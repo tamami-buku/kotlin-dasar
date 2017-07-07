@@ -1,0 +1,109 @@
+%\documentclass{wileysev} % ini 7x10
+\documentclass{wileysix} % ini 6x9
+
+\usepackage{w-bookps} % postscript text
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{
+	colorlinks= true,
+	linkcolor= blue,
+	filecolor= magenta, 
+	urlcolor= blue,
+	bookmarks=true
+}
+
+\definecolor{gray}{cmyk}{0,0,0,0.5}
+
+% level section head to appear 
+% 0: no section number
+% 1: section
+% 2: subsection
+% 3: subsubsection
+\setcounter{secnumdepth}{3}
+
+% level section head to appear in table of contents
+% 0: chapter title
+% 1: section titles
+% 2: subsection titles
+% 3: subsubsection titles
+\setcounter{tocdepth}{2}
+
+%\draft % double space between lines, current date and time printed at bottom of page
+%\renewcommand{\arraystretch}{0.6} % tables in double space
+
+\offprintinfo{Bahasa Pemrograman Kotlin I, \\ Dasar-Dasar Pemrograman}{P. Tamami}
+
+% list code program
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolor}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolor},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  stringstyle=\color{codepurple},
+  basicstyle=\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+
+\lstset{style=mystyle}
+% end list code program
+
+\begin{document}
+
+\booktitle{Bahasa Pemrograman Kotlin I} 
+\subtitle{Dasar}
+
+\authors{P. Tamami\\ 
+\affil{BPPKAD Kab. Brebes}}
+
+\halftitlepage
+ 
+\titlepage
+
+\dedication{Untuk Istriku yang selalu memberi semangat, dan anak-anak yang selalu ceria}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\begin{foreword}
+Saat melihat keunggulan dari bahasa pemrograman Java yang mudah untuk di\textit{maintenance}, dapat berjalan di berbagai \textit{platform}, berorientasi objek, dan beberapa keunggulan lain, ada beberapa penyempurnaan yang dilakukan oleh bahasa pemrograman Kotlin, yang sama-sama berjalan di atas JVM. 
+
+Dalam buku ini akan dijelaskan dasar dari pemrograman Kotlin yang menawarkan penulisan kode yang lebih ringkas, menjamin kesalahan seluruh kelas dari \textit{exception} \textbf{null}, dan yang tidak kalah penting adalah integrasinya dengan sistem yang dibangun dengan menggunakan bahasa Java.
+
+Silahkan menikmati buku yang kurang dari sempurna ini, dan berharap penulis mendapatkan kritik yang membangun guna perubahan isi buku ini ke arah yang lebih sempurna.
+
+\vspace{4mm}
+4 Mei 2017
+
+\vspace{5mm}
+Penulis
+\end{foreword}
+
+\include{01-mulai}
+\include{02-dasar}
+\include{03-kelas-dan-objek}
+\include{04-fungsi-lamda}
+\include{05-java-interoperabilitas}
+\include{06-perkakas}
+\include{07-kasus-1}
+
+\end{document}

@@ -1,0 +1,153 @@
+\chapter{Memulai} 
+
+Perlu diketahui bahwa Kotlin ini adalah bahasa pemrograman yang berjalan di atas JVM, sehingga diperlukan Java Runtime untuk menjalankannya.
+
+Cara termudah untuk memasangkan atau meng\textit{install} \textit{compiler} Kotlin adalah dengan mengunduh di halaman \url{https://github.com/JetBrains/kotlin/releases/}, kemudian melakukan \textit{unzip} dan menambahkan direktori \texttt{bin} ke dalam \textit{path} sistem.
+
+\section{Sintak Dasar}
+
+\subsection{Deklarasi Paket}
+
+Sama seperti bahasa pemrograman Java, deklarasi paket berada di awal kode seperti contoh berikut :
+
+\begin{lstlisting}
+package nama.paket
+
+import java.net.*
+...
+\end{lstlisting}
+
+Perbedaannya adalah bahwa nama paket tidak perlu disesuaikan atau disamakan dengan nama direktorinya seperti pada pemrograman Java. \textit{File} kode sumber dapat ditempatkan dimanapun pada \textit{drive}.
+
+\subsection{Deklarasi Fungsi}
+
+Deklarasi fungsi tanpa parameter dan tanpa nilai balikkan (\textit{return}) akan terlihat seperti contoh kode berikut :
+
+\begin{lstlisting}
+fun cetak(): Unit {
+	println("Hai, apa kabar")
+}
+\end{lstlisting}
+
+Atau deklarasi \texttt{Unit} dapat dihilangkan dengan kode akan terlihat seperti ini :
+
+\begin{lstlisting}
+fun cetak() {
+	println("Hai, apa kabar")
+}
+\end{lstlisting}
+
+Untuk deklarasi fungsi dengan parameter akan terlihat seperti contoh kode berikut :
+
+\begin{lstlisting}
+fun tambah(a: Int, b: Int): Int {
+	return a + b
+}
+\end{lstlisting}
+
+Fungsi yang sama seperti diatas dapat dibuat lebih ringkas dengan nilai balikan \textit{return} yang sudah diprediksi oleh Kotlin, kodenya menjadi seperti berikut ini :
+
+\begin{lstlisting}
+fun tambah(a: Int, b: Int) = a + b
+\end{lstlisting}
+
+Untuk pembahasan lebih lanjut mengenai fungsi, akan dijabarkan dalam bagian tersendiri dalam buku ini.
+
+\subsection{Deklarasi Variabel}
+
+Deklarasi variabel dapat dilakukan untuk 2 (dua) cara. Yang pertama adalah variabel yang hanya dapat diisi satu kali, dan ada yang dapat diisi berkali-kali. 
+
+Kode untuk deklarasi variabel yang hanya dapat diisi 1 (satu) kali adalah sebagai berikut :
+
+\begin{lstlisting}
+val a: Int = 2 
+// atau 
+val c = 2
+// atau
+val d: Int
+d = 5
+\end{lstlisting}
+
+Untuk deklarasi variabel yang dapat diubah, kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+var e = 2
+e *= 2
+\end{lstlisting}
+
+\subsection{Deklarasi Komentar}
+
+Seperti bahasa pemrograman Java dan Javascript, Kotlin juga menyediakan komentar dalam bentuk komentar baris dan komentar multi-baris. Kode untuk komentar satu baris adalah sebagai berikut :
+
+\begin{lstlisting}
+// ini komentar 1 baris
+\end{lstlisting}
+
+Untuk kode komentar multi-bari adalah sebagai berikut :
+
+\begin{lstlisting}
+/*  ini komentar
+    multi baris */
+\end{lstlisting}
+
+Namun tidak seperti bahasa pemrograman Java, komentar di Kotlin dapat bersarang bertingkat.
+
+\section{Logat}
+
+Beberapa logat yang biasa digunakan di Kotlin adalah seperti di bawah ini.
+
+\subsection{Membuat Kelas Data}
+
+Kelas data ini biasa digunakan untuk pembuatan kelas \textit{entity}. Contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+data class Pegawai(val nim: String, val nama: String)
+\end{lstlisting}
+
+Dengan menambahkan deklarasi \texttt{data} di depan kelas, maka untuk kelas Pegawai ini akan disediakan fungsi-fungsi berikut secara otomatis :
+
+\begin{itemize}
+\item \textit{Getters} dan \textit{Setter} untuk seluruh properti
+\item \textit{Method} \texttt{equals}.
+\item \textit{Method} \texttt{hashCode}
+\item \textit{Method} \texttt{toString}
+\item \textit{Method} \texttt{copy}
+\end{itemize}
+
+\subsection{Nilai \textit{Default} Untuk Parameter Fungsi}
+
+Pada saat deklarasi fungsi, sebetulnya parameter dapat kita isikan dengan nilai \textit{default} seperti berikut :
+
+\begin{lstlisting}
+fun isiData(nama: String, kelamin: Int = 0) {
+	...
+}
+\end{lstlisting}
+
+Nantinya parameter \texttt{kelamin} akan terisi otomatis dengan \texttt{0}
+
+\subsection{\textit{Interpolasi} Teks}
+
+\textit{Interpolasi} atau penyisipan teks akan terlihat seperti baris perintah berikut ini :
+
+\begin{lstlisting}
+val nama: String = "tamami"
+println("name $nama")
+\end{lstlisting}
+
+Nantinya sisipan teks dengan kode \texttt{$nama} akan terisi oleh variabel \texttt{nama} yang telah dideklarasikan sebelumnya.
+
+\subsection{Pemeriksaan Instan}
+\subsection{Penggunaan \textit{Range}}
+\subsection{\textit{Read-only List}}
+\subsection{\textit{Read-only Map}}
+\subsection{Mengakses \textit{Map}}
+\subsection{Jalan Pintas Perintah \texttt{if not null}}
+\subsection{Jalan Pintas Perintah \texttt{if not null and else}}
+\subsection{Eksekusi Perintah \texttt{if null}}
+\subsection{Eksekusi Perintah \texttt{if not null}}
+\subsection{Kembalikan Pada Perintah \texttt{when}}
+\subsection{Ekspresi \texttt{try catch}}
+\subsection{Ekspresi \texttt{if}}
+
+\section{Adat}
