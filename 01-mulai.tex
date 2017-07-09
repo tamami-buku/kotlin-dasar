@@ -4,6 +4,74 @@ Perlu diketahui bahwa Kotlin ini adalah bahasa pemrograman yang berjalan di atas
 
 Cara termudah untuk memasangkan atau meng\textit{install} \textit{compiler} Kotlin adalah dengan mengunduh di halaman \url{https://github.com/JetBrains/kotlin/releases/}, kemudian melakukan \textit{unzip} dan menambahkan direktori \texttt{bin} ke dalam \textit{path} sistem.
 
+Untuk memastikan bahwa Kotlin sudah terpasang dan dapat digunakan, kita seharusnya dapat menjalankan perintah berikut di konsol pada Linux atau \textit{command prompt} milik Windows, berikut perintahnya :
+
+\begin{lstlisting}
+kotlinc -version
+\end{lstlisting}
+
+Perintah tersebut sebetulnya untuk mencetak informasi tentang versi \textit{compiler} Kotlin yang aktif. Dan seharusnya akan muncul informasi yang kurang lebih sebagai berikut :
+
+\begin{lstlisting}
+info: Kotlin Compiler version 1.1.2-2
+\end{lstlisting}
+
+Tentunya versi yang keluar akan berbeda tergantung apa yang kita \textit{install}.
+
+Percobaan berikutnya adalah menampilkan versi \textit{runtime environment} dari Kotlin, jika perintah \texttt{kotlinc} digunakan untuk melakukan \textit{compile} (kompilasi) terhadap kode yang kita ketik / tulis menjadi bahasa biner, fungsi dari \textit{runtime environment} adalah menerjemahkan bahasa biner hasil \textit{compile} oleh \texttt{kotlinc} menjadi bahasa \textit{native} sesuai sistem operasi yang digunakan, inilah prinsip yang digunakan bahasa pemrograman Java yang tetap digunakan oleh Kotlin, karena memang Kotlin masih menggunakan JRE (\textit{Java Runtime Environment}).
+
+Perintah untuk melihat versi \textit{runtime environment} dari Kotlin adalah sebagai berikut :
+
+\begin{lstlisting}
+kotlin -version
+\end{lstlisting}
+
+Dengan hasil keluaran di layar monitor seperti ini :
+
+\begin{lstlisting}
+Kotlin version 1.1.2-2 (JRE 1.8.0_121-b13)
+\end{lstlisting}
+
+Versi Kotlin seharusnya sama dengan versi \textit{compiler}-nya. Sedangkan muncul tambahan informasi \texttt{JRE 1.8.0\_121-b13}, inilah yang menunjukan bahwa Kotlin masih menggunakan JRE untuk menjalankan programnya, karena memang sebelum melakukan instalasi Kotlin, Java harus di\textit{install} terlebih dahulu.
+
+\section{Katakan Hai}
+
+Setelah melakukan percobaan dasar seperti di atas, kita akan mencoba menjalankan kode pertama yang kita buat dengan Kotlin. Berikut adalah langkahnya :
+
+\begin{enumerate}[1.]
+	\item Membuka editor teks seperti notepad, atom, notepad++, atau aplikasi sejenis. 
+	\item Mengetikan kode berikut :
+	
+\begin{lstlisting}
+fun main(args: Array<String>) {
+    println("Hai, selamat datang")
+}
+\end{lstlisting}
+
+	\item Simpanlah dengan nama apapun, berikan ekstensi \texttt{kt}, misal kita beri nama \textit{file} tersebut dengan \texttt{Test.kt}.
+	\item Buka konsol atau \textit{command prompt} dan aktifkan ke direktori tempat kita simpan \textit{file} \texttt{Test.kt} tadi.
+	\item \textit{Compile file} \texttt{Test.kt} tersebut dengan perintah berikut :
+	
+\begin{lstlisting}
+kotlinc Test.kt
+\end{lstlisting}
+
+	\item Hasil dari \textit{compile} tersebut adalah berupa \textit{file} \texttt{TestKt.class}
+	\item Untuk menjalankan hasil program yang telah kita \textit{compile}, gunakan perintah berikut :
+	
+\begin{lstlisting}
+kotlin TestKt
+\end{lstlisting}
+
+	\item Kemudian akan program / aplikasi akan menghasilkan keluaran sebagai berikut :
+	
+\begin{lstlisting}
+Hai, selamat datang
+\end{lstlisting}
+
+	\item Sampai titik ini, kita berhasil menjalankan kode yang telah kita buat.
+\end{enumerate}
+
 \section{Sintak Dasar}
 
 \subsection{Deklarasi Paket}
@@ -126,6 +194,44 @@ fun isiData(nama: String, kelamin: Int = 0) {
 
 Nantinya parameter \texttt{kelamin} akan terisi otomatis dengan \texttt{0}
 
+Contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val nama = "tamami"
+	println("Halo, $nama")
+	
+	isiData(nama)
+}
+
+fun isiData(nama: String, kelamin: Int = 0) {
+	println(kelamin)
+}
+\end{lstlisting}
+
+Hasil keluarannya adalah sebagai berikut :
+
+\begin{lstlisting}
+Halo, tamami
+0
+\end{lstlisting}
+
+Penjelasannya adalah sebagai berikut, pada baris pertama menghasilkan keluaran teks \texttt{Halo, tamami}, yang sebetulnya hasil dari eksekusi perintah kode pada baris ke-3, yaitu :
+
+\begin{lstlisting}
+println("Halo, $nama")
+\end{lstlisting}
+
+Dimana pemanggilan variabel \texttt{\$nama} pada baris ke-2 dari \textit{source code} terjadi, dan yang ditampilkan di layar monitor adalah isi dari variabel \texttt{\$nama}, yaitu \texttt{tamami}.
+
+Sedangkan pada baris kedua dari hasil keluaran, yaitu \texttt{0}, adalah hasil dari eksekusi kode pada bari ke-9, di dalam fungsi \texttt{isiData}, tepatnya pada perintah berikut :
+
+\begin{lstlisting}
+println(kelamin)
+\end{lstlisting}
+
+Kenapa hasil keluarannya adalah \texttt{0}, alurnya adalah seperti ini, pada saat pemanggilan fungsi \texttt{isiData(nama)} pada baris ke-5, parameter \texttt{nama} pada fungsi \texttt{isiData} ini terisi dengan nilai \texttt{tamami}, karena parameter kedua, yaitu \texttt{kelamin} tidak disertakan pada pemanggilannya pada baris ke-5, sehingga parameter \texttt{kelamin} akan terisi otomatis dengan nilai \texttt{0} sebagaimana deklarasinya pada baris ke-8.
+
 \subsection{\textit{Interpolasi} Teks}
 
 \textit{Interpolasi} atau penyisipan teks akan terlihat seperti baris perintah berikut ini :
@@ -135,9 +241,12 @@ val nama: String = "tamami"
 println("name $nama")
 \end{lstlisting}
 
-Nantinya sisipan teks dengan kode \texttt{$nama} akan terisi oleh variabel \texttt{nama} yang telah dideklarasikan sebelumnya.
+Nantinya sisipan teks dengan kode \texttt{\$nama} akan terisi oleh variabel \texttt{nama} yang telah dideklarasikan sebelumnya.
 
 \subsection{Pemeriksaan Instan}
+
+
+
 \subsection{Penggunaan \textit{Range}}
 \subsection{\textit{Read-only List}}
 \subsection{\textit{Read-only Map}}
