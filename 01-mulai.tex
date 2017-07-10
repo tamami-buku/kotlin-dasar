@@ -72,6 +72,16 @@ Hai, selamat datang
 	\item Sampai titik ini, kita berhasil menjalankan kode yang telah kita buat.
 \end{enumerate}
 
+Jadi sebetulnya, untuk memulai koding dengan bahasa Kotlin cukup sederhana, tinggal siapkan \textit{berekstensi} \texttt{kt}, kemudian sertakan blok kode program berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	...
+}
+\end{lstlisting}
+
+Seluruh program yang dibangun dengan Kotlin akan berawal dari fungsi \texttt{main} ini.
+
 \section{Sintak Dasar}
 
 \subsection{Deklarasi Paket}
@@ -245,10 +255,144 @@ Nantinya sisipan teks dengan kode \texttt{\$nama} akan terisi oleh variabel \tex
 
 \subsection{Pemeriksaan Instan}
 
+Pada bahasa Kotlin, kita dapat melakukan pemeriksaan tipe data secara instan, formatnya adalah seperti kode berikut :
 
+\begin{lstlisting}
+when(x) {
+	is String -> ...
+	is Int -> ...
+	is KelasSaya -> ...
+	else -> ...
+}
+\end{lstlisting}
+
+Artinya nanti isi dari variabel \texttt{x} akan dipilah, apakah merupakan tipe data \texttt{String}, \texttt{Int}, merupakan instan dari kelas \texttt{KelasSaya}, atau berupa tipe data atau kelas lain.
+
+Contoh nyata dari penggunaan kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val x: Any = 2
+	
+	when (x) {
+		is String -> println("Jawaban String")
+		is Int -> println("Jawaban Int")
+		else -> println("lainnya")
+	}
+}
+\end{lstlisting}
+
+Pada kode di atas, tipe data dari variabel \texttt{x} adalah \texttt{Any}, yang artinya bisa berupa tipe data apapun, atau instan dari kelas apapun. Lalu diisikan nilai awal berupa angka 2 (dua).
+
+Selanjutnya kode akan melakukan seleksi tipe data \texttt{x} pada baris ke-4 dengan perintah \texttt{when (x)}, kemudian melakukan pemeriksaan, apabila tipe data dari variabel \texttt{x} adalah \texttt{String} maka akan dicetak seperti pada baris ke-5 dari kode di atas, tapi ternyata memang tipe data yang tepat adalah pada baris ke-6 sehingga program yang kita bangun akan mencetak \texttt{Jawaban Int} di layar, karena variabel \texttt{x} berisi angka 2 (dua).
 
 \subsection{Penggunaan \textit{Range}}
+
+Penggunaan \textit{range} biasanya untuk melakukan iterasi atau perulangan, beberapa contohnya akan dikerjakan dengan kode berikut :
+
+\begin{lstlisting}
+for(i in 1..10) { println("data ke-$i = $i") }
+\end{lstlisting}
+
+Kode tersebut akan menghasilkan keluaran di monitor dimana nilai \texttt{i} dari 1 sampai dengan 10 sebagai berikut :
+
+\begin{lstlisting}
+data ke-1 = 1
+data ke-2 = 2
+data ke-3 = 3
+data ke-4 = 4
+data ke-5 = 5
+data ke-6 = 6
+data ke-7 = 7
+data ke-8 = 8
+data ke-9 = 9
+data ke-10 = 10
+\end{lstlisting}
+
+Contoh penggunaan \textit{range} yang lain adalah seperti kode berikut :
+
+\begin{lstlisting}
+for(i in 1 until 10) { println("data ke-$i = $i") }
+\end{lstlisting}
+
+Sama seperti kode sebelumnya, hanya saja kali ini nilai \texttt{i} adalah antara 1 sampai dengan 9, angka 10 tidak masuk dalam kualifikasi proses cetak ke monitor. Berikut adalah hasil keluarannya di monitor :
+
+\begin{lstlisting}
+data ke-1 = 1
+data ke-2 = 2
+data ke-3 = 3
+data ke-4 = 4
+data ke-5 = 5
+data ke-6 = 6
+data ke-7 = 7
+data ke-8 = 8
+data ke-9 = 9
+\end{lstlisting}
+
+Contoh penggunaan \textit{range} dengan beberapa pola lompatan atau kelipatan angka adalah sebagai berikut :
+
+\begin{lstlisting}
+for(i in 1..10 step 3) { println("data ke-$i") }
+\end{lstlisting}
+
+Maksudnya adalah mencetak deretan angka yang dimulai dari 1 dengan kelipatan 3 sampai nilai \texttt{i} sama dengan 10. Berikut adalah hasil keluaran dari kode tersebut :
+
+\begin{lstlisting}
+data ke-1
+data ke-4
+data ke-7
+data ke-10
+\end{lstlisting}
+
+Contoh penggunaan \textit{range} untuk perulangan yang mundur ke nilai yang lebih kecil adalah sebagai berikut :
+
+\begin{lstlisting}
+for(i in 10 downTo 1) { println("data ke-$i") }
+\end{lstlisting}
+
+Penjelasan dari kode tersebut dijelaskan dengan hasil keluaran di layar monitor sebagai berikut :
+
+\begin{lstlisting}
+data ke-10
+data ke-9
+data ke-8
+data ke-7
+data ke-6
+data ke-5
+data ke-4
+data ke-3
+data ke-2
+data ke-1
+\end{lstlisting}
+
 \subsection{\textit{Read-only List}}
+
+Artinya adalah membuat \textit{list} yang tidak dapat diubah isinya, contoh deklarasinya adalah sebagai berikut :
+
+\begin{lstlisting}
+val list = listOf("data A", "data B", "data C")
+\end{lstlisting}
+
+Untuk lebih jelasnya, kita akan melihat kode contoh sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val list = listOf("A", "B", "C");
+	
+	for(i in list) {
+		println("data $i")	
+	]
+}
+\end{lstlisting}
+
+Kode tersebut, pada baris ke-2 adalah menyiapkan objek \textit{list} dan diisikan langsung dengan data menggunakan perintah \texttt{listOf}, selanjutnya seluruh data dicetak ke layar monitor sebagaimana tampilan berikut :
+
+\begin{lstlisting}
+data A
+data B
+data C
+\end{lstlisting}
+
 \subsection{\textit{Read-only Map}}
 \subsection{Mengakses \textit{Map}}
 \subsection{Jalan Pintas Perintah \texttt{if not null}}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.25)  9 JUL 2017 23:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.25)  10 JUL 2017 21:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -518,31 +518,46 @@ Overfull \hbox (3.11748pt too wide) in paragraph at lines 233--234
 hingga pa-ram-e-ter \OT1/pcr/m/n/10 kelamin
  []
 
-LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 254.
-)
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
 [5]
+Overfull \hbox (4.34729pt too wide) in paragraph at lines 259--260
+[]\OT1/ptm/m/n/10 Artinya nanti isi dari vari-abel \OT1/pcr/m/n/10 x \OT1/ptm/m
+/n/10 akan dip-i-lah, apakah meru-pakan tipe data \OT1/pcr/m/n/10 String\OT1/pt
+m/m/n/10 ,
+ []
+
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 283.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
 [6]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[7]
 \openout2 = `02-dasar.aux'.
 
- (./02-dasar.tex
-BAB 2.
-) [7
+ (./02-dasar.tex [8
 
 
 
 ]
+BAB 2.
+) [9]
 \openout2 = `03-kelas-dan-objek.aux'.
 
- (./03-kelas-dan-objek.tex [8
+ (./03-kelas-dan-objek.tex [10
 
 
 
@@ -551,7 +566,7 @@ BAB 3.
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9]
+ [11]
 Overfull \vbox (130.235pt too high) has occurred while \output is active []
 
 
@@ -559,37 +574,37 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[10]
+[12]
 \openout2 = `04-fungsi-lamda.aux'.
 
  (./04-fungsi-lamda.tex
 BAB 4.
-) [11
+) [13
 
 
 
 ]
 \openout2 = `05-java-interoperabilitas.aux'.
 
- (./05-java-interoperabilitas.tex [12
+ (./05-java-interoperabilitas.tex [14
 
 
 
 ]
 BAB 5.
-) [13]
+) [15]
 \openout2 = `06-perkakas.aux'.
 
- (./06-perkakas.tex [14
+ (./06-perkakas.tex [16
 
 
 
 ]
 BAB 6.
-) [15]
+) [17]
 \openout2 = `07-kasus-1.aux'.
 
- (./07-kasus-1.tex [16
+ (./07-kasus-1.tex [18
 
 
 
@@ -599,7 +614,7 @@ BAB 7.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-) [17]
+) [19]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
  (./00-book.aux (./01-mulai.aux) (./02-dasar.aux)
@@ -611,9 +626,9 @@ Package rerunfilecheck Info: File `00-book.out' has not changed.
 (rerunfilecheck)             Checksum: 4933236E9DE68BE9E133ACDDCB32B8C0;3472.
  ) 
 Here is how much of TeX's memory you used:
- 7571 strings out of 495028
- 109306 string characters out of 6181505
- 239456 words of memory out of 5000000
+ 7590 strings out of 495028
+ 109577 string characters out of 6181505
+ 237456 words of memory out of 5000000
  10447 multiletter control sequences out of 15000+600000
  54220 words of font info for 104 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -628,10 +643,10 @@ sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on 00-book.pdf (33 pages, 133095 bytes).
+Output written on 00-book.pdf (35 pages, 135726 bytes).
 PDF statistics:
- 597 PDF objects out of 1000 (max. 8388607)
- 546 compressed objects within 6 object streams
- 179 named destinations out of 1000 (max. 500000)
+ 626 PDF objects out of 1000 (max. 8388607)
+ 573 compressed objects within 6 object streams
+ 198 named destinations out of 1000 (max. 500000)
  441 words of extra memory for PDF output out of 10000 (max. 10000000)
 
