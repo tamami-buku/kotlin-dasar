@@ -393,14 +393,213 @@ data B
 data C
 \end{lstlisting}
 
-\subsection{\textit{Read-only Map}}
-\subsection{Mengakses \textit{Map}}
+\subsection{\textit{Read-only Map} dan Cara Mengaksesnya}
+
+\textit{Map} sebetulnya adalah kelas koleksi yang berisi pasangan kunci (\textit{key}) dan isi (\textit{value}), contohnya adalah sebagai berikut :
+
+\begin{lstlisting}
+val map = mapOf("key1" to "nilai1", "key2" to "nilai2", "key3" to "nilai3")
+\end{lstlisting}
+
+Untuk melakukan akses data pada \textit{map} ini adalah sebagai berikut :
+
+\begin{lstlisting}
+println(map["key"]) // untuk mengambil nilainya
+map["key"] = nilai // untuk mengganti atau mengisi nilai
+\end{lstlisting}
+
+Kode lengkap untuk percobaan \textit{Map} ini adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val map = mapOf("key1" to "nilai1", "key2" to "nilai2", "key3" to "nilai3")
+	
+	println(map["key2"])
+	
+	for(i in map) {
+		println(i)
+	}
+}
+\end{lstlisting}
+
+Hasil keluarannya adalah sebagai berikut :
+
+\begin{lstlisting}
+nilai2
+key1=nilai1
+key2=nilai2
+key3=nilai3
+\end{lstlisting}
+
+Hasil dari kode pada baris ke-4 adalah hasil keluaran pada baris ke-1, sedangkan hasil iterasi atau perulangan dari kode pada baris ke-6 sampai dengan baris ke-8 adalah pada baris ke-2 sampai dengan baris ke-4 pada hasil keluaran.
+
 \subsection{Jalan Pintas Perintah \texttt{if not null}}
+
+Ini digunakan sebetulnya untuk melakukan pemeriksaan terhadap isi dari suatu variabel apakah terisi atau tidak (\textit{null}), kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+import java.io.File
+
+fun main(args: Array<String>) {
+	val file = File("Test.kt").listFiles()
+	
+	println(file ?. getTotalSpace())
+}
+\end{lstlisting}
+
+Pada kode tersebut kita melihat bahwa aplikasi yang kita bangun menggunakan pustaka Java yaitu \texttt{java.io.File}, hal ini memungkinkan karena memang Kotlin adalah turunan dari Java yang dapat menggunakan kelas-kelas Java untuk membangun aplikasi. Ini adalah salah fasilitas yang Kotlin sediakan.
+
+Yang perlu diperhatikan adalah pada baris ke-6, yaitu pada bagian \texttt{file?.getTotalSpace()}, dimana tanda tanya (\texttt{?}) yang ada pada bagian ini menunjukan seleksi atau pemeriksaan terhadap kondisi \textit{null}, atau kosongnya isi dari variabel yang diminta.
+
+Bila isi variabel \texttt{file} ada isinya, maka akan dicetak ukuran dari \textit{file} tersebut, namun bila nihil, maka akan mencetak \texttt{null} ke layar monitor.
+
+Sebagai contoh apabila isi dari variabel \texttt{file} adalah \texttt{null} adalah sebagai berikut :
+
+\begin{lstlisting}
+import java.io.File
+
+fun main(args: Array<String>) {
+	val file: File?
+	file = null
+	println(file?.getTotalSpace())
+}
+\end{lstlisting}
+
+Hasil dari kode di atas adalah informasi \texttt{null} yang dicetak ke layar monitor.
+
 \subsection{Jalan Pintas Perintah \texttt{if not null and else}}
+
+Cara ini sebetulnya pengembangan dari kasus sebelumnya, dengan penambahan penanganan apabila memang hasilnya adalah \texttt{null}, berikut kodenya :
+
+\begin{lstlisting}
+import java.io.File
+
+fun main(args: Array<String>) {
+	val file: File?
+	file = null
+	println(file ?. getTotalSpace() ?: "NIHIL")
+}
+\end{lstlisting}
+
+Yang perlu diperhatikan adalah pada baris ke-6, dimana ada tambahan tanda (\texttt{?:}), apabila variabel \texttt{file} tidak bernilai \texttt{null} maka akan dipanggil \textit{method} \texttt{getTotalSpace()}, namun bila bernilai \texttt{null} maka akan dicetak kata \texttt{NIHIL}.
+
 \subsection{Eksekusi Perintah \texttt{if null}}
+
+Kondisi ini digunakan untuk melakukan eksekusi bila nilai dari suatu variabel bernilai \texttt{null}. Contoh kode untuk kasus ini adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val data = mapOf("nama" to "tamami", "umur" to 36)
+	val email = data["email"] ?: throw IllegalStateException("Email tidak ada")
+}
+\end{lstlisting}
+
+Inti dari kode ini sebetulnya ada pada baris ke-3, pada saat variabel \texttt{email} akan diisikan sebuah nilai yang diambilkan dari variabel \textit{map} \texttt{data} berupa \textit{email}, namun bila nilai untuk \textit{email} ini \texttt{null} maka akan dilemparkan keluar sebagai \texttt{IllegalStateException}.
+
+Hasil keluaran dari kode tersebut tentu saja sebuah \textit{exception} dengan pesan berupa \texttt{Email tidak ada}.
+
 \subsection{Eksekusi Perintah \texttt{if not null}}
+
+Kondisi ini adalah kebalikan dari eksekusi sebelumnya, yaitu bila nilainya tidak \texttt{null} maka akan melakukan eksekusi yang tertuang dalam blok kode. Berikut ada contoh kodenya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val data = mapOf("nama" to "tamami", "umur" to 33)
+	data?.let {
+		println(data["nama"])
+	}
+}
+\end{lstlisting}
+
+Blok kode untuk kondisi ini sebetulnya ada pada baris ke-3 sampai dengan baris ke-5, pada baris ke-3, akan dilakukan pemeriksaan, apakah variabel \texttt{data} berupa \texttt{null} atau bukan, bila bukan \texttt{null} maka akan dikerjakan perintah pada baris ke-4. Bila berupa \texttt{null} maka blok kode ini akan dilewati begitu saja.
+
 \subsection{Kembalikan Pada Perintah \texttt{when}}
+
+Pada bagian ini, sebuah \textit{method} akan mengembalikan nilai dari hasil seleksi pada perintah \texttt{when}. Berikut kode lengkapnya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	println("Kode warna " + kodeWarna("hijau"))
+}
+
+fun kodeWarna(warna: String): Int {
+	return when(warna) {
+		"merah" -> 1
+		"hijau" -> 2
+		"biru" -> 3
+		else -> throw Exception("Salah Warna")
+	}
+}
+\end{lstlisting}
+
+Pada bagian ini intinya ada pada \textit{method} atau fungsi \texttt{kodeWarna}, yaitu bila parameter \texttt{warna} terisi oleh teks \texttt{merah} maka akan mengembalikan nilai \texttt{1}, bila terisi oleh teks \texttt{hijau} maka akan mengembalikan nilai \texttt{2} dan seterusnya.
+
+Pada baris ke-2, karena dipanggil fungsi \texttt{kodeWarna} dengan parameter \texttt{warna} berisi teks \texttt{hijau}, maka hasil keluaran yang terjadi di layar monitor adalah sebagai berikut :
+
+\begin{lstlisting}
+Kode warna 2
+\end{lstlisting}
+
 \subsection{Ekspresi \texttt{try catch}}
+
+Pada bagian ini ditujukan untuk penanganan \textit{exception} dengan \texttt{try catch} agar aplikasi yang dibangun lebih bersih dari informasi kesalahan yang diproduksi oleh bahasa pemrograman. Contoh kode untuk penjelasannya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	try {
+		println("kode warna : " + kodeWarna("ungu"))
+	} catch(e: Exception) {
+		println("error : " + e.printStackTrace())
+	}
+}
+
+fun kodeWarna(warna: String): Int {
+	return when(warna) {
+		"merah" -> 1
+		"hijau" -> 2
+		"biru" -> 3
+		else -> throw Exception("Salah Warna")
+	}
+}
+\end{lstlisting}
+
+Pada baris ke-3, sengaja diberikan isi teks \texttt{ungu} pada parameter fungsi \texttt{kodeWarna} agar \textit{exception} yang ada dapat dipicu untuk dieksekusi.
+
+Hasilnya adalah karena parameter teks \texttt{ungu} yang dikirim, maka yang diterima adalah \textit{exception} pada baris ke-14, sehingga kode akan langsung dilempar ke baris ke-5 karena pemanggilan fungsi \texttt{kodeWarna} menghasilkan \textit{exception} tersebut.
+
 \subsection{Ekspresi \texttt{if}}
 
+Pada bagian ini, sebetulnya berfungsi untuk kondisional biasa, untuk memilah sebagaimana bentuk \textit{when} sebelumnya. Contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val i = 37
+	
+	if(i % 2 == 0) {
+		println("itu bilangan genap")
+	} else {
+		println("itu bilangan ganjil")
+	}
+}
+\end{lstlisting}
+
+Tentu saja hasil dari kode tersebut akan mencetak baris teks berikut :
+
+\begin{lstlisting}
+itu bilangan ganjil
+\end{lstlisting}
+
+Karena memang nilai dari variabel \texttt{i} diperiksa, apabila setelah dibagi dengan angka 2 tidak memiliki sisa bagi, maka itu pertanda bahwa nilai \texttt{i} adalah bilangan genap, namun bila selain dari itu, akan dieksekusi perintah dalam blok \texttt{else}.
+
 \section{Adat}
+
+Pada tiap bahasa pemrograman, ada sebuah adat atau kebiasaan atau \textit{style} dari kode agar tetap mudah terbaca bagi orang lain yang membuka kode sumbernya, begitu pula di Kotlin, ada beberapa kebiasan atau adat yang perlu kita latih agar kode kita mudah untuk dibaca oleh orang lain. Berikut adalah diantaranya :
+
+\begin{itemize}
+	\item Gaya Penamaan
+	\item Titik Dua
+	\item Lamda
+	\item Format \textit{Header} Kelas
+	\item Unit
+	\item Fungsi vs. Properti
+\end{itemize}
