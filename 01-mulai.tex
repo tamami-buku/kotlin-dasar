@@ -597,9 +597,108 @@ Pada tiap bahasa pemrograman, ada sebuah adat atau kebiasaan atau \textit{style}
 
 \begin{itemize}
 	\item Gaya Penamaan
+	
+Gaya penamaan akan mirip seperti bahasa Java, yaitu :
+
+		\begin{itemize}
+			\item menggunalan \texttt{camelCase} untuk semua nama variabel atau fungsi (diusahakan menghilangkan garis bawah (\texttt{\_}))
+			\item tipe atau kelas diawali dengan huruf besar
+			\item fungsi dan properti diawali dengan huruf kecil
+			\item menggunakan 4 spasi untuk indentasi
+			\item fungsi yang bersifat public harus memiliki dokumentasi seperti yang muncul pada dokumentasi Kotlin
+		\end{itemize}	
+	
 	\item Titik Dua
-	\item Lamda
+	
+Penggunaan titik dua menggunakan spasi sebelum tanda titik dua ketika memisahkan tipe dan super-tipe, dan tidak menggunakan spasi sebelum tanda titik dua ketika memisahkan instan dan tipe. Berikut contohnya :
+
+\begin{lstlisting}
+interface MyInterface<out T : Any> : Bar {
+	fun myFungsi(a: Int): T
+}
+\end{lstlisting}	
+	
+	\item Lambda
+	
+Ekspresi Lambda atau disebut labmda saja sebetulnya adalah fasilitas yang memudahkan penulis kode program untuk mempersingkat kode. Penulisannya seharusnya tiap penggunaan kurung kurawal buka dan tutup, disertakan spasi sebelum dan sesudahnya. Begitu lupa perlakukan untuk tanda panah yang memisahkan antara parameter dan isi lambda, harus diberikan spasi sebelum dan sesudahnya.
+
+Contoh sederhananya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val list = listOf(1, 2, 3, 4, 5)
+	println(list.filter { it >= 4 }
+}
+\end{lstlisting}	
+
+Inti dari kode diatas sebetulnya ada pada baris ke-3, pada bagian texttt{it >= 4}, yang menghasilkan hanya isi yang nilainya lebih dari atau sama dengan 4. Hasil dari kode di atas adalah sebagai berikut : 
+
+\begin{lstlisting}
+[4, 5]
+\end{lstlisting}
+
+Untuk lambda sederhana tidak perlu melakukan definisi parameter, cukup menggunakan kata kunci \texttt{it}. Namun pada lambda yang memiliki parameter, harus selalu menyertakan parameter dan isinya. Seperti contoh kode berikut untuk lambda yang menyertakan parameternya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val list = listOf(1, 2, 3, 4, 5)
+	println(list.map { data -> data * 2 } )
+}
+\end{lstlisting}
+
+Inti dari kode di atas sebetulnya ada pada baris ke-3, pada bagian \texttt{data -> data * 2}, inilah bentuk lambda di Kotlin. Seluruh isi pada variabel \texttt{list} akan dikalikan dengan 2 dengan perintah tersebut, sehingga hasil keluarannya adalah seperti berikut :
+
+\begin{lstlisting}
+[2, 4, 6, 8, 10]
+\end{lstlisting}
+	
 	\item Format \textit{Header} Kelas
+	
+Deklarasi kelas dengan sedikit parameter dapat dituliskan dalam satu baris kode seperti berikut :
+
+\begin{lstlisting}
+class Mahasiswa(nim: String, nama: String)
+\end{lstlisting}	
+
+Namun deklarasi kelas yang lebih banyak harus tersusun lebih rapih, sehingga setiap parameter atau argumen pembentuk kelas berada pada baris terpisah. Kemudian tutup kurung untuk parameter / argumen harus berada pada baris baru. Jika menggunakan pewarisan, kontruktor super-kelas harus ditempatkan pada baris yang sama dengan tutup kurung. Berikut adalah contoh kodenya :
+
+\begin{lstlisting}
+class Pejabat (
+    nip: String,
+    nama: String,
+    alamat: String,
+    hp: String,
+    gaji: BigInteger
+) : Pegawai(nip, nama) {
+    ... 
+}
+\end{lstlisting}
+	
 	\item Unit
+	
+Bila sebuah fungsi mengembalikan nilai bertipe \texttt{Unit}, maka tidak perlu dituliskan, seperti contoh berikut :
+
+\begin{lstlisting}
+fun fungsiKu() {
+    ...
+}
+\end{lstlisting}	
+
+Unit sendiri di Kotlin seperti tipe \texttt{void} di Java, yaitu tipe dengan hanya satu nilai saja.
+	
 	\item Fungsi vs. Properti
+	
+Dalam beberapa hal, fungsi tanpa sebuah parameter mungkin terlihat sama dengan properti. Walau secara tertulis mirip, namun ada beberapa pertimbangan gaya untuk memilih salah satunya.
+
+Jadikanlah itu sebuah properti dan bukan fungsi bila :
+
+		\begin{itemize}
+			\item tidak melamparkan eksepsi
+			\item kompleksitas rendah
+			\item perhitungan yang terjadi tidak berat
+			\item mengembalikan nilai yang sama setelah beberapa kali dipanggil
+		\end{itemize}	
+	
 \end{itemize}
+
+Demikianlah gaya penulisan kode pada Kotlin, walaupun bila tidak mengikuti aturan ini aplikasi tetap bisa di\textit{compile} dan berjalan sebagaimana mestinya, tetapi ini adalah aturan baku untuk memudahkan sesama pemrogram bahasa Kotlin lebih cepat dan mudah dalam memahami kode yang ditulis oleh orang lain.
