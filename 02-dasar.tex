@@ -8,6 +8,65 @@ Tipe data secara garis besar dapat dikelompokan menjadi : angka, karakter, \text
 
 \subsection{Angka}
 
+Tipe data untuk angka di Kotlin mirip dengan Java. Dan untuk karakter bukan dianggap sebagai angka di Kotlin. Berikut adalah tipe data angka yang dapat digunakan beserta ukurannya :
+
+\begin{center}
+\begin{tabular}{|l|l|}
+	\hline
+	\textbf{Tipe} & \textbf{Panjang Bit} \\
+	\hline
+	\hline
+	Double & 64 \\
+	\hline
+	Float & 32 \\
+	\hline
+	Long & 64 \\
+	\hline
+	Int & 32 \\
+	\hline
+	Short & 16 \\
+	\hline
+	Byte & 8 \\
+	\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+	\item \textbf{Format Angka}
+	
+	Format angka pada Kotlin dapat mengakomodir beberapa format berikut :
+	
+	\begin{itemize}
+		\item Desimal, contohnya adalah \texttt{432}, untuk tipe data Long dituliskan sebagai \texttt{432L}.
+		\item Hexadesimal, contohnya adalah \texttt{0xa4}
+		\item Biner, contohnya adalah \texttt{0b00111100}
+	\end{itemize}
+	
+	Sebagai catatan bahwa tipe format oktal tidak didukung di Kotlin. Kotlin juga mendukung bilangan pecahan sebagai berikut :
+	
+	\begin{itemize}
+		\item Double, contohnya adalah 12.34
+		\item Float, contohnya adalah 154.3f
+	\end{itemize}
+	
+	\item \textbf{Garis Bawah Pada Format Angka}
+	
+	Kita dapat menggunakan garis bawah sebagai tanda pada angka yang kita isikan sebagai pengganti digit atau format lain. Ini didukung oleh Kotlin versi 1.1 ke atas, artinya bila masih menggunakan Kotlin versi sebelumnya, kode angka yang dibangun dengan garis bawah akan berantakan. Berikut contoh penulisan angka dengan garis bawah :
+	
+	\begin{lstlisting}
+val satuJuta = 1_000_000
+val telp = 0821_3828_3607
+	\end{lstlisting}
+		
+	
+	\item \textbf{Representasi}
+	
+	
+	
+	\item \textbf{Konversi Eksplisit}
+	\item \textbf{Operasi}
+\end{itemize}
+
 \subsection{Karakter}
 
 \subsection{\textit{Boolean}}
