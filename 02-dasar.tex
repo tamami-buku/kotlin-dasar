@@ -58,23 +58,313 @@ val satuJuta = 1_000_000
 val telp = 0821_3828_3607
 	\end{lstlisting}
 		
-	
-	\item \textbf{Representasi}
-	
-	
-	
 	\item \textbf{Konversi Eksplisit}
+	
+	Konversi eksplisit diperlukan karena tipe yang lebih kecil bukan berarti merupakan sub-tipe yang lebih besar, contohnya adalah seperti kode berikut :
+	
+	\begin{lstlisting}
+val a: Int? = 1
+val b: Long? = a
+print(a == b)
+	\end{lstlisting}
+	
+	Hasil dari kode tersebut, pada saat kompilasi akan menghasilkan 2 (dua) kesalahan yaitu, yang pertama, variabel dengan tipe data \texttt{Int} tidak dapat dimasukkan langsung isinya ke dalam variabel dengan tipe data \texttt{Long}.
+	
+	Untuk tujuan ini, kita perlu melakukan konversi secara eksplisit dengan beberapa fungsi berikut, dan tiap variabel berjenis angka memilikinya :
+	
+	\begin{itemize}
+		\item \texttt{toByte(): Byte}
+		\item \texttt{toShort(): Short}
+		\item \texttt{toInt(): Int}
+		\item \texttt{toLong(): Long}
+		\item \texttt{toFloat(): Float}
+		\item \texttt{toDouble(): Double}
+		\item \texttt{toChar(): Char}
+	\end{itemize}
+	
+	Contoh implementasi dari kode sebelumnya akan menjadi seperti ini :
+	
+	\begin{lstlisting}
+val a: Int = 1
+val b: Long? = a.toLong()
+print(a.toLong() == b)
+	\end{lstlisting}
+	
 	\item \textbf{Operasi}
+	
+		Ada beberapa operasi, atau lebih dikenal sebagai fungsi, yang biasa dilakukan pada angka yang disediakan Kotlin, berikut adalah diantaranya :
+		
+		\begin{itemize}
+			\item \texttt{shl(bits)}, geser bit ke kiri
+			\item \texttt{shr(bits)}, geser bit ke kanan
+			\item \texttt{ushr(bits)}, geser bit tanpa tanda ke kanan 
+			\item \texttt{and(bits)}, operator bit dan
+			\item \texttt{or(bits)}, operator bit atau
+			\item \texttt{xor(bits)}, operator bit \textit{xor}
+			\item \texttt{inv()}, operator bit inversi
+		\end{itemize}
+	
 \end{itemize}
 
 \subsection{Karakter}
 
+Sama bahwa tipa data angka yang lebih kecil bukan berarti sub-tipe data angka yang lebih besar, berbeda dengan Java, dimana tipe karakter (\texttt{Char}) tidak dapat diperlakukan seperti tipe data angka. Berikut contoh kode yang tidak bisa dikompilasi :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a: Char = 1
+	print(a)
+}
+\end{lstlisting}
+
+Hasil kode di atas tidak dapat dikompilasi karena terdapat kesalahan / \textit{error} pada baris ke-2. 
+
+Tipe data karakter harus memiliki tanda kutip tunggal sepasang, dan karakter yang berada di tengahnya. Contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a: Char = '1'
+	print(a)
+}
+\end{lstlisting}
+
+Pada kode di atas, variabel \texttt{a} bertipe data \texttt{Char} dengan diberikan nilai berupa karakter \texttt{1}. Kemudian mencetak isi variabel \texttt{a} ke layar monitor.
+
+Karakter-karakter tertentu dapat dimunculkan dengan menggunakan \textit{backslash}. Contoh kode untuk karakter-karakter tertentu atau spesial adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a: Char = '\t'
+	val b: Char = '\b'
+	val c: Char = '\n'
+	val d: Char = '\r'
+	val e: Char = '\''
+	val f: Char = '\"'
+	val g: Char = '\\'
+	val h: Char = '\$'
+	
+	println("isi a : $a text")
+	println("isi b : $b text")
+	println("isi c : $c text")
+	println("isi d : $d text")
+	println("isi e : $e text")
+	println("isi f : $f text")
+	println("isi g : $g text")
+	println("isi h : $h text")
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+isi a : 	text
+isi b : text
+isi c : 
+ text
+ text
+isi e : ' text
+isi f : " text
+isi g : \ text
+isi h : $ text
+\end{lstlisting}
+
+Seperti pada pembahasan di awal bahwa tipe data \texttt{Char} bukan merupakan sub-tipe dari tipe data \texttt{Int}, tetapi sebetulnya bisa saja di konversi secara eksplisit, berikut adalah contoh kodenya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a: Int
+	a = ubahKeDesimal('b')
+	println("nilai a : $a")
+}
+
+fun ubahKeDesimal(c: Char): Int {
+	return c.toInt()
+}
+\end{lstlisting}
+
+Hasil dari kode tersebut adalah sebagai berikut :
+
+\begin{lstlisting}
+nilai a : 98
+\end{lstlisting}
+
 \subsection{\textit{Boolean}}
+
+Tipe \textit{boolean} adalah tipe dengan nilai hanya ada 2 (dua) pilihan, \texttt{true} dan \texttt{false}. Contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a: Boolean = true
+	println("nilai a = $a")
+}
+\end{lstlisting}
+
+Nilai yang diisikan ke variabel \texttt{a} yang bertipe data \texttt{Boolean} adalah \texttt{true}, yang kemudian apabila di \textit{compile} dan di eksekusi akan menghasilkan keluaran sebagai berikut :
+
+\begin{lstlisting}
+nilai a = true
+\end{lstlisting}
 
 \subsection{Larik}
 
+Larik dalam bahasa pemrograman Kotlin berbentuk sebuah kelas \texttt{Array}. Untuk membuat larik, kita dapat memanggil fungsi \texttt{arrayOf()} atau \texttt{arrayOfNulls()}, contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a: Array<Any>
+	a = arrayOf('a', 'c', 'i')
+	
+	println("isi larik a : ")
+	for(i in a) {
+		print(" $i ")
+	}
+	
+	println()
+	val b: Array<Any?>
+	b = arrayOfNulls(5)
+	
+	println("isi larik b : ")
+	for(i in b) {
+		print(" $i ")
+	}
+}
+\end{lstlisting}
+
+Kode tersebut pada baris ke-2 akan mendeklarasikan atau menyiapkan variabel \texttt{a} dengan bentuk \texttt{Array} yang mampu menampung tipe data apa pun, yang kebetulan pada baris ke-3 diisikan dengan data bertipe karakter. Baris ke-5 sampai dengan baris ke-8 digunakan untuk menampilkan isi dari larik \texttt{a}.
+
+Pada baris ke-11, kita mendeklarasikan atau menyiapkan variabel \texttt{b} yang berbentuk larik dengan tipe data \texttt{Any} yang mampu menampung tipe data apapun, ada tanda berbentuk \texttt{?} setelahnya yang artinya data yang diisikan dapat berupa data \texttt{null}, karena memang pada baris ke-12 kita akan isikan larik \texttt{b} ini dengan 5 (lima) data \texttt{null}.
+
+Kemudian baris ke-14 sampai dengan baris ke-17 digunakan untuk mencetak isi dari larik \texttt{b}.
+
+Kita juga dapat membuat larik dengan menggunakan konstruktor-nya \texttt{Array}, yang menjadi parameter dari konstruktor ini adalah jumlah data dan nilai \textit{default} yang akan diisikan. Contoh kodenya adalah seperti berikut ini : 
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a: Array<Any>
+	a = Array(3, { _ -> '-' })
+	
+	println("isi larik a :")
+	for(i in a) {
+		println(" $i ")
+	}
+}
+\end{lstlisting}
+
+Pada baris ke-3, larik akan disiapkan untuk menampung 3 (tiga) data sesuai dengan parameter pertama dari konstruktor ini, dengan nilai \textit{default} berupa tanda strip \texttt{-} sesuai parameter ke-2 dari konstruktor ini.
+
+Kode dari parameter ke-2 yaitu \texttt{\{ \_ -> '-' \}} nampak membingungkan, 
+sebetulnya formatnya adalah \texttt{\{ Int -> T \}} dengan \texttt{Int} dapat digantikan variabel apapun yang nantinya akan menampung nilai \textit{integer}, pada kode yang kita buat menggunakan tanda garis bawah (\texttt{\_}) karena nilainya tidak dibutuhkan. 
+
+Kemudian ada huruf \texttt{T} disana yang dapat digantikan dengan data apapun, termasuk karakter yang kita masukan berupa tanda minus (\texttt{-}).
+
+Kotlin juga menyediakan kelas larik untuk tipe data primitif tanpa harus mendeklarasikan dalam kurung siku, contohnya seperti kelas \texttt{ByteArray}, \texttt{ShortArray}, \texttt{IntArray}, dan sebagainya. Berikut adalah contoh kode untuk penerapan kelas larik tipe data primitif ini :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a: IntArray
+	a = intArrayOf(3, 2, 7)
+	
+	println("isi larik a:")
+	for(i in a) {
+		println(" $i ")
+	}
+}
+\end{lstlisting}
+
+Pada baris ke-2 adalah persiapan variabel \texttt{a} dengan tipe data \texttt{IntArray}. Pada baris ke-3, variabel atau larik \texttt{a} diisikan dengan 3 (tiga) angka yaitu \texttt{3}, \texttt{2}, dan \texttt{7}.
+
+Pada baris ke-5 sampai baris ke-8 adalah kode untuk menampilkan isi dari larik \texttt{a}.
+
+\subsection{\textit{String}}
+
+Tipe data \textit{string} digunakan untuk menampung 1 (satu) karakter atau lebih, yang sebenarnya seperti sebuah larik untuk menampung banyak karakter.
+
+Penggunaan tipe data \texttt{String} ini sama seperti bahasa pemrograman lain, terutama Java, dapat langsung diisikan kata atau kalimat yang menjadi isinya seperti contoh berikut :
+
+\begin{lstlisting}
+val kata = "Ini isi dari variabel kata"
+\end{lstlisting}
+
+Kode tersebut artinya memasukan kalimat \texttt{Ini isi dari variabel kata} ke variabel \texttt{kata}. Dalam \textit{string} kita juga dapat menambahkan \textit{escape character} seperti kode berikut :
+
+\begin{lstlisting}
+val kata = "Ini isi dari variabel kata\n"
+\end{lstlisting}
+
+Kode tersebut nantinya akan menjadikan kursor pindah ke baris berikutnya.
+
+Pada Kotlin, ada yang namanya \textit{string} mentah, dimana pengetikan nilai \textit{string} ini tidak perlu menggunakan \textit{escape character}, dan setiap spasi atau baris baru akan dicetak sebagaimana adanya. berikut contoh kodenya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val code = """
+	  ini contoh raw string
+	  spasi dan baris baru akan terbaca
+	  sebagaimana mestinya
+	  
+	    ini saat pindah baris baru
+	"""
+	
+	println(code)
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+        ini contoh raw string
+        spasi dan baris baru akan terbaca
+        sebagaimana mestinya
+        
+          ini saat pindah baris baru
+\end{lstlisting}
+
+Terlihat bahwa hasil keluaran dari kode tersebut, mirip dengan kondisi di kodenya selain spasi kiri yang mungkin terlalu lebar. Kita juga dapat menggunakan \textit{prefix} apapun sebagai tanda bahwa ini adalah awal dari pencetakan dengan deklarasi \texttt{trimMargin()}, contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+    var kode = """
+        |  ini contoh raw string
+        |  spasi dan baris baru akan terbaca
+        |  sebagaimana mestinya
+        
+        |    ini saat pindah baris baru
+    """.trimMargin("|")
+    
+    println(kode)
+}
+\end{lstlisting}
+
+Kita akan melihat perbedaan di baris ke-8, yaitu adanya \texttt{trimMargin("|")}, yang sebetulnya ini adalah fungsi milik \textit{raw string} untuk melakukan pemotongan baris awal, sedangkan tanda garis lurus (\texttt{|}) adalah tanda dimulainya baris paling kiri, tanda awal baris ini pun dapat diganti sesuai keinginan kita.
+
+Pada \textit{string} di Kotlin, dapat menggunakan \textit{template} dengan tanda \texttt{\$} untuk menambahkan hasil dari ekspresi sebuah perintah ke dalam teks. Contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a = "tamami"
+	
+	println("isi dari a adalah $a")
+	println("panjang dari a adalah ${a.length}")
+}
+\end{lstlisting}
+
+Penggunaan \textit{template} ada pada baris ke-4 dan baris ke-5. Dimana pada baris ke-4 menampilkan isi dari variabel \texttt{a} dengan \textit{template} \texttt{\$a}, dan pada baris ke-5 memanggil fungsi \texttt{length} milik variabel \texttt{a} yang bertipe \textit{string}, pemanggilan fungsi \texttt{length} ini dilakukan dengan \textit{template} \texttt{\$\{a.length\}}.
 
 \section{Paket}
+
+Pada Kotlin mendukung penamaan paket seperti di Java, hanya saja nama paket tidak terikat dengan nama direktori tempat \textit{file} kode sumber berada, tetapi hasil dari kompilasi akan ditempatkan dalam direktori / \textit{folder} sesuai dengan nama paket, bila direktori / \textit{folder} belum ada, maka akan dibuatkan direktori / \textit{folder} baru dengan nama sama dengan nama paket. Berikut contoh deklarasi paket pada kode sumber :
+
+\begin{lstlisting}
+package tester
+
+fun main(args: Array<String>) {
+	println("ini dicetak dalam paket tester")
+}
+\end{lstlisting}
+
+Deklarasinya ada pada baris ke-1. Walaupun penempatan kode sumber tidak terikat dengan nama paket, namun lebih baik bila kode sumber tetap disimpan dalam direktori / \textit{folder} sesuai dengan nama paket, agar memudahkan pencarian kelas.
+
+Apabila suatu kelas akan menggunakan kelas lain dari paket yang lain, kita perlu mendeklarasikan dengan perintah \texttt{import}
 
 \section{Mengatur Alur}
 

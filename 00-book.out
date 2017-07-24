@@ -30,29 +30,30 @@
 \BOOKMARK [2][-]{subsection.2.1.2}{Karakter}{section.2.1}% 30
 \BOOKMARK [2][-]{subsection.2.1.3}{Boolean}{section.2.1}% 31
 \BOOKMARK [2][-]{subsection.2.1.4}{Larik}{section.2.1}% 32
-\BOOKMARK [1][-]{section.2.2}{Paket}{chapter.2}% 33
-\BOOKMARK [1][-]{section.2.3}{Mengatur Alur}{chapter.2}% 34
-\BOOKMARK [0][-]{chapter.3}{Kelas dan Objek}{}% 35
-\BOOKMARK [1][-]{section.3.1}{Kelas}{chapter.3}% 36
-\BOOKMARK [1][-]{section.3.2}{Properti}{chapter.3}% 37
-\BOOKMARK [1][-]{section.3.3}{Interface}{chapter.3}% 38
-\BOOKMARK [1][-]{section.3.4}{Visibility Modifiers}{chapter.3}% 39
-\BOOKMARK [1][-]{section.3.5}{Ekstensi}{chapter.3}% 40
-\BOOKMARK [1][-]{section.3.6}{Kelas Data}{chapter.3}% 41
-\BOOKMARK [1][-]{section.3.7}{Kelas Tertutup}{chapter.3}% 42
-\BOOKMARK [1][-]{section.3.8}{Generik}{chapter.3}% 43
-\BOOKMARK [1][-]{section.3.9}{Kelas Bersarang}{chapter.3}% 44
-\BOOKMARK [1][-]{section.3.10}{Kelas Enum}{chapter.3}% 45
-\BOOKMARK [1][-]{section.3.11}{Ekspresi Objek dan Deklarasi}{chapter.3}% 46
-\BOOKMARK [1][-]{section.3.12}{Delegasi}{chapter.3}% 47
-\BOOKMARK [1][-]{section.3.13}{Mendelegasikan Properti}{chapter.3}% 48
-\BOOKMARK [0][-]{chapter.4}{Fungsi dan Lamda}{}% 49
-\BOOKMARK [1][-]{section.4.1}{Fungsi}{chapter.4}% 50
-\BOOKMARK [1][-]{section.4.2}{Fungsi Lanjutan dan Lamda}{chapter.4}% 51
-\BOOKMARK [1][-]{section.4.3}{Fungsi Sebaris}{chapter.4}% 52
-\BOOKMARK [1][-]{section.4.4}{Coroutines}{chapter.4}% 53
-\BOOKMARK [0][-]{chapter.5}{Java Interoperabilitas}{}% 54
-\BOOKMARK [0][-]{chapter.6}{Perkakas}{}% 55
-\BOOKMARK [1][-]{section.6.1}{Menggunakan Gradle}{chapter.6}% 56
-\BOOKMARK [1][-]{section.6.2}{Menggunakan Maven}{chapter.6}% 57
-\BOOKMARK [0][-]{chapter.7}{Contoh Kasus \040Aplikasi Chat}{}% 58
+\BOOKMARK [2][-]{subsection.2.1.5}{String}{section.2.1}% 33
+\BOOKMARK [1][-]{section.2.2}{Paket}{chapter.2}% 34
+\BOOKMARK [1][-]{section.2.3}{Mengatur Alur}{chapter.2}% 35
+\BOOKMARK [0][-]{chapter.3}{Kelas dan Objek}{}% 36
+\BOOKMARK [1][-]{section.3.1}{Kelas}{chapter.3}% 37
+\BOOKMARK [1][-]{section.3.2}{Properti}{chapter.3}% 38
+\BOOKMARK [1][-]{section.3.3}{Interface}{chapter.3}% 39
+\BOOKMARK [1][-]{section.3.4}{Visibility Modifiers}{chapter.3}% 40
+\BOOKMARK [1][-]{section.3.5}{Ekstensi}{chapter.3}% 41
+\BOOKMARK [1][-]{section.3.6}{Kelas Data}{chapter.3}% 42
+\BOOKMARK [1][-]{section.3.7}{Kelas Tertutup}{chapter.3}% 43
+\BOOKMARK [1][-]{section.3.8}{Generik}{chapter.3}% 44
+\BOOKMARK [1][-]{section.3.9}{Kelas Bersarang}{chapter.3}% 45
+\BOOKMARK [1][-]{section.3.10}{Kelas Enum}{chapter.3}% 46
+\BOOKMARK [1][-]{section.3.11}{Ekspresi Objek dan Deklarasi}{chapter.3}% 47
+\BOOKMARK [1][-]{section.3.12}{Delegasi}{chapter.3}% 48
+\BOOKMARK [1][-]{section.3.13}{Mendelegasikan Properti}{chapter.3}% 49
+\BOOKMARK [0][-]{chapter.4}{Fungsi dan Lamda}{}% 50
+\BOOKMARK [1][-]{section.4.1}{Fungsi}{chapter.4}% 51
+\BOOKMARK [1][-]{section.4.2}{Fungsi Lanjutan dan Lamda}{chapter.4}% 52
+\BOOKMARK [1][-]{section.4.3}{Fungsi Sebaris}{chapter.4}% 53
+\BOOKMARK [1][-]{section.4.4}{Coroutines}{chapter.4}% 54
+\BOOKMARK [0][-]{chapter.5}{Java Interoperabilitas}{}% 55
+\BOOKMARK [0][-]{chapter.6}{Perkakas}{}% 56
+\BOOKMARK [1][-]{section.6.1}{Menggunakan Gradle}{chapter.6}% 57
+\BOOKMARK [1][-]{section.6.2}{Menggunakan Maven}{chapter.6}% 58
+\BOOKMARK [0][-]{chapter.7}{Contoh Kasus \040Aplikasi Chat}{}% 59
