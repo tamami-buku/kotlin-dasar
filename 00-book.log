@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.25)  23 JUL 2017 05:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.25)  25 JUL 2017 21:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -698,18 +698,23 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [22]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[23]
 \openout2 = `03-kelas-dan-objek.aux'.
 
- (./03-kelas-dan-objek.tex
-BAB 3.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23
+ (./03-kelas-dan-objek.tex [24
 
 
 
 ]
+BAB 3.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
 Overfull \vbox (130.235pt too high) has occurred while \output is active []
 
 
@@ -717,37 +722,37 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[24]
+[26]
 \openout2 = `04-fungsi-lamda.aux'.
 
  (./04-fungsi-lamda.tex
 BAB 4.
-) [25
+) [27
 
 
 
 ]
 \openout2 = `05-java-interoperabilitas.aux'.
 
- (./05-java-interoperabilitas.tex [26
+ (./05-java-interoperabilitas.tex [28
 
 
 
 ]
 BAB 5.
-) [27]
+) [29]
 \openout2 = `06-perkakas.aux'.
 
- (./06-perkakas.tex [28
+ (./06-perkakas.tex [30
 
 
 
 ]
 BAB 6.
-) [29]
+) [31]
 \openout2 = `07-kasus-1.aux'.
 
- (./07-kasus-1.tex [30
+ (./07-kasus-1.tex [32
 
 
 
@@ -757,7 +762,7 @@ BAB 7.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-) [31]
+) [33]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
  (./00-book.aux (./01-mulai.aux) (./02-dasar.aux)
@@ -765,12 +770,19 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
 (./05-java-interoperabilitas.aux) (./06-perkakas.aux) (./07-kasus-1.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 110.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 110.
-Package rerunfilecheck Info: File `00-book.out' has not changed.
-(rerunfilecheck)             Checksum: B0CBADEE1B4FD6B36A9FD5DBEDCB46A5;3727.
+
+
+Package rerunfilecheck Warning: File `00-book.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `00-book.out':
+(rerunfilecheck)             Before: B0CBADEE1B4FD6B36A9FD5DBEDCB46A5;3727
+(rerunfilecheck)             After:  DDCC10BCAFED7EE8CEEECFC7F16710C1;4074.
  ) 
 Here is how much of TeX's memory you used:
- 7993 strings out of 495028
- 115606 string characters out of 6181505
+ 8009 strings out of 495028
+ 115836 string characters out of 6181505
  301448 words of memory out of 5000000
  10471 multiletter control sequences out of 15000+600000
  58343 words of font info for 111 fonts, out of 8000000 for 9000
@@ -787,10 +799,10 @@ re/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on 00-book.pdf (47 pages, 200084 bytes).
+Output written on 00-book.pdf (49 pages, 202392 bytes).
 PDF statistics:
- 1137 PDF objects out of 1200 (max. 8388607)
- 1066 compressed objects within 11 object streams
- 569 named destinations out of 1000 (max. 500000)
+ 1164 PDF objects out of 1200 (max. 8388607)
+ 1091 compressed objects within 11 object streams
+ 585 named destinations out of 1000 (max. 500000)
  473 words of extra memory for PDF output out of 10000 (max. 10000000)
 

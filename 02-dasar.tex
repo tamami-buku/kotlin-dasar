@@ -364,7 +364,49 @@ fun main(args: Array<String>) {
 
 Deklarasinya ada pada baris ke-1. Walaupun penempatan kode sumber tidak terikat dengan nama paket, namun lebih baik bila kode sumber tetap disimpan dalam direktori / \textit{folder} sesuai dengan nama paket, agar memudahkan pencarian kelas.
 
-Apabila suatu kelas akan menggunakan kelas lain dari paket yang lain, kita perlu mendeklarasikan dengan perintah \texttt{import}
+Apabila suatu kelas akan menggunakan kelas lain dari paket yang lain, kita perlu mendeklarasikan dengan perintah \texttt{import}, contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+import java.util.Date
+
+fun main(args: Array<String>) {
+	val a = Date()
+	
+	println("isi data a adalah $a")
+}
+\end{lstlisting}
+
+Pada kode tersebut kita menggunakan kelas milik Java, yaitu \texttt{java.util.Date} yang dideklarasikan pada baris ke-1. Kemudian di baris ke-4, variabel \texttt{a} akan diisikan dengan tanggal dan jam saat ini dengan cara pemanggilan kontruktor \texttt{Date}, lalu pada baris ke-6 mencetak hasil atau isi dari variabel \texttt{a} ke layar monitor. 
 
 \section{Mengatur Alur}
+
+\subsection{Ekspresi \texttt{if}}
+
+Ekspresi \texttt{if} di Kotlin mirip dengan Java, berikut adalah contoh kodenya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a = 2
+	val b = 5
+	
+	if(a >= b)
+		println("a lebih besar dari b")
+	else
+		println("a lebih kecil dari b")
+}
+\end{lstlisting}
+
+Hasil keluaran untuk kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+a lebih kecil dari b
+\end{lstlisting}
+
+\subsection{Ekspresi \texttt{when}}
+
+\subsection{Ekspresi \texttt{for}}
+
+\subsection{Ekspresi \texttt{while}}
+
+\subsection{Ekspresi \texttt{break} dan \texttt{continue}}
 
