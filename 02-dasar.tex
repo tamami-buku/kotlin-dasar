@@ -402,7 +402,110 @@ Hasil keluaran untuk kode di atas adalah sebagai berikut :
 a lebih kecil dari b
 \end{lstlisting}
 
+Ini karena pada seleksi di baris ke-5 akan memeriksa, apakah \texttt{a} lebih besar atau sama dengan \texttt{b}, bila benar, maka akan dikerjakan dan dicetak perintah pada baris ke-6, bila salah, maka akan dikerjakan dan mencetak perintah pada baris ke-8.
+
+Perintah \texttt{if} ini dapat pula dijadikan ekspresi seperti kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a = 2
+	val b = 5
+	
+	val c = if(a > b) a else b
+	println("nilai c = $c")
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+nilai c = 5
+\end{lstlisting}
+
+Hasil seperti itu karena pada baris ke-5, nilai \texttt{a} akan diperiksa terlebih dahulu apakah lebih dari nilai \texttt{b}, bila benar, maka nilai \texttt{c} sama dengan \texttt{a}, bila tidak benar, maka nilai \texttt{c} sama dengan nilai \texttt{b}.
+
 \subsection{Ekspresi \texttt{when}}
+
+Jika bentuk \texttt{if} bertingkat terlalu rumit dan panjang untuk dideklarasikan, perintah atau bentuk \texttt{when} ini akan meringkasnya, formatnya adalah seperti contoh kode program berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a = 2
+	
+	when(a) {
+		1 -> println("a = 1")
+		2 -> println("a = 2")
+		3 -> println("a = 3")
+		else -> {
+			println("lainnya")
+		}
+	}
+}
+\end{lstlisting}
+
+Pada baris ke-4 akan memeriksa nilai dari variabel \texttt{a}, bila sesuai dengan opsi bahwa nilainya adalah \texttt{1}, maka akan dijalankan perintah pada baris ke-5, namun bila tidak cocok, maka akan diperiksa apakah nilainya adalah \texttt{2}, yang apabila cocok akan melakukan perintah pada baris ke-6, dan seterusnya sampai bila tidak ada pilihan yang cocok, maka akan menjalankan perintah pada blok \texttt{else}.
+
+Itulah mengapa hasil keluaran dari kode program diatas apabila dijalankan akan menghasilkan teks berikut :
+
+\begin{lstlisting}
+a = 2
+\end{lstlisting}
+
+Hebatnya, kita dapat melakukan kombinasi data dengan menggunakan ekspresi \texttt{when} ini, misalnya seperti kode program berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a = 2
+	
+	when (a) {
+		1,3,5 -> println("a angka ganjil")
+		2,4,6 -> println("a angka genap")
+		else -> {
+			println("lainnya")
+		}
+	}
+}
+\end{lstlisting}
+
+Pada baris ke-5 dan ke-6 adalah bentuk dari kombinasi deret angka yang akan dicocokan dengan variabel \texttt{a}. Hasil keluaran untuk kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+a angka genap
+\end{lstlisting}
+
+Bukan hanya data yang statis seperti di atas untuk menyeleksi hasil variabel \texttt{a}, kita juga dapat menggunakan fungsi untuk seleksi seperti kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val a = 2
+	val b = 5
+	
+	when(a) {
+		varifikasi(b) -> println("hasil fungsi")
+		10 -> println("hasil statis")
+		else -> {
+			println("lainnya")
+		}
+	}
+}
+
+fun verifikasi(b: Int): Int {
+	if(b == 5) return 2 else return 0
+}
+\end{lstlisting}
+
+Pada baris ke-6 terlihat bahwa ada fungsi dengan nama \texttt{verifikasi} dipanggil, isi dari variabel \texttt{b} yang bernilai \texttt{5} akan diteruskan ke fungsi ini dan melakukan pemeriksaan, bila nilai dari \texttt{b} sama dengan \texttt{5}, maka fungsi akan mengembalikan nilai \texttt{2}, bila tidak akan mengembalikan nilai \texttt{0} (nol).
+
+Kenyataannya memang nilai dari variabel \texttt{b} adalah \texttt{5}, kemudian fungsi akan mengembalikan nilai \texttt{2} yang menjadi bahan periksa dari perintah \texttt{when} yang nilai \texttt{a}-nya adalah \texttt{2}, sehingga kode program akan mencetak keluaran sebagai berikut :
+
+\begin{lstlisting}
+hasil fungsi
+\end{lstlisting}
+
+Kita juga dapat menggunakan perintah \texttt{in} untuk memeriksa nilai dari variabel yang diseleksi, berikut adalah contoh kode programnya :
+
+\begin{lstlisting}
+\end{lstlisting}
 
 \subsection{Ekspresi \texttt{for}}
 
