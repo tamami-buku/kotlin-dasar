@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.25)  26 JUL 2017 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.26)  26 JUL 2017 21:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **00-book.tex
 (./00-book.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+LaTeX2e <2017/01/01> patch level 3
+Babel <3.9r> and hyphenation patterns for 3 language(s) loaded.
 (./wileysix.cls
 
 
@@ -74,32 +74,324 @@ Writing index file 00-book.idx
  Feb 16, 2012
 
  
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+! Font \tocarttitlefont=phvb at 12.0pt not loadable: Metric (TFM) file not foun
+d.
+l.89 \font\tocarttitlefont=\helveticabold at 12pt
+                                                 
+? q
+OK, entering \batchmode...
+! Font \chaptocfont=phvb at 10.0pt not loadable: Metric (TFM) file not found.
+l.90 \font\chaptocfont=\helveticabold at 10pt
+                                             
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \tocfonts=ptmr at 10.0pt not loadable: Metric (TFM) file not found.
+l.91 \font\tocfonts=\timesroman at 10pt
+                                       
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \runningheadfont=phvr at 6.5pt not loadable: Metric (TFM) file not found
+.
+l.94 \font\runningheadfont=\helvetica at6.5pt
+                                             
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \foliofont=phvb at 9.0pt not loadable: Metric (TFM) file not found.
+l.95 \font\foliofont=\helveticabold at 9pt
+                                          
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \halftitlefont=phvb at 20.0pt not loadable: Metric (TFM) file not found.
+l.99 \font\halftitlefont=\helveticabold at 20pt
+                                               
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \titlefont=phvb at 24.0pt not loadable: Metric (TFM) file not found.
+l.100 \font\titlefont=\helveticabold at 24pt
+                                            
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \subtitlefont=phvb at 20.0pt not loadable: Metric (TFM) file not found.
+l.101 \font\subtitlefont=\helveticabold at 20pt
+                                               
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \editionfont=phvr at 14.0pt not loadable: Metric (TFM) file not found.
+l.102 \font\editionfont=\helvetica at 14pt
+                                          
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \authorfont=phvb at 11.0pt not loadable: Metric (TFM) file not found.
+l.103 \font\authorfont=\helveticabold at 11pt
+                                             
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \affilfont=phvr at 10.0pt not loadable: Metric (TFM) file not found.
+l.104 \font\affilfont=\helvetica at 10pt
+                                        
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \locfont=ptmbi at 7.0pt not loadable: Metric (TFM) file not found.
+l.105 \font\locfont=\timesbolditalic at 7pt
+                                           
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \wileyfont=phvb at 10.0pt not loadable: Metric (TFM) file not found.
+l.107 \font\wileyfont=\helveticabold at 10pt
+                                            
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \imprintfont=phvr at 10.0pt not loadable: Metric (TFM) file not found.
+l.108 \font\imprintfont=\helvetica at 10pt
+                                          
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \partfont=phvr at 24.0pt not loadable: Metric (TFM) file not found.
+l.111 \font\partfont=\helvetica at 24pt
+                                       
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \partnumberfont=phvb at 14.0pt not loadable: Metric (TFM) file not found
+.
+l.112 \font\partnumberfont=\helveticabold at 14pt
+                                                 
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \chapternumberfont=phvb at 14.0pt not loadable: Metric (TFM) file not fo
+und.
+l.115 ...\chapternumberfont=\helveticabold at 14pt
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \chaptertitlefont=phvr at 18.0pt not loadable: Metric (TFM) file not fou
+nd.
+l.116 \font\chaptertitlefont=\helvetica at 18pt
+                                               
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \chapaffilfont=ptmr at 9.0pt not loadable: Metric (TFM) file not found.
+l.117 \font\chapaffilfont=\timesroman at 9pt
+                                            
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \sectionfont=phvb at 10.0pt not loadable: Metric (TFM) file not found.
+l.120 \font\sectionfont=\helveticabold at 10pt
+                                              
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \subsectionfont=phvb at 10.0pt not loadable: Metric (TFM) file not found
+.
+l.121 \font\subsectionfont=\helveticabold at 10pt
+                                                 
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \subsubsectionfont=phvbo at 9.0pt not loadable: Metric (TFM) file not fo
+und.
+l.122 ...bsectionfont=\helveticaboldoblique at 9pt
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \paragraphfont=phvro at 9.5pt not loadable: Metric (TFM) file not found.
+l.123 ...\paragraphfont=\helveticaoblique at 9.5pt
+                                                  
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \fignumfont=ptmb at 9.0pt not loadable: Metric (TFM) file not found.
+l.126 \font\fignumfont=\timesbold at 9pt
+                                        
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \tabnumfont=ptmb at 9.0pt not loadable: Metric (TFM) file not found.
+l.127 \font\tabnumfont=\timesbold at 9pt
+                                        
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \figtextfont=ptmr at 9.0pt not loadable: Metric (TFM) file not found.
+l.128 \font\figtextfont=\timesroman at 9pt
+                                          
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \tabtextfont=ptmr at 9.0pt not loadable: Metric (TFM) file not found.
+l.129 \font\tabtextfont=\timesroman at 9pt
+                                          
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \bit=ptmbi at 8.0pt not loadable: Metric (TFM) file not found.
+l.139 \font\bit=\timesbolditalic at 8pt
+                                       
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \bigscfont=ptmr at 9.5pt not loadable: Metric (TFM) file not found.
+l.142 \font\bigscfont\timesroman at 9.5pt
+                                         
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \smscfont=ptmr at 7.5pt not loadable: Metric (TFM) file not found.
+l.143 \font\smscfont\timesroman at 7.5pt
+                                        
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \wherefont=ptmri at 8.0pt not loadable: Metric (TFM) file not found.
+l.144 \font\wherefont\timesitalic at 8pt
+                                        
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+! Font \probfont=ptmbi at 10.0pt not loadable: Metric (TFM) file not found.
+l.147 \font\probfont\timesbolditalic at 10pt
+                                            
+I wasn't able to read the size data for this font,
+so I will ignore the font specification.
+[Wizards can fix TFM files using TFtoPL/PLtoTF.]
+You might try inserting a different font spec;
+e.g., type `I\font<same font id>=<substitute font name>'.
+
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count106
 ))
@@ -107,14 +399,15 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@width=\dimen115
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 147.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
 \fancy@headwidth=\skip46
 \f@ncyO@elh=\skip47
 \f@ncyO@erh=\skip48
@@ -126,13 +419,13 @@ Package color Info: Driver file: pdftex.def on input line 130.
 \f@ncyO@orf=\skip54
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2013/12/03 3.9h The Babel package
+Package: babel 2016/04/23 3.9r The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2013/12/03 3.9h Babel common definitions
+File: babel.def 2016/04/23 3.9r Babel common definitions
 \babel@savecnt=\count107
 \U@D=\dimen116
 )
@@ -142,660 +435,27 @@ File: babel.def 2013/12/03 3.9h Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count108
-\lst@gtempboxa=\box26
-\lst@token=\toks15
-\lst@length=\count109
-\lst@currlwidth=\dimen117
-\lst@column=\count110
-\lst@pos=\count111
-\lst@lostspace=\dimen118
-\lst@width=\dimen119
-\lst@newlines=\count112
-\lst@lineno=\count113
-\lst@maxwidth=\dimen120
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
-\c@lstnumber=\count114
-\lst@skipnumbers=\count115
-\lst@framebox=\box27
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2013/08/26 1.5b listings configuration
-))
-Package: listings 2013/08/26 1.5b (Carsten Heinz)
+! LaTeX Error: File `listings.sty' not found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+ Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.11 \usepackage
+                {hyperref}^^M
+*** (cannot \read from terminal in nonstop modes)
 
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
-Package hobsub Info: Skipping package `infwarerr' (already loaded).
-Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
-)
-Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
-Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
-)
-Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
-Package: xcolor-patch 2011/01/30 xcolor patch
-Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
-Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
-Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
-Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
-
-
-Package auxhook Warning: Cannot patch \document,
-(auxhook)                using \AtBeginDocument instead.
-
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-)
-\@linkdim=\dimen121
-\Hy@linkcounter=\count116
-\Hy@pagecounter=\count117
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
-)
-\Hy@SavedSpaceFactor=\count118
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
-)
-Package hyperref Info: Hyper figures OFF on input line 4443.
-Package hyperref Info: Link nesting OFF on input line 4448.
-Package hyperref Info: Hyper index ON on input line 4451.
-Package hyperref Info: Plain pages OFF on input line 4458.
-Package hyperref Info: Backreferencing OFF on input line 4463.
-Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count119
-
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip10
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen122
-\Fld@menulength=\count120
-\Field@Width=\dimen123
-\Fld@charsize=\dimen124
-Package hyperref Info: Hyper figures OFF on input line 6295.
-Package hyperref Info: Link nesting OFF on input line 6300.
-Package hyperref Info: Hyper index ON on input line 6303.
-Package hyperref Info: backreferencing OFF on input line 6310.
-Package hyperref Info: Link coloring OFF on input line 6315.
-Package hyperref Info: Link coloring with OCG OFF on input line 6320.
-Package hyperref Info: PDF/A mode OFF on input line 6325.
-LaTeX Info: Redefining \ref on input line 6365.
-LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count121
-\c@Item=\count122
-\c@Hfootnote=\count123
-)
-
-Package hyperref Message: Driver (autodetected): hpdftex.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count124
-\c@bookmark@seq@number=\count125
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
-)
-\Hy@SectionHShift=\skip55
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
-Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
-\@enLab=\toks16
-)
-Package hyperref Info: Option `colorlinks' set `true' on input line 20.
-
-
-Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 20.
-
-(./00-book.aux (./01-mulai.aux) (./02-dasar.aux) (./03-kelas-dan-objek.aux)
-(./04-fungsi-lamda.aux) (./05-java-interoperabilitas.aux) (./06-perkakas.aux)
-(./07-kasus-1.aux))
-\openout1 = `00-book.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 70.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
-\scratchdimen=\dimen125
-\scratchbox=\box28
-\nofMPsegments=\count127
-\nofMParguments=\count128
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count129
-\MPscratchDim=\dimen126
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
-\everyMPtoPDFconversion=\toks18
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-)
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-\c@lstlisting=\count132
-\AtBeginShipoutBox=\box29
-
-
-Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
-(hyperref)                using 11in.
-
-Package hyperref Info: Link coloring ON on input line 70.
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
-)
-\c@section@level=\count133
-)
-LaTeX Info: Redefining \ref on input line 70.
-LaTeX Info: Redefining \pageref on input line 70.
-LaTeX Info: Redefining \nameref on input line 70.
-
-(./00-book.out) (./00-book.out)
-\@outlinefile=\write4
-\openout4 = `00-book.out'.
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
- [3] [4
-
-] [5] [6
-
-]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
- (./00-book.toc [7]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 20.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[8])
-\tf@toc=\write5
-\openout5 = `00-book.toc'.
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[9] [10
-
-]
-
-Package hyperref Warning: bookmark level for unknown schapter defaults to 0.
-
-(./00-book.lof)
-\tf@lof=\write6
-\openout6 = `00-book.lof'.
-
- [11] [12
-
-] (./00-book.lot)
-\tf@lot=\write7
-\openout7 = `00-book.lot'.
-
- [13] [14
-
-]
-Overfull \hbox (23.21718pt too wide) in paragraph at lines 89--90
-\OT1/ptm/m/n/10 Saat meli-hat ke-ung-gu-lan dari ba-hasa pem-ro-gra-man Java ya
-ng mu-dah un-tuk di\OT1/ptm/m/it/10 maintenance\OT1/ptm/m/n/10 ,
- []
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
-[15]
-\openout2 = `01-mulai.aux'.
-
- (./01-mulai.tex [16
-
-
-]
-BAB 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 5.
-
-Overfull \hbox (1.58792pt too wide) in paragraph at lines 5--6
-\OT1/pcr/m/n/10 releases/$[][]\OT1/ptm/m/n/10 , ke-mu-dian melakukan \OT1/ptm/m
-/it/10 un-zip \OT1/ptm/m/n/10 dan menam-bahkan di-rek-tori \OT1/pcr/m/n/10 bin 
-\OT1/ptm/m/n/10 ke dalam
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 10.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 10.
-[1]
-Overfull \hbox (5.95653pt too wide) in paragraph at lines 23--24
-[]\OT1/ptm/m/n/10 Perintah un-tuk meli-hat versi \OT1/ptm/m/it/10 run-time en-v
-i-ron-ment \OT1/ptm/m/n/10 dari Kotlin adalah se-ba-gai berikut
- []
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 46.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
-File: omlptm.fd 
-)
-LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 46.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 46.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[2]
-Overfull \hbox (3.336pt too wide) in paragraph at lines 102--103
-\OT1/ptm/m/n/10 Deklarasi fungsi tanpa pa-ram-e-ter dan tanpa ni-lai ba-likkan 
-(\OT1/ptm/m/it/10 re-turn\OT1/ptm/m/n/10 ) akan ter-li-hat seperti
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[3]
-Overfull \hbox (4.97693pt too wide) in paragraph at lines 171--172
-[]\OT1/ptm/m/n/10 Namun tidak seperti ba-hasa pem-ro-gra-man Java, ko-men-tar d
-i Kotlin da-pat bersarang
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[4]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 195.
-
-Overfull \hbox (2.07724pt too wide) in paragraph at lines 235--236
-\OT1/ptm/m/n/10 dan yang di-ta-mpilkan di la-yar mon-i-tor adalah isi dari vari
--abel \OT1/pcr/m/n/10 $nama\OT1/ptm/m/n/10 , yaitu \OT1/pcr/m/n/10 tamami\OT1/p
-tm/m/n/10 . 
- []
-
-
-Overfull \hbox (3.11748pt too wide) in paragraph at lines 243--244
-\OT1/ptm/m/n/10 tidak dis-er-takan pada pe-mang-gi-lan-nya pada baris ke-5, se-
-hingga pa-ram-e-ter \OT1/pcr/m/n/10 kelamin
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[5]
-Overfull \hbox (4.34729pt too wide) in paragraph at lines 269--270
-[]\OT1/ptm/m/n/10 Artinya nanti isi dari vari-abel \OT1/pcr/m/n/10 x \OT1/ptm/m
-/n/10 akan dip-i-lah, apakah meru-pakan tipe data \OT1/pcr/m/n/10 String\OT1/pt
-m/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[6] [7] [8]
-LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 436.
-
-Overfull \hbox (64.94795pt too wide) in paragraph at lines 452--453
-[]\OT1/ptm/m/n/10 Yang perlu diper-hatikan adalah pada baris ke-6, yaitu pada b
-agian \OT1/pcr/m/n/10 file?.getTotalSpace()\OT1/ptm/m/n/10 ,
- []
-
-
-Overfull \hbox (8.23763pt too wide) in paragraph at lines 472--473
-\OT1/ptm/m/n/10 Cara ini se-be-tul-nya pengem-ban-gan dari ka-sus se-belum-nya,
- den-gan pe-nam-ba-han penan-
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[9]
-Overfull \hbox (42.91763pt too wide) in paragraph at lines 484--485
-\OT1/ptm/m/n/10 apa-bila vari-abel \OT1/pcr/m/n/10 file \OT1/ptm/m/n/10 tidak b
-erni-lai \OT1/pcr/m/n/10 null \OT1/ptm/m/n/10 maka akan di-pang-gil \OT1/ptm/m/
-it/10 method \OT1/pcr/m/n/10 getTotalSpace()\OT1/ptm/m/n/10 ,
- []
-
-
-Overfull \hbox (71.10739pt too wide) in paragraph at lines 497--498
-\OT1/ptm/m/n/10 bila ni-lai un-tuk \OT1/ptm/m/it/10 email \OT1/ptm/m/n/10 ini \
-OT1/pcr/m/n/10 null \OT1/ptm/m/n/10 maka akan dilem-parkan keluar se-ba-gai \OT
-1/pcr/m/n/10 IllegalStateException\OT1/ptm/m/n/10 . 
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[10]
-Overfull \hbox (11.04755pt too wide) in paragraph at lines 566--567
-[]\OT1/ptm/m/n/10 Pada baris ke-3, sen-gaja diberikan isi teks \OT1/pcr/m/n/10 
-ungu \OT1/ptm/m/n/10 pada pa-ram-e-ter fungsi \OT1/pcr/m/n/10 kodeWarna
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[11]
-Overfull \hbox (0.41682pt too wide) in paragraph at lines 608--609
-[]\OT1/ptm/m/n/10 fungsi yang bersi-fat pub-lic harus memi-liki doku-men-tasi s
-eperti yang muncul
- []
-
-
-Overfull \hbox (18.97676pt too wide) in paragraph at lines 613--614
-[]\OT1/ptm/m/n/10 Penggunaan titik dua meng-gu-nakan spasi se-belum tanda titik
- dua ketika memisahkan
- []
-
-[12]
-Overfull \hbox (1.58731pt too wide) in paragraph at lines 640--641
-[]\OT1/ptm/m/n/10 Untuk lambda seder-hana tidak perlu melakukan defin-isi pa-ra
-m-e-ter, cukup meng-
- []
-
-[13])
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[14]
-\openout2 = `02-dasar.aux'.
-
- (./02-dasar.tex
-BAB 2.
-
-Overfull \hbox (7.88713pt too wide) in paragraph at lines 7--8
-[]\OT1/ptm/m/n/10 Tipe data se-cara garis be-sar da-pat dikelom-pokan men-jadi 
-: angka, karak-ter, \OT1/ptm/m/it/10 boolean\OT1/ptm/m/n/10 ,
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 14.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 16.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15
-
-
-
-]
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[16] [17]
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[18]
-Overfull \hbox (0.98795pt too wide) in paragraph at lines 210--211
-\OT1/ptm/m/n/10 mem-buat larik, kita da-pat me-mang-gil fungsi \OT1/pcr/m/n/10 
-arrayOf() \OT1/ptm/m/n/10 atau \OT1/pcr/m/n/10 arrayOfNulls()\OT1/ptm/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[19]
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 255.
-
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
-File: omspcr.fd 
-)
-LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 255.
-
-Overfull \hbox (27.30638pt too wide) in paragraph at lines 260--261
-[]\OT1/ptm/m/n/10 Kotlin juga menye-di-akan ke-las larik un-tuk tipe data prim-
-i-tif tanpa harus mendeklarasikan
- []
-
-
-Overfull \hbox (9.61865pt too wide) in paragraph at lines 260--261
-\OT1/ptm/m/n/10 dalam ku-rung siku, con-tohnya seperti ke-las \OT1/pcr/m/n/10 B
-yteArray\OT1/ptm/m/n/10 , \OT1/pcr/m/n/10 ShortArray\OT1/ptm/m/n/10 , \OT1/pcr/
-m/n/10 IntArray\OT1/ptm/m/n/10 ,
- []
-
-
-Overfull \hbox (4.66689pt too wide) in paragraph at lines 282--283
-[]\OT1/ptm/m/n/10 Penggunaan tipe data \OT1/pcr/m/n/10 String \OT1/ptm/m/n/10 i
-ni sama seperti ba-hasa pem-ro-gra-man lain, terutama
- []
-
-
-Underfull \vbox (badness 1270) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[20]
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[21]
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[22] [23])
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[24]
-\openout2 = `03-kelas-dan-objek.aux'.
-
- (./03-kelas-dan-objek.tex
-BAB 3.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25
-
-
-
-]
-Overfull \vbox (130.235pt too high) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[26]
-\openout2 = `04-fungsi-lamda.aux'.
-
- (./04-fungsi-lamda.tex
-BAB 4.
-) [27
-
-
-
-]
-\openout2 = `05-java-interoperabilitas.aux'.
-
- (./05-java-interoperabilitas.tex [28
-
-
-
-]
-BAB 5.
-) [29]
-\openout2 = `06-perkakas.aux'.
-
- (./06-perkakas.tex [30
-
-
-
-]
-BAB 6.
-) [31]
-\openout2 = `07-kasus-1.aux'.
-
- (./07-kasus-1.tex [32
-
-
-
-]
-BAB 7.
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 1.
-
-) [33]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
- (./00-book.aux (./01-mulai.aux) (./02-dasar.aux)
-(./03-kelas-dan-objek.aux) (./04-fungsi-lamda.aux)
-(./05-java-interoperabilitas.aux) (./06-perkakas.aux) (./07-kasus-1.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 110.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 110.
-Package rerunfilecheck Info: File `00-book.out' has not changed.
-(rerunfilecheck)             Checksum: DDCC10BCAFED7EE8CEEECFC7F16710C1;4074.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 8051 strings out of 495028
- 116490 string characters out of 6181505
- 301448 words of memory out of 5000000
- 10476 multiletter control sequences out of 15000+600000
- 58343 words of font info for 111 fonts, out of 8000000 for 9000
+ 1710 strings out of 494945
+ 21069 string characters out of 6181032
+ 89034 words of memory out of 5000000
+ 5034 multiletter control sequences out of 15000+600000
+ 10358 words of font info for 36 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 29i,10n,43p,639b,1736s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cour
-ier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
-utmri8a.pfb>
-Output written on 00-book.pdf (49 pages, 206777 bytes).
-PDF statistics:
- 1229 PDF objects out of 1440 (max. 8388607)
- 1155 compressed objects within 12 object streams
- 622 named destinations out of 1000 (max. 500000)
- 513 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 27i,0n,43p,237b,36s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -505,9 +505,24 @@ hasil fungsi
 Kita juga dapat menggunakan perintah \texttt{in} untuk memeriksa nilai dari variabel yang diseleksi, berikut adalah contoh kode programnya :
 
 \begin{lstlisting}
+fun main(args: Array<String>) {
+	val a = 'a'
+
+	when (a) {
+		in 'a'..'e' -> println("Kelas teladan")
+		in 'f'..'i' -> println("Kelas unggulan")
+		else -> {
+			println("lainnya")
+		}
+	}
+}
 \end{lstlisting}
 
+Dari kode di atas sudah terlihat bahwa, karena variabel \texttt{a} berisi karakter \texttt{a}, maka baris yang akan dikerjakan ada pada baris ke-5. Sangat intuitif sekali kodenya bahwa pada baris ke-5 akan menyeleksi apabila isi dari variabel \texttt{a} ada di antara huruf \texttt{a, b, c, d} atau \texttt{e}, maka baris ke-5 inilah yang akan dikerjakan.
+
 \subsection{Ekspresi \texttt{for}}
+
+Ekspresi \texttt{for} digunakan untuk melakukan iterasi dari barisan data. Contoh kode programnya adalah sebagai berikut 
 
 \subsection{Ekspresi \texttt{while}}
 
