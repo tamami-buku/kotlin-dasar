@@ -58,7 +58,8 @@ This version is dated \currversion^^J^^J}
 \parskip=0pt %plus .1pt
 
 %% to make the 6 1/8 by 9 1/4 trim size
-\textheight=45pc \textwidth=28pc
+%\textheight=45pc \textwidth=28pc
+\textwidth=13cm \textheight=19cm
 
 \topmargin.75in
 \headheight 12pt
