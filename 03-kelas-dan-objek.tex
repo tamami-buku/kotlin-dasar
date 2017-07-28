@@ -2,7 +2,52 @@
 
 \section{Kelas}
 
-Kelas di Kotlin dideklarasikan dengan kata kunci \texttt{class}.
+Kelas di Kotlin dideklarasikan dengan kata kunci \texttt{class}. Contoh dalam kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+class Mahasiswa {
+}
+\end{lstlisting}
+
+Deklarasi kelas memang sesederhana itu. Isi dari kelas itu sendiri terdiri dari konstruktor, properti atau yang biasa dikenal dengan istilah variabel, dan fungsi.
+
+Uniknya bentuk konstruktor dari Kotlin ini dibedakan menjadi 2 (dua), ada konstruktor utama, dan ada konstruktor tambahan. Kita bahas terlebih dahulu bagaimana bentuk dari konstruktor utama, contoh kode dasarnya adalah sebagai berikut :
+
+\begin{lstlisting}
+class Mahasiswa constructor(nama: String) {
+}
+\end{lstlisting}
+
+Jika konstruktor tidak memiliki anotasi atau \textit{visibility modifiers}, maka kode di atas dapat disederhanakan menjadi seperti berikut :
+
+\begin{lstlisting}
+class Mahasiswa(nama: String) {
+}
+\end{lstlisting}
+
+Tentang apa itu anotasi dan \textit{visibility modifiers} akan kita jelaskan di bab berikutnya. 
+
+Lalu bagaimana cara memanfaatkan parameter yang ada pada konstruktor bila deklarasi konstruktor implisit seperti itu? Ada 2 (dua) cara, yang pertama melalui blok \texttt{init}, yang kedua dengan langsung mengisikan ke variabel yang bersangkutan. 
+
+Berikut adalah contoh dari penggunaan blok \texttt{init} :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val mhs = Mahasiswa("tamami")
+	
+	println(mhs.nama)
+}
+
+class Mahasiswa(nama: String) {
+	var nama: String
+	
+	init {
+		this.nama = nama
+	}
+}
+\end{lstlisting}
+
+Pada baris ke-2 dari kode di atas, variabel \texttt{mhs} bertipe kelas \texttt{Mahasiswa}
 
 \section{Properti}
 

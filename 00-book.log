@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  27 JUL 2017 21:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  28 JUL 2017 13:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -641,13 +641,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 ]
 Chapter 3.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [29]
-Overfull \vbox (129.63264pt too high) has occurred while \output is active []
-
-
+[29])
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
@@ -704,8 +698,8 @@ Package rerunfilecheck Info: File `00-book.out' has not changed.
 (rerunfilecheck)             Checksum: D8521BCD811DABA2AA98105C24F87E8F;4062.
  ) 
 Here is how much of TeX's memory you used:
- 8189 strings out of 494902
- 118569 string characters out of 6179891
+ 8199 strings out of 494902
+ 118733 string characters out of 6179891
  296948 words of memory out of 5000000
  10609 multiletter control sequences out of 15000+600000
  58343 words of font info for 111 fonts, out of 8000000 for 9000
@@ -722,10 +716,10 @@ re/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on 00-book.pdf (53 pages, 215973 bytes).
+Output written on 00-book.pdf (53 pages, 217559 bytes).
 PDF statistics:
- 1356 PDF objects out of 1440 (max. 8388607)
- 1277 compressed objects within 13 object streams
- 718 named destinations out of 1000 (max. 500000)
+ 1369 PDF objects out of 1440 (max. 8388607)
+ 1290 compressed objects within 13 object streams
+ 728 named destinations out of 1000 (max. 500000)
  513 words of extra memory for PDF output out of 10000 (max. 10000000)
 

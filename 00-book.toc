@@ -40,7 +40,7 @@
 \contentsline {subsection}{\numberline {2.3.4}Ekspresi \texttt {while}}{25}{subsection.2.3.4}
 \contentsline {subsection}{\numberline {2.3.5}Ekspresi Loncat}{26}{subsection.2.3.5}
 \contentsline {chapter}{\numberline {3}Kelas dan Objek}{29}{chapter.3}
-\contentsline {section}{\numberline {3.1}Kelas}{30}{section.3.1}
+\contentsline {section}{\numberline {3.1}Kelas}{29}{section.3.1}
 \contentsline {section}{\numberline {3.2}Properti}{30}{section.3.2}
 \contentsline {section}{\numberline {3.3}\textit {Interface}}{30}{section.3.3}
 \contentsline {section}{\numberline {3.4}\textit {Visibility Modifiers}}{30}{section.3.4}
