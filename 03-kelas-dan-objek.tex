@@ -47,7 +47,98 @@ class Mahasiswa(nama: String) {
 }
 \end{lstlisting}
 
-Pada baris ke-2 dari kode di atas, variabel \texttt{mhs} bertipe kelas \texttt{Mahasiswa}
+Pada baris ke-2 dari kode di atas, variabel \texttt{mhs} bertipe kelas \texttt{Mahasiswa} yang langsung dipanggil konstruktornya dengan parameter berupa teks (\textit{string}). 
+
+Kotlin akan memanggil konstruktor utamanya kemudian menjalankan blok \texttt{init} untuk pertama kalinya. Isi dari blok \texttt{init} ini hanya mengisikan variabel \texttt{nama} dari parameter konstruktor \texttt{nama}.
+
+Kemudian aplikasi menlanjutkan tugasnya untuk mencetak variabel \texttt{nama} milik instan kelas \texttt{Mahasiswa}.
+
+Atau kita juga bisa persingkat kode di atas menjadi seperti berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val mhs = Mahasiswa("tamami")
+	
+	println(mhs.nama)
+}
+
+class Mahasiswa(nama: String) {
+	var nama = nama
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas sama persis dengan sebelumnya, seperti ini :
+
+\begin{lstlisting}
+tamami
+\end{lstlisting}
+
+Kita telah menghapus blok \texttt{init} dan melewatkan nilai dari parameter \texttt{nama} langsung ke variabel \texttt{nama}.
+
+Lalu bagaimana dengan konstruktor tambahan, deklarasi nya ada di dalam tubuh kelas itu sendiri, contoh kodenya adalah seperti berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val mhs = Mahasiswa("tamami", "DIV-TI")
+	
+	println(mhs.nama)
+	println(mhs.jurusan)
+}
+
+class Mahasiswa(nama: String) {
+	var nama = nama
+	var jurusan: String = ""
+	
+	constructor(nama: String, jurusan: String): this(nama) {
+		this.jurusan = jurusan
+	}
+}
+\end{lstlisting}
+
+Deklarasi konstruktor utama ada di baris ke-8 dengan satu parameter yaitu \texttt{nama}, sedangkan deklarasi konstruktor tambahan ada pada baris ke-12 sampai dengan baris ke-14. Dimana konstruktor tambahan memiliki 2 (dua) parameter, yaitu \texttt{nama} dan \texttt{jurusan}. 
+
+Ada satu tambahan lagi pada konstruktor tambahan, yaitu perintah \texttt{this} di akhir baris, ini karena Kotlin mengharuskan seluruh konstruktor tambahan memanggil konstruktor utama terlebih dahulu dengan perintah \texttt{this}.
+
+Dalam sebuah kelas dapat memuat beberapa hal berikut :
+
+\begin{itemize}
+	\item Konstruktor dan blok \texttt{init}
+	\item Fungsi
+	\item Properti (atau lebih dikenal dengan variabel)
+	\item Kelas bersarang
+	\item Deklarasi Objek.
+\end{itemize}
+
+Sebetulnya seluruh kelas di Kotlin akan bermuara pada kelas \texttt{Any} sebagai super-kelas-nya. Bahkan kelas-kelas yang deklarasinya tanpa super-kelas akan menjadikan kelas \texttt{Any} ini sebagai \textit{default}.
+
+Untuk mendeklarasikan super kelas secara eksplisit, contoh kode berikut akan menjelaskannya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val pegawai = Pejabat("tamami", "fungsional")
+	
+	println(pegawai.nama)
+	println(pegawai.jabatan)
+}
+
+open class Pegawai(nama: String) {
+	var nama = nama
+}
+
+class Pejabat(nama: String, jabatan: String): Pegawai(nama) {
+	var jabatan = jabatan
+}
+\end{lstlisting}
+
+Pada kode di atas, yang menerangkan deklarasi super kelas secara eksplisit tepat pada baris ke-12, yang menunjukkan bahwa kelas \texttt{Pejabat} yang dibentuk adalah turunan dari kelas \texttt{Pegawai}.
+
+Pada deklarasi kelas \texttt{Pegawai}, ada pernyataan \texttt{open} disana, ini sebetulnya menandakan bahwa kelas tersebut bukan bersifat final, karena secara \textit{default}, semua kelas yang dibentuk di Kotlin akan bersifat final, maka agar kita dapat membuat turunan dari kelas yang telah kita buat, maka kelas tersebut harus kita berikan tanda \texttt{open} di awal deklarasi kelas.
+
+Alur dari kode program di atas dapat diceritakan demikian, pertama pada baris ke-2 kita membuat sebuah variabel bernama \texttt{pegawai}, kemudian diisikan dengan data dari instan kelas \texttt{Pejabat}.
+
+Kita coba melompat ke baris 12, dimana ini adalah tempat deklarasi pembentukan kelas \texttt{Pejabat} yang memang memiliki 2 (dua) parameter. Namun pada baris ke-12 inilah secara eksplisit menyebutkan bahwa kelas \texttt{Pejabat} adalah turunan dari kelas \texttt{Pegawai}. Namun parameter yang dimasukan ke kelas \texttt{Pegawai} adalah parameter yang juga masuk melalui konstruktor \texttt{Pejabat}, sehingga parameter yang dilewatkan ke konstruktor \texttt{Pegawai} adalah parameter yang juga dibawah oleh konstruktor \texttt{Pejabat}.
+
+Pemanggilan variabel atau properti dari kelas \texttt{Pejabat} di baris ke-4 dan ke-5 sebetulnya tidak aneh karena sebetulnya, setelah kelas \texttt{Pejabat} menjadi turunan dari kelas \texttt{Pegawai}, maka semua variabel dan fungsi yang ada pada kelas \texttt{Pegawai} akan dimiliki oleh kelas \texttt{Pejabat}.
 
 \section{Properti}
 
