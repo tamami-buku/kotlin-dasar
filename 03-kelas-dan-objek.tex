@@ -11,6 +11,8 @@ class Mahasiswa {
 
 Deklarasi kelas memang sesederhana itu. Isi dari kelas itu sendiri terdiri dari konstruktor, properti atau yang biasa dikenal dengan istilah variabel, dan fungsi.
 
+\subsection{Konstruktor}
+
 Uniknya bentuk konstruktor dari Kotlin ini dibedakan menjadi 2 (dua), ada konstruktor utama, dan ada konstruktor tambahan. Kita bahas terlebih dahulu bagaimana bentuk dari konstruktor utama, contoh kode dasarnya adalah sebagai berikut :
 
 \begin{lstlisting}
@@ -109,6 +111,8 @@ Dalam sebuah kelas dapat memuat beberapa hal berikut :
 	\item Deklarasi Objek.
 \end{itemize}
 
+\subsection{Pewarisan}
+
 Sebetulnya seluruh kelas di Kotlin akan bermuara pada kelas \texttt{Any} sebagai super-kelas-nya. Bahkan kelas-kelas yang deklarasinya tanpa super-kelas akan menjadikan kelas \texttt{Any} ini sebagai \textit{default}.
 
 Untuk mendeklarasikan super kelas secara eksplisit, contoh kode berikut akan menjelaskannya :
@@ -130,6 +134,13 @@ class Pejabat(nama: String, jabatan: String): Pegawai(nama) {
 }
 \end{lstlisting}
 
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+tamami
+fungsional
+\end{lstlisting}
+
 Pada kode di atas, yang menerangkan deklarasi super kelas secara eksplisit tepat pada baris ke-12, yang menunjukkan bahwa kelas \texttt{Pejabat} yang dibentuk adalah turunan dari kelas \texttt{Pegawai}.
 
 Pada deklarasi kelas \texttt{Pegawai}, ada pernyataan \texttt{open} disana, ini sebetulnya menandakan bahwa kelas tersebut bukan bersifat final, karena secara \textit{default}, semua kelas yang dibentuk di Kotlin akan bersifat final, maka agar kita dapat membuat turunan dari kelas yang telah kita buat, maka kelas tersebut harus kita berikan tanda \texttt{open} di awal deklarasi kelas.
@@ -138,7 +149,254 @@ Alur dari kode program di atas dapat diceritakan demikian, pertama pada baris ke
 
 Kita coba melompat ke baris 12, dimana ini adalah tempat deklarasi pembentukan kelas \texttt{Pejabat} yang memang memiliki 2 (dua) parameter. Namun pada baris ke-12 inilah secara eksplisit menyebutkan bahwa kelas \texttt{Pejabat} adalah turunan dari kelas \texttt{Pegawai}. Namun parameter yang dimasukan ke kelas \texttt{Pegawai} adalah parameter yang juga masuk melalui konstruktor \texttt{Pejabat}, sehingga parameter yang dilewatkan ke konstruktor \texttt{Pegawai} adalah parameter yang juga dibawah oleh konstruktor \texttt{Pejabat}.
 
-Pemanggilan variabel atau properti dari kelas \texttt{Pejabat} di baris ke-4 dan ke-5 sebetulnya tidak aneh karena sebetulnya, setelah kelas \texttt{Pejabat} menjadi turunan dari kelas \texttt{Pegawai}, maka semua variabel dan fungsi yang ada pada kelas \texttt{Pegawai} akan dimiliki oleh kelas \texttt{Pejabat}.
+Pemanggilan variabel atau properti dari kelas \texttt{Pejabat} di baris ke-4 dan ke-5 sebetulnya tidak aneh karena sebetulnya, setelah kelas \texttt{Pejabat} menjadi turunan dari kelas \texttt{Pegawai}, maka semua variabel dan fungsi yang ada pada kelas \texttt{Pegawai} akan dimiliki oleh kelas \texttt{Pejabat}, sehingga variabel dari kelas \texttt{Pegawai} dapat pula diakses dari kelas \texttt{Pejabat}.
+
+Contoh lain untuk pewarisan dengan konstruktor tambahan bisa dilihat pada kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	println("-= contoh pemanggilan konstruktor utama =-")
+	val pegawai = Pejabat("tamami", "fungsional")
+	println(pegawai.nama)
+	println(pegawai.jabatan)
+	
+	println("\n-= contoh pemanggilan konstruktor tambahan =-")
+	val pegawaiLain = Pejabat("19840409001", "tamami", "fungsional")
+	println(pegawaiLain.nip)
+	println(pegawaiLain.nama)
+	println(pegawaiLain.jabatan)
+}
+
+open class Pegawai(nama: String) {
+	var nama = nama
+	var nip = ""
+	
+	constructor(nip: String, nama: String): this(nama) {
+		this.nip = nip
+	}
+}
+
+class Pejabat: Pegawai {
+	var jabatan: String
+	
+	constructor(nama: String, jabatan: String): super(nama) {
+		this.jabatan = jabatan
+	}
+	
+	constructor(nip: String, nama: String, jabatan: String): super(nip, nama) {
+		this.jabatan = jabatan
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+-= contoh pemanggilan konstruktor utama =-
+tamami
+fungsional
+
+-= contoh pemanggilan konstruktor tambahan =- 
+19840409001
+tamami
+fungsional
+\end{lstlisting}
+
+Pada kode di atas, kelas \texttt{Pegawai} memiliki 2 (dua) konstruktor, yang pertama adalah konstruktor utama dengan 1 (satu) buah parameter dengan nama \texttt{nama}, yang kedua adalah konstruktor dengan 2 (dua) parameter dengan nama \texttt{nip} dan \texttt{nama}.
+
+Kita lihat bahwa pada konstruktor tambahan milik kelas \texttt{Pegawai} ada tambahan perintah \texttt{this} di belakang deklarasinya seperti yang telah dijelaskan pada saat cara mendeklarasikan konstruktor tambahan sebelumnya.
+
+Kelas \texttt{Pejabat} merupakan turunan dari kelas \texttt{Pegawai} yang menggunakan 2 (dua) konstruktor dari kelas tersebut. Cara deklarasinya sama seperti konstruktor tambahan sebelumnya, hanya saja kali ini tidak menggunakan perintah \texttt{this} tetapi menggunakan kelas \texttt{super} karena yang dipanggil adalah super-kelas dari kelas \texttt{Pejabat} yaitu kelas \texttt{Pegawai}.
+
+\subsection{\textit{Override} Fungsi}
+
+Fungsi dalam bahasa objek biasa dikenal dengan istilah \textit{method}, mungkin akan digunakan secara bergantian istilah tersebut dalam buku ini yang artinya adalah sebetulnya sama.
+
+Sama seperti kelas, untuk fungsi pun, agar dapat di \textit{override}, suatu fungsi harus dideklarasikan secara eksplisit dengan perintah \texttt{open}. Contoh kode untuk \textit{override} fungsi adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	println("-= contoh kelas Pegawai =-")
+	val pegawai = Pegawai("tamami")
+	pegawai.cetak()
+	
+	println("\n-= contoh kelas Pejabat =-")
+	val pegawaiLain = Pejabat("tamami", "fungsional")
+	pegawaiLain.cetak()
+}
+
+open class Pegawai(nama: String) {
+	var nama = nama
+	
+	open fun cetak() {
+		println("nama : $nama")
+	}
+}
+
+class Pejabat: Pegawai {
+	var jabatan: String
+	
+	constructor(nama: String, jabatan: String): super(nama) {
+		this.jabatan = jabatan
+	}
+	
+	override fun cetak() {
+		println("nama : $nama\njabatan : $jabatan");
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+-= contoh kelas Pegawai =-
+nama : tamami
+
+-= contoh kelas Pejabat =- 
+nama : tamami
+jabatan : fungsional
+\end{lstlisting}
+
+Yang menjadi titik fokus, fungsi yang akan di-\textit{override} harus diberikan perintah \texttt{open} seperti pada baris ke-14, dan pada saat akan meng-\textit{override} pada kelas turunannya, harus diberikan perintah \texttt{override}. 
+
+Ini artinya fungsi \texttt{cetak} pada kelas \texttt{Pejabat} adalah fungsi turunan yang telah diadaptasikan sesuai kebutuhan kelas \texttt{Pejabat}, dan isi dari fungsi \textit{cetak} pada kelas \texttt{Pegawai} telah digantikan dengan yang baru, yaitu khusus untuk kelas \texttt{Pejabat}.
+
+Sebagai catatan lain adalah bahwa apabila ada fungsi yang dapat di-\textit{override}maka deklarasi kelas juga harus memiliki perintah \texttt{open}, tidak boleh dalam kondisi final.
+
+Fungsi-fungsi yang dideklarasikan secara \texttt{override}, akan otomatis menjadi \texttt{open} dan dapat di-\textit{override} pada kelas turunannya, untuk mencegah hal ini, dapat diberikan perintah \texttt{final} diawalnya, agar tidak dapat di-\textit{override} ulang.
+
+Sebagai contoh, misalnya pada fungsi \texttt{cetak} milik kelas \texttt{Pejabat} tidak ingin agar kelas turunannya nanti melakukan \textit{override} terhadap fungsi ini, maka deklarasi yang mungkin adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	println("-= contoh kelas Pegawai =-")
+	val pegawai = Pegawai("tamami")
+	pegawai.cetak()
+	
+	println("-= contoh kelas Pejabat =-")
+	val pegawaiLain = Pejabat("tamami", "fungsional")
+	pegawaiLain.cetak()
+}
+
+open class Pegawai(nama: String) {
+	val nama = nama
+	
+	open fun cetak() {
+		println("nama : $nama")
+	}
+}
+
+class Pejabat: Pegawai {
+	var jabatan: String
+	
+	constructor(nama: String, jabatan: String): super(nama) {
+		this.jabatan = jabatan
+	}
+	
+	final override fun cetak() {
+		println("nama : $nama\njabatan : $jabatan")
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas sama saja dengan kode sebelumnya, hanya saja apabila kelas \texttt{Pejabat} memiliki turunan, maka turunannya tidak dapat melakukan \textit{override} terhadap fungsi \texttt{cetak}, karena telah dilakukan kuncian dengan perintah \texttt{final} pada baris ke-26.
+
+\subsection{\textit{Override} variabel}
+
+Variabel dalam bahasa objek biasa dikenal dengan istilah properti, jadi mungkin akan dibahas dalam buku ini bahwa properti adalah variabel milik kelas.
+
+\textit{Override} variabel atau properti ini sama seperti \textit{override method}, ada penambahan perintah \texttt{open} pada properti yang dapat di-\textit{override} oleh kelas turunan, dan memberikan tambahan perintah \texttt{override} pada properti di kelas turunannya. Kodenya akan terlihat seperti berikut ini :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	println("-= contoh kelas Pegawai =-")
+	val pegawai = Pegawai()
+	pegawai.cetak()
+	
+	println("\n-= contoh kelas Pejabat =-")
+	val pegawaiLain = Pejabat()
+	pegawaiLain.cetak()
+}
+
+open class Pegawai {
+	open var nama = "nama Pegawai"
+	
+	fun cetak() {
+		println("nama : $nama")
+	}
+}
+
+class Pejabat: Pegawai() {
+	override var nama = "nama Pejabat"
+}
+\end{lstlisting}
+
+Keluaran dari kode tersebut akan terlihat seperti ini :
+
+\begin{lstlisting}
+-= contoh kelas Pegawai =-
+nama : nama Pegawai
+
+-= contoh kelas Pejabat =-
+nama : nama Pejabat
+\end{lstlisting}
+
+Seperti dijelaskan sebelumnya, bahwa agar properti dapat di-\textit{override}, maka perlu ditambahkan perintah \texttt{open} pada kelas utama seperti pada baris ke-12 dari kode di atas, kemudian menambahkan perintah \texttt{override} pada kelas turunannya seperti pada baris ke-20.
+
+\subsection{\textit{Override rule}}
+
+\textit{Override rule} ini terjadi karena kondisi dimana sebuah kelas diwajibkan melakukan \textit{override} atas suatu \textit{method} yang biasanya memiliki moyang 2 (dua) atau lebih kelas / \textit{interface}. Contoh kodenya adalah sebagai berikut : 
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	println("-= contoh kelas Pegawai =-")
+	val pegawai = Pegawai("tamami")
+	pegawai.cetak()
+	
+	println(\n-= contoh kelas Pejabat =-"")
+	val pejabat = Pejabat("tamami", "BPPKAD")
+	pejabat.cetak()
+}
+
+open class Pegawai(nama: String) {
+	var nama = nama
+	
+	open file cetak() {
+		println("nama : $nama")
+	}
+}
+
+interface Struktural {
+	var unit: String
+	
+	fun cetak() {
+		println("ini dicetak dari interface Struktural")
+	}
+}
+
+class Pejabat(nama: String, unit: String): Pegawai(nama), Struktural {
+	override var unit = unit
+	
+	override fun cetak() {
+		println("nama : $nama\nunit : $unit")
+	}
+}
+\end{lstlisting}
+
+Hasil dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+-= contoh kelas Pegawai =-
+nama : tamami
+
+-= contoh kelas Pejabat =-
+nama : tamami
+unit : BPPKAD
+\end{lstlisting}
+
+Titik fokus untuk pembahasan kali ini ada pada baris ke-27, dimana kelas \texttt{Pejabat} mewarisi properti dan \textit{method} dari 1 (satu) kelas yaitu \texttt{Pegawai} dan 1 (satu) \textit{interface} \texttt{Struktural}. 
+
+Kelas dan \textit{interface} tersebut memiliki 1 (satu) \textit{method} yang sama dengan nama \texttt{cetak}. Karena hal inilah kelas \texttt{Pejabat} dengan terpaksa harus melakukan \textit{override} untuk mendefinisikan bagaimana implementasi \textit{method} \texttt{cetak} pada kelas ini.
 
 \section{Properti}
 
