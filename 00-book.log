@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  31 JUL 2017 21:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  1 AUG 2017 21:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -664,42 +664,68 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[35] [36])
+[35] [36]
+Overfull \hbox (2.1313pt too wide) in paragraph at lines 399--400
+\OT1/ptm/m/n/10 Karena hal in-i-lah ke-las \OT1/pcr/m/n/10 Pejabat \OT1/ptm/m/n
+/10 den-gan ter-paksa harus melakukan \OT1/ptm/m/it/10 over-ride \OT1/ptm/m/n/1
+0 un-tuk mendefin-
+ []
+
+
+Overfull \hbox (1.02129pt too wide) in paragraph at lines 403--404
+\OT1/ptm/m/n/10 prop-erti yang hanya da-pat dibaca saja. Un-tuk prop-erti yang 
+da-pat di-ubah, perlu dideklarasikan
+ []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[37]
+[37])
+Underfull \vbox (badness 1052) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[38]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[39]
 \openout2 = `04-fungsi-lamda.aux'.
 
- (./04-fungsi-lamda.tex [38
+ (./04-fungsi-lamda.tex [40
 
 
 
 ]
 Chapter 4.
-) [39]
+) [41]
 \openout2 = `05-java-interoperabilitas.aux'.
 
- (./05-java-interoperabilitas.tex [40
+ (./05-java-interoperabilitas.tex [42
 
 
 
 ]
 Chapter 5.
-) [41]
+) [43]
 \openout2 = `06-perkakas.aux'.
 
- (./06-perkakas.tex [42
+ (./06-perkakas.tex [44
 
 
 
 ]
 Chapter 6.
-) [43]
+) [45]
 \openout2 = `07-kasus-1.aux'.
 
- (./07-kasus-1.tex [44
+ (./07-kasus-1.tex [46
 
 
 
@@ -709,7 +735,7 @@ Chapter 7.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-) [45]
+) [47]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
  (./00-book.aux (./01-mulai.aux) (./02-dasar.aux)
@@ -721,8 +747,8 @@ Package rerunfilecheck Info: File `00-book.out' has not changed.
 (rerunfilecheck)             Checksum: 9C139E786A8C979BFAA33CD32E6C0B62;4397.
  ) 
 Here is how much of TeX's memory you used:
- 8455 strings out of 494902
- 122896 string characters out of 6179891
+ 8504 strings out of 494902
+ 123676 string characters out of 6179891
  296948 words of memory out of 5000000
  10614 multiletter control sequences out of 15000+600000
  58343 words of font info for 111 fonts, out of 8000000 for 9000
@@ -739,10 +765,10 @@ re/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on 00-book.pdf (61 pages, 244653 bytes).
+Output written on 00-book.pdf (63 pages, 251200 bytes).
 PDF statistics:
- 1720 PDF objects out of 1728 (max. 8388607)
- 1629 compressed objects within 17 object streams
- 979 named destinations out of 1000 (max. 500000)
+ 1784 PDF objects out of 2073 (max. 8388607)
+ 1691 compressed objects within 17 object streams
+ 1028 named destinations out of 1200 (max. 500000)
  553 words of extra memory for PDF output out of 10000 (max. 10000000)
 

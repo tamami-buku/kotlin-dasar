@@ -400,6 +400,97 @@ Kelas dan \textit{interface} tersebut memiliki 1 (satu) \textit{method} yang sam
 
 \section{Properti}
 
+Deklarasi sebuah properti di Kotlin ada 2 (dua) cara, yaitu properti yang dapat diubah, dan properti yang hanya dapat dibaca saja. Untuk properti yang dapat diubah, perlu dideklarasikan dengan perintah \texttt{var} sedangkan untuk property yang hanya dapat diberikan nilai sekali dan tidak dapat berubah menggunakan kata perintah \texttt{val}.
+
+Contohnya sudah banyak kita lakukan di atas, kita akan coba lagi dengan menggunakan 2 (dua) perintah tersebut, \texttt{var} dan \texttt{val}, berikut kodenya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var data = Pegawai()
+	
+	data.nama = "p. tamami"
+	
+	println(data.nama)
+	println(data.nip)
+}
+
+class Pegawai {
+	var nama = "tamami"
+	val nip = "19840409001"
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+p. tamami
+19840409001
+\end{lstlisting}
+
+Hal ini karena setelah pembentukan instan kelas \texttt{Pegawai} di baris ke-2, properti \texttt{nama} diubah kembali pada baris ke-4, sehingga nama yang barulah yang keluar di layar.
+
+Hal yang sama tidak dapat dilakukan terhadap properti \texttt{nip}, karena properti \texttt{nip} tidak dapat diubah nilainya.
+
+Secara lengkap, sebuah deklarasi properti akan dituliskan seperti format kode berikut :
+
+\begin{lstlisting}
+var <namaProperti>[: <tipeData>] [= <initializer>]
+		[<getter>]
+		[<setter>]
+\end{lstlisting}
+
+Penjelasannya adalah sebagai berikut :
+
+\begin{itemize}
+	\item \texttt{<namaProperti>} ini nantinya digantikan dengan nama properti
+	\item \texttt{<tipeData>} ini akan digantikan dengan tipe data / nama kelas
+	\item \texttt{<initializer>} adalah data awal yang akan diisikan ke dalam properti
+	\item \texttt{<getter>} adalah kode untuk mengambil nilai dari properti
+	\item \texttt{<setter>} adalah blok kode untuk memberikan nilai ke properti
+\end{itemize}
+
+Terlihat agak rumit, namun sebetulnya sederhana, seperti, \texttt{<getter>} dan \texttt{<setter>} sebetulnya opsional, boleh hadir, boleh tidak. Saat \texttt{<getter>} dan \texttt{<setter>} tidak hadir, maka sebetulnya Kotlin akan membuatkan kedua fungsi tersebut secara umum.
+
+ \texttt{<tipeData>} pun sebetulnya bisa dijadikan implisit hanya dengan memberikan data awal pada bagian \texttt{<initializer>}. Mari kita coba contoh kode lebih lengkapnya untuk implementasi pembentukan properti seperti di atas, berikut adalah kodenya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var data = Pegawai("tamami")
+	
+	println(data.nama)
+}
+
+class Pegawai(nama: String) {
+	var nama: String = nama	
+		get() = field
+		set(nama) {
+			field = nama
+		}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+tamami
+\end{lstlisting}
+
+Kode yang kita maksud berada pada baris ke-8 sampai dengan baris ke-12, blok baris ini menerangkan detail bagaimana properti \texttt{nama}, apa tipe datanya, bagaimana cara mengisi nilainya dengan \texttt{set}, dan bagaimana mengambil datanya dengan \texttt{get}. Namun secara sederhana dengan tujuan yang sama, kode tersebut dapat diringkas menjadi seperti kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var data = Pegawai("tamami")
+	
+	println(data.nama)
+}
+
+class Pegawai(nama: String) {
+	var nama = nama
+}
+\end{lstlisting}
+
+Keluaran dari kode di atas pun sama, dapat kita lihat bahwa baris yang tadi dapat digantikan hanya dengan 1 (satu) baris saja, yaitu pada baris ke-8.
+
 \section{\textit{Interface}}
 
 \section{\textit{Visibility Modifiers}}
