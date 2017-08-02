@@ -491,6 +491,51 @@ class Pegawai(nama: String) {
 
 Keluaran dari kode di atas pun sama, dapat kita lihat bahwa baris yang tadi dapat digantikan hanya dengan 1 (satu) baris saja, yaitu pada baris ke-8.
 
+Di Kotlin, ada juga yang namanya konstanta, atau lebih tepatnya \textit{compile-time constants}, untuk menjadikan sebuah properti menjadi konstanta, diperlukan perintah \texttt{const}. 
+
+Lalu apa bedanya dengan \texttt{val} yang nilainya juga tidak dapat diubah? Perbedaannya adalah, pada penggunaan \texttt{const}, properti ini hanya dapat dideklarasikan langsung di bawah kelas / objek, dan inisialisasinya hanya dapat dilakukan dengan nilai yang tipe datanya adalah \texttt{String} atau tipe data primitif.
+
+Akan lebih jelas bila kita melihat kode program berikut sebagai contoh :
+
+\begin{lstlisting}
+val pegawai = Pegawai()
+val nama = pegawai.namaLengkap()
+
+fun main(args: Array<String>) {
+	println(nama)
+}
+
+class Pegawai {
+	fun namaLengkap(): String {
+		return "p. tamami"
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+p. tamami
+\end{lstlisting}
+
+Pada penggunaan \texttt{val}, kita mungkin dapat menggunakan sebuah fungsi untuk mengisi nilainya seperti pada baris ke-2. Ini tidak mungkin dilakukan oleh properti dengan kata kunci \texttt{const}. Yang mungkin dilakukan apabila menggunakan kata kunci \texttt{const} adalah dengan kode berikut :
+
+\begin{lstlisting}
+const val nama = "P. Tamami"
+
+fun main(args: Array<String>) {
+	println(nama)
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+P. Tamami
+\end{lstlisting}
+
+Seperti pada penjelasan sebelumnya bahwa konstanta ini hanya dapat diberikan nilainya langsung dengan tipe data berupa String atau tipe data primitif lainnya, dan tidak dapat diubah pada saat \textit{runtime}.
+
 \section{\textit{Interface}}
 
 \section{\textit{Visibility Modifiers}}
