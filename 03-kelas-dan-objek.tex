@@ -538,7 +538,123 @@ Seperti pada penjelasan sebelumnya bahwa konstanta ini hanya dapat diberikan nil
 
 \section{\textit{Interface}}
 
+\textit{Interface} disini bukan tampilan jendela atau tatap muka sebuah aplikasi, tetapi \textit{interface} disini adalah bentuk implementasi dari orientasi objek. 
+
+\textit{Interface} di Kotlin bukan hanya dapat menyiapkan kerangka berupa \textit{method}, tetapi diperbolehkan melakukan implementasi di dalam \textit{method} tersebut. Pada \textit{interface} boleh terdapat properti / atribut hanya saja harus bersifat abstrak atau tanpa isi, karena implementasi isi akan dideklarasikan langsung dalam kelas turunannya.
+
+Contoh penggunaan \textit{interface} adalah seperti kode berikut ini :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var data = Pejabat("tamami")
+	
+	println(data.getNamaLengkap())
+}
+
+interface Pegawai {
+	fun getNamaLengkap(): String
+}
+
+class Pejabat(nama: String): String {
+	var nama: String = nama
+	
+	override fun getNamaLengkap(): String {
+		return "Pa/Bu $nama"
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+Pa/Bu tamami
+\end{lstlisting}
+
+Kita lihat bagaimana \textit{interface} \texttt{Pegawai} pada baris ke-7 sampai dengan baris ke-9 membentuk sebuah kerangka implementasi tentang Pegawai dan kelas \texttt{Pejabat} melakukan pewarisan dan mengimplementasikan fungsi \texttt{getNamaLengkap()} seperti pada baris ke-14 sampai dengan baris ke-16.
+
 \section{\textit{Visibility Modifiers}}
+
+\textit{Visibility Modifiers} di Kotlin ada 4 (empat) macam, yaitu : \texttt{public}, \texttt{private}, \texttt{protected}, dan \texttt{internal}. Secara \textit{default} bila tidak ada deklarasi lain, maka yang terpilih adalah \texttt{public}.
+
+Penjelasannya adalah sebagai berikut :
+
+\begin{itemize}
+	\item \texttt{public}, artinya deklarasi akan dapat diakses dari manapun
+	\item \texttt{private}, artinya hanya sebatas file yang mendeklarasikan
+	\item \texttt{internal}, artinya dapat diakses oleh objek-objek yang berada pada modul yang sama
+	\item \texttt{protected} artinya sapa seperti \texttt{private}, tetapi dapat terlihat pada kelas turunannya.
+\end{itemize}
+
+Penjelasan untuk \texttt{public} tidak perlu kita lakukan kembali, karena dari contoh-contoh sebelumnya kita sudah mendapati lingkup \texttt{public} itu demikian, dapat diakses dari manapun, dan secara \textit{default} deklarasi tiap properti atau fungsi akan berada pada lingkup \texttt{public}.
+
+Untuk \texttt{private}, contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var data = Pegawai("tamami")
+	println(data.nama)
+}
+
+class Pegawai(nama: String) {
+	private var nama: String = nama
+}
+\end{lstlisting}
+
+Kode di atas tidak akan pernah bisa di-\textit{compile} karena kesalahan bahwa pada baris ke-7, deklarasi properti \texttt{nama} memiliki lingkup \texttt{private} sehingga perintah pada baris ke-3 tidak akan pernah dapat dieksekusi.
+
+Sekarang kita coba untuk implementasi dengan kata kunci \texttt{internal}, buatlah 2 (dua) buah \textit{file}, isi dari \textit{file} kode sumber pertama adalah sebagai berikut :
+
+\begin{lstlisting}
+public class Pegawai(nama: String) {
+	internal var nama = nama
+}
+\end{lstlisting}
+
+Lalu \textit{file} yang kedua, isi kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var data = Pegawai("tamami")
+	println(data.nama)
+}
+\end{lstlisting}
+
+Yang pertama dilakukan kompilasi adalah \textit{file} dengan nama kelas \texttt{Pegawai}, misal saya beri nama \texttt{Pegawai.kt}, lalu coba \textit{compile} dengan perintah berikut :
+
+\begin{lstlisting}
+kotlinc Pegawai.kt
+\end{lstlisting}
+
+Namun pada saat \textit{compile file} yang ke-2, karena saya beri nama \textit{file} yang kedua dengan \texttt{Test.kt}, lakukan seperti kode / perintah berikut :
+
+\begin{lstlisting}
+kotlinc -cp . Test.kt
+\end{lstlisting}
+
+Saat \textit{compile} akan muncul peringatan kesalahan bahwa deklarasi \texttt{nama} pada kelas \texttt{Pegawai} bersifat \texttt{internal} sehingga tidak dapat dilakukan pemanggilan di \textit{method} \texttt{main}.
+
+Untuk percobaan \texttt{protected}, perhatikan kode berikut ini :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var data = Pejabat("tamami")
+	println(data.getNamaLengkap())
+}
+
+open class Pegawai(nama: String) {
+	protected var nama = nama
+}
+
+class Pejabat(nama: String): Pegawai(nama) {
+	fun getNamaLengkap(): String {
+		return "pa/bu $nama"
+	}
+}
+\end{lstlisting}
+
+Pada baris ke-7 kode di atas, ada deklarasi \texttt{protected}, artinya pada baris ke-3 kita tidak dapat memanggil langsung dengan perintah \texttt{data.nama}. 
+
+Kemudian di baris ke-10 sampai dengan ke-14, ada deklarasi kelas \texttt{Pejabat} yang mewarisi atribut dan fungsi dari kelas \texttt{Pegawai}, yang diwarisi tentu saja adalah atribut \texttt{nama}, maka dari itu, pemanggilan atribut \texttt{nama} masih dapat dilakukan pada kelas \texttt{Pejabat} tanpa harus mendeklarasikan atribut ini karena atribut \texttt{nama} ini adalah hasil dari pewarisan kelas \texttt{Pegawai}.
 
 \section{Ekstensi}
 
