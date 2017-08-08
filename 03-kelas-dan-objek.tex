@@ -656,9 +656,216 @@ Pada baris ke-7 kode di atas, ada deklarasi \texttt{protected}, artinya pada bar
 
 Kemudian di baris ke-10 sampai dengan ke-14, ada deklarasi kelas \texttt{Pejabat} yang mewarisi atribut dan fungsi dari kelas \texttt{Pegawai}, yang diwarisi tentu saja adalah atribut \texttt{nama}, maka dari itu, pemanggilan atribut \texttt{nama} masih dapat dilakukan pada kelas \texttt{Pejabat} tanpa harus mendeklarasikan atribut ini karena atribut \texttt{nama} ini adalah hasil dari pewarisan kelas \texttt{Pegawai}.
 
-\section{Ekstensi}
+\section{Ekstensi Fungsi}
+
+Kotlin memeberikan kita sebuah fasilitas ekstensi fungsi. Artinya tanpa harus melakukan pewarisan, kita dapat menambahkan beberapa fungsi di luar deklarasi kelas. Mari kita lihat contoh kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var data = Pegawai("tamami")
+	data.cetakNama()
+}
+
+fun Pegawai.cetakNama() {
+	println("pa/bu ${this.nama}")
+}
+
+open class Pegawai(nama: String) {
+	var nama = nama
+}
+\end{lstlisting}
+
+Hasil dari kode di atas adalah seperti berikut ini :
+
+\begin{lstlisting}
+pa/bu tamami
+\end{lstlisting}
+
+Kita lihat pada blok deklarasi kelas \texttt{Pegawai} pada baris ke-10 sampai dengan baris ke-12, tidak ada fungsi dengan nama \texttt{cetakNama()}, tambahan fungsi tersebut muncul di luar kelas, yaitu pada baris ke-6 sampai dengan baris ke-8, sehingga memungkinkan perintah pada baris ke-3 dilaksanakan.
+
+Kondisi ekstensi fungsi ini sebetulnya tidak menambahkan anggota baru ke dalam kelas, tetapi memungkinkan sebuah variabel untuk dipanggil dengan fungsi yang belum ada pada dirinya. Untuk membuktikan bahwa ekstensi fungsi tidak sama dengan fungsi kelas yang asli, perhatikan kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var pejabat = Pejabat()
+	
+	cetakIsinya(pejabat)
+}
+
+fun Pegawai.cetak() = "ini kelar Pegawai"
+
+fun Pejabat.cetak() = "ini kelas Pejabat"
+
+fun cetakIsinya(pegawai: Pegawai) {
+	println(pegawai.cetak())
+}
+
+open class Pegawai
+
+class Pejabat: Pegawai()
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+ini kelas Pegawai
+\end{lstlisting}
+
+Terlihat bahwa pada saat dilewatkan instan dari kelas \texttt{Pejabat} pada baris ke-4, seharusnya yang tercetak adalah \texttt{ini kelas Pejabat}, namun yang keluar justru sebaliknya, ini karena yang dipanggil dalam fungsi \texttt{cetakIsinya} adalah extensi fungsi \texttt{cetak} yang dideklarasikan menempel pada kelas \texttt{Pegawai}, sehingga walaupun sebenarnya kelas \texttt{Pejabat} mewarisi fungsi dan \textit{method} dari kelas Pegawai, tapi perlakuannya bahwa fungsi \texttt{cetak} tidak ikut diwariskan, melainkan dipanggil fungsi ekstensi aslinya, yaitu \texttt{Pegawai.cetak()}.
+
+Jika kita ingin mengakses ekstensi fungsi dari luar paket, caranya adalah dengan melakukan \texttt{import}, contohnya dapat kita lihat pada kode berikut dengan 2 (dua) \textit{file} yang berbeda paket.
+
+\textit{File} pertama akan mendeklarasikan kelas \texttt{Pegawai}, yang berada di paket \texttt{entity}, berikut adalah kodenya :
+
+\begin{lstlisting}
+package entity
+
+public class Pegawai() {
+	internal var nama: String = ""
+}
+
+fun Pegawai.cetakInfo() {
+	println("ini cetakInfo dari Pegawai")
+}
+\end{lstlisting}
+
+Setelah file tersebut di\textit{compile}, \textit{file} hasil kompilasi akan berada pada \textit{folder} \texttt{entity} dengan 2 (dua) \textit{file} berekstensi \texttt{.class}. 
+
+Hasil dari 2 (dua) \textit{file} tersebut bila nama \textit{file}-nya adalah \texttt{Pegawai.kt}, akan menjadi \texttt{PegawaiKt.class} dan \texttt{Pegawai.class}. Sebetulnya \textit{file} \texttt{Pegawai.class} berisi kelas \texttt{Pegawai}, sedangkan \textit{file} \texttt{PegawaiKt.class} berisi fungsi yang dideklarasikan di luar kelas \texttt{Pegawai} namun masih dalam satu \textit{file} \texttt{Pegawai.kt}.
+
+Lalu \textit{file} yang ke-2 isinya adalah sebagai berikut :
+
+\begin{lstlisting}
+import entity.Pegawai
+import entity.cetakInfo
+
+fun main(args Array<String>) {
+	var pegawai = Pegawai()
+	pegawai.cetakInfo()
+}
+\end{lstlisting}
+
+Pada saat melakukan \textit{compile} terhadap \textit{file} yang ke-2, anggaplah kita berikan \textit{file} ini nama \texttt{Test.kt}. Untuk memberikan petunjuk bagi Kotlin bahwa pustaka yang akan kita gunakan (kelas \texttt{Pegawai}) berada pada paket \texttt{entity}, maka kita arahkan Kotlin agar mengerti dengan opsi perintah \texttt{classpath}. Berikut perintah lengkap yang dapat dieksekusi :
+
+\begin{lstlisting}
+> kotlinc -cp . Test.kt
+\end{lstlisting}
+
+Pada saat menjalankan aplikasi tersebut, maka hasil keluaran yang tampak di layar adalah seperti berikut ini :
+
+\begin{lstlisting}
+ini cetakInfo dari Pegawai
+\end{lstlisting}
+
+Yang perlu di perhatikan adalah pada \textit{file} \texttt{Test.kt} pada baris ke-2. Untuk dapat menggunakan ekstensi fungsi yang berada di luar paket, maka diperlukan deklarasi \texttt{import} seperti pada baris ke-2. 
+
+Bagaimana deklarasi untuk ekstensi fungsi apabila berada di dalam kelas yang lain, bukan langsung di bawah paket tertentu. Untuk memahami ini, kita akan coba awali dari kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	Pelanggan.eksekusi(Barang())
+}
+
+class Barang {
+	fun cetakInfo() {
+		println("ini dari kelas Barang")
+	}
+}
+
+class Pelanggan {
+	fun cetakInfo() {
+		println("ini dari kelas Pelanggan")
+	}
+	
+	fun Barang.cetakAll() {
+		cetakInfo()
+		this@Pelanggan.cetakInfo()
+	}
+	
+	fun eksekusi(barang: Barang) {
+		barang.cetakAll()
+	}
+}
+\end{lstlisting}
+
+Hasil dari kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+ini dari kelas Barang
+ini dari kelas Pelanggan
+\end{lstlisting}
+
+Alur programnya sebetulnya adalah seperti ini, pada saat pemanggilan fungsi \texttt{eksekusi} milik kelas \texttt{Pelanggan} di baris ke-2, program akan loncat ke baris 21 dan memanggil ekstensi fungsi \texttt{cetakAll} milik kelas \texttt{Barang} yang berada di dalam kelas \texttt{Pelanggan} di baris ke-16.
+
+Pada saat eksekusi baris ke-17, yang dipanggil adalah fungsi \texttt{cetakInfo} milik kelas \texttt{Barang} yang berada di baris ke-6, sehingga tercetaklah lebih dahulu teks \texttt{ini dari kelas Barang}.
+
+Yang terakhir karena fungsi \texttt{cetakInfo} milik kelas \texttt{Pelanggan} dan kelas \texttt{Barang} memiliki bentuk yang sama, maka pada baris ke-18 diperjelas dengan \texttt{this@Pelanggan}, sehingga tercetaklah seperti pada baris ke-2 hasil keluaran program.
+
+Bila fungsi yang dipanggil memiliki nama atau bentuk yang berbeda, tidak perlu ditegaskan dengan perintah \texttt{this@Pelanggan}.
 
 \section{Kelas Data}
+
+Ada saatnya dimana kita membuat sebuah kelas dengan tujuan spesifik yaitu menjadi tempat simpanan data. Di Kotlin, kelas ini ditandai dengan perintah \texttt{data}, berikut contohnya :
+
+\begin{lstlisting}
+data class Pegawai(var nip: String, var nama: String, var gaji: Int)
+\end{lstlisting}
+
+Kelas di atas sebetulnya akan membuat beberapa fungsi secara otomatis seperti berikut :
+
+\begin{itemize}
+	\item Fungsi \texttt{equals} yang fungsinya untuk melakukan pemeriksaan apakah kedua objek yang dibandingkan sama isinya.
+	\item Fungsi \texttt{hashCode} yang fungsinya untuk menghasilkan kode \textit{hash} yang memastikan bahwa tiap objek yang terbentuk bersifat unik.
+	\item Fungsi \texttt{toString} yang akan mencetak nama kelas beserta parameternya.
+	\item Fungsi \texttt{componentN} sesuai jumlah parameter yang hadir di konstruktor.
+	\item Fungsi \texttt{copy} yang akan memberikan duplikasi data untuk instan kelas lain yang terbentuk.
+\end{itemize}
+
+Coba kita buktikan, apakah benar semua fungsi itu terbentuk secara otomatis, seharusnya saat fungsi tersebut terbentuk otomatis, dapat langsung dipanggil pada instan kelas yang terbentuk, berikut kode lengkap pembuktiannya :
+
+\begin{lstlisting}
+data class Pegawai(var nip: String, var nama: String, var gaji: Int) 
+
+fun main(args: Array<String>) {
+	var pegawai = Pegawai("1984001", "tamami", 3000)
+	
+	println("hashCode = ${pegawai.hashCode()}")
+	println("toString = ${pegawai.toString()}")
+	println("comp1 = ${pegawai.component1()}")
+	println("comp2 = ${pegawai.component2()}")
+	println("comp3 = ${pegawai.component3()}")
+	
+	var pegawai2 = pegawai.copy(nip = "1984002", nama = "ami")
+	println("data pegawai2 = ${pegawai2.toString()}")
+	
+	var pegawaiSama = pegawai.copy()
+	println("pegawai sama dengan pegawaiSama ga? ${pegawai.equals(pegawaiSama)}")
+	println("pegawai sama dengan pegawai2 ga? ${pegawai.equals(pegawai2)}")
+}
+\end{lstlisting}
+
+Hasil dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+hashCode = 337043080
+toString = Pegawai(nip=1984001, nama=tamami, gaji=3000)
+comp1 = 1984001
+comp2 = tamami
+comp3 = 3000
+data pegawai2 = Pegawai(nip=1984002, nama=ami, gaji=3000)
+pegawai sama dengan pegawai pegawaiSama ga? true
+pegawai sama dengan pegawai pegawai2 ga? false
+\end{lstlisting}
+
+Ternyata terbukti bahwa semua fungsi di atas terbentuk otomatis pada kelas data. Yang menarik adalah pada baris ke-7 dan ke-8 dari hasil keluaran, terlihat bahwa apabila data dari tiap parameter sama persis, maka 2 (dua) kelas yang dibandingkan akan dianggap sama karena isinya sama.
+
+Adat yang biasanya terjadi untuk menjaga konsistensi kode program terkait kelas data ini adalah sebagai berikut : 
+
+\begin{itemize}
+	\item Konstruktor utama harus menyediakan paling sedikit 1 (satu) parameter
+	\item Parameter yang hadir di konstruktor harus diberi tanda \texttt{var} atau \texttt{val}
+	\item Kelas data tidak boleh memiliki kata kunci \texttt{abstract}, \texttt{open}, \texttt{sealed}, atau \texttt{inner}.
+\end{itemize}
 
 \section{Kelas Tertutup}
 

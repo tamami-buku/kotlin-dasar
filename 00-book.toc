@@ -49,22 +49,22 @@
 \contentsline {section}{\numberline {3.2}Properti}{37}{section.3.2}
 \contentsline {section}{\numberline {3.3}\textit {Interface}}{39}{section.3.3}
 \contentsline {section}{\numberline {3.4}\textit {Visibility Modifiers}}{40}{section.3.4}
-\contentsline {section}{\numberline {3.5}Ekstensi}{42}{section.3.5}
-\contentsline {section}{\numberline {3.6}Kelas Data}{42}{section.3.6}
-\contentsline {section}{\numberline {3.7}Kelas Tertutup}{42}{section.3.7}
-\contentsline {section}{\numberline {3.8}Generik}{42}{section.3.8}
-\contentsline {section}{\numberline {3.9}Kelas Bersarang}{42}{section.3.9}
-\contentsline {section}{\numberline {3.10}Kelas \textit {Enum}}{42}{section.3.10}
-\contentsline {section}{\numberline {3.11}Ekspresi Objek dan Deklarasi}{42}{section.3.11}
-\contentsline {section}{\numberline {3.12}Delegasi}{42}{section.3.12}
-\contentsline {section}{\numberline {3.13}Mendelegasikan Properti}{42}{section.3.13}
-\contentsline {chapter}{\numberline {4}Fungsi dan Lamda}{43}{chapter.4}
-\contentsline {section}{\numberline {4.1}Fungsi}{43}{section.4.1}
-\contentsline {section}{\numberline {4.2}Fungsi Lanjutan dan Lamda}{43}{section.4.2}
-\contentsline {section}{\numberline {4.3}Fungsi Sebaris}{43}{section.4.3}
-\contentsline {section}{\numberline {4.4}\textit {Coroutines}}{43}{section.4.4}
-\contentsline {chapter}{\numberline {5}Java Interoperabilitas}{45}{chapter.5}
-\contentsline {chapter}{\numberline {6}Perkakas}{47}{chapter.6}
-\contentsline {section}{\numberline {6.1}Menggunakan Gradle}{47}{section.6.1}
-\contentsline {section}{\numberline {6.2}Menggunakan Maven}{47}{section.6.2}
-\contentsline {chapter}{\numberline {7}Contoh Kasus \\ Aplikasi Chat}{49}{chapter.7}
+\contentsline {section}{\numberline {3.5}Ekstensi Fungsi}{42}{section.3.5}
+\contentsline {section}{\numberline {3.6}Kelas Data}{44}{section.3.6}
+\contentsline {section}{\numberline {3.7}Kelas Tertutup}{46}{section.3.7}
+\contentsline {section}{\numberline {3.8}Generik}{46}{section.3.8}
+\contentsline {section}{\numberline {3.9}Kelas Bersarang}{46}{section.3.9}
+\contentsline {section}{\numberline {3.10}Kelas \textit {Enum}}{46}{section.3.10}
+\contentsline {section}{\numberline {3.11}Ekspresi Objek dan Deklarasi}{46}{section.3.11}
+\contentsline {section}{\numberline {3.12}Delegasi}{46}{section.3.12}
+\contentsline {section}{\numberline {3.13}Mendelegasikan Properti}{46}{section.3.13}
+\contentsline {chapter}{\numberline {4}Fungsi dan Lamda}{47}{chapter.4}
+\contentsline {section}{\numberline {4.1}Fungsi}{47}{section.4.1}
+\contentsline {section}{\numberline {4.2}Fungsi Lanjutan dan Lamda}{47}{section.4.2}
+\contentsline {section}{\numberline {4.3}Fungsi Sebaris}{47}{section.4.3}
+\contentsline {section}{\numberline {4.4}\textit {Coroutines}}{47}{section.4.4}
+\contentsline {chapter}{\numberline {5}Java Interoperabilitas}{49}{chapter.5}
+\contentsline {chapter}{\numberline {6}Perkakas}{51}{chapter.6}
+\contentsline {section}{\numberline {6.1}Menggunakan Gradle}{51}{section.6.1}
+\contentsline {section}{\numberline {6.2}Menggunakan Maven}{51}{section.6.2}
+\contentsline {chapter}{\numberline {7}Contoh Kasus \\ Aplikasi Chat}{53}{chapter.7}

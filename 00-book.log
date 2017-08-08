@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  3 AUG 2017 22:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  8 AUG 2017 22:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -706,8 +706,18 @@ ringatan ke-sala-han bahwa deklarasi \OT1/pcr/m/n/10 nama \OT1/ptm/m/n/10 pada
 ke-las \OT1/pcr/m/n/10 Pegawai
  []
 
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Overfull \hbox (6.84134pt too wide) in paragraph at lines 657--658
+[]\OT1/ptm/m/n/10 Kemudian di baris ke-10 sam-pai den-gan ke-14, ada deklarasi 
+ke-las \OT1/pcr/m/n/10 Pejabat \OT1/ptm/m/n/10 yang mewarisi
+ []
+
+
+Overfull \hbox (9.94064pt too wide) in paragraph at lines 657--658
+\OT1/ptm/m/n/10 mendeklarasikan atribut ini karena atribut \OT1/pcr/m/n/10 nama
+ \OT1/ptm/m/n/10 ini adalah hasil dari pe-warisan ke-las \OT1/pcr/m/n/10 Pegawa
+i\OT1/ptm/m/n/10 . 
+ []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -715,41 +725,76 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [41]
+Overfull \hbox (41.03111pt too wide) in paragraph at lines 714--715
+\OT1/pcr/m/n/10 cetak \OT1/ptm/m/n/10 tidak ikut di-wariskan, melainkan di-pang
+-gil fungsi ek-stensi aslinya, yaitu \OT1/pcr/m/n/10 Pegawai.cetak()\OT1/ptm/m/
+n/10 . 
+ []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
 [42]
+Overfull \hbox (2.6609pt too wide) in paragraph at lines 716--717
+[]\OT1/ptm/m/n/10 Jika kita in-gin men-gak-ses ek-stensi fungsi dari luar paket
+, caranya adalah den-gan melakukan
+ []
+
+
+Overfull \hbox (4.97162pt too wide) in paragraph at lines 718--719
+[]\OT1/ptm/m/it/10 File \OT1/ptm/m/n/10 per-tama akan mendeklarasikan ke-las \O
+T1/pcr/m/n/10 Pegawai\OT1/ptm/m/n/10 , yang be-rada di paket \OT1/pcr/m/n/10 en
+tity\OT1/ptm/m/n/10 , berikut
+ []
+
+[43]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[44]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[45])
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[46]
 \openout2 = `04-fungsi-lamda.aux'.
 
  (./04-fungsi-lamda.tex
 Chapter 4.
-) [43
+) [47
 
 
 
 ]
 \openout2 = `05-java-interoperabilitas.aux'.
 
- (./05-java-interoperabilitas.tex [44
+ (./05-java-interoperabilitas.tex [48
 
 
 
 ]
 Chapter 5.
-) [45]
+) [49]
 \openout2 = `06-perkakas.aux'.
 
- (./06-perkakas.tex [46
+ (./06-perkakas.tex [50
 
 
 
 ]
 Chapter 6.
-) [47]
+) [51]
 \openout2 = `07-kasus-1.aux'.
 
- (./07-kasus-1.tex [48
+ (./07-kasus-1.tex [52
 
 
 
@@ -759,7 +804,7 @@ Chapter 7.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-) [49]
+) [53]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
  (./00-book.aux (./01-mulai.aux) (./02-dasar.aux)
@@ -768,16 +813,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 110.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 110.
 Package rerunfilecheck Info: File `00-book.out' has not changed.
-(rerunfilecheck)             Checksum: 9C139E786A8C979BFAA33CD32E6C0B62;4397.
+(rerunfilecheck)             Checksum: E3731344458B92EDB4263CAFA50AE61B;4404.
  ) 
 Here is how much of TeX's memory you used:
- 8586 strings out of 494902
- 124998 string characters out of 6179891
+ 8705 strings out of 494902
+ 126914 string characters out of 6179891
  296948 words of memory out of 5000000
  10614 multiletter control sequences out of 15000+600000
  58343 words of font info for 111 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 29i,11n,43p,639b,1674s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,11n,43p,652b,1674s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
@@ -789,10 +834,10 @@ re/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on 00-book.pdf (65 pages, 261177 bytes).
+Output written on 00-book.pdf (69 pages, 277045 bytes).
 PDF statistics:
- 1889 PDF objects out of 2073 (max. 8388607)
- 1793 compressed objects within 18 object streams
- 1110 named destinations out of 1200 (max. 500000)
+ 2047 PDF objects out of 2073 (max. 8388607)
+ 1945 compressed objects within 20 object streams
+ 1229 named destinations out of 1440 (max. 500000)
  553 words of extra memory for PDF output out of 10000 (max. 10000000)
 
