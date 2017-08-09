@@ -869,9 +869,166 @@ Adat yang biasanya terjadi untuk menjaga konsistensi kode program terkait kelas 
 
 \section{Kelas Tertutup}
 
+Penggunaan kelas tertutup ini sangat spesifik, yaitu membantu kita melakukan seleksi \texttt{when} dengan lebih sempurna. Artinya, pada saat aplikasi melakukan seleksi, jangan sampai ada 1 (satu) opsi atau lebih yang tertinggal tanpa sebuah pemeriksaan.
+
+Akan lebih jelas apabila kita melihat contoh kodenya seperti berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val angka1 = Positif(4)
+	val angka2 = Negatif(-20)
+	val angka3 = Nihil()
+	
+	print("angka1 : ")
+	println(cek(angka1))
+	
+	print("angka2 : ")
+	println(cek(angka2))
+	
+	print("angka3 : ")
+	println(cek(angka3))
+}
+
+fun cek(data: Cek): String = when(data) {
+	is Positif -> "${data.angka} : bilangan positif"
+	is Negatif -> "${data.angka} : bilangan negatif"
+	is Nihil -> "0"
+}
+
+sealed class Cek
+
+class Positif(val angka: Int): Cek()
+
+class Negatif(val angka: Int): Cek()
+
+class Nihil: Cek()
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+angka1 : 4 : bilangan positif
+angka2 : -20 : bilangan negatif
+angka3 : 0
+\end{lstlisting}
+
+Terlihat bahwa deklarasi \textit{sealed class} \texttt{Cek} ada di baris ke-22, diikuti dengan deklarasi sub-kelas dari \texttt{Cek}. Ada 3 (tiga) kelas yang mewarisi kelas \texttt{Cek} ini.
+
+Fungsi dari \texttt{sealed class} secara spesifik akan bermanfaat bila dihubungkan dengan deklarasi \texttt{when} pada baris ke-16.
+
+Kita akan coba melihat alur dari kode program yang telah kita buat, pertama, kita siapkan beberapa variabel / properti / atribut seperti terlihat di baris ke-2 sampai dengan baris ke-4.
+
+Kemudian melakukan pencetakan ke layar monitor dengan memanggil fungsi \texttt{cek} untuk masing-masing variabel yang sudah disiapkan, seperti terlihat di baris ke-7, baris ke-10, dan baris ke-13.
+
+Kekuatan \texttt{sealed class} sebetulnya ada di sini, yaitu dibaris ke-16, dengan adanya perintah \texttt{when} dengan variabel \texttt{data} yang menjadi objek seleksi, maka akan diperiksa tipe data dari variabel \texttt{data} ini terhadap seluruh sub-kelas dari \texttt{sealed class Cek}, apakah \texttt{Positif}, \texttt{Negatif}, atau \texttt{Nihil}.
+
+Apabila salah satu baris dihilangkan di antara baris ke-17 sampai dengan baris ke-19, maka saat \textit{compile} akan muncul peringatan bahwa masih ada perintah seleksi yang tertinggal, harap deklarasikan atau ganti dengan deklarasi \texttt{else}.
+
+Misal, pada baris ke-19, kita hapus, maka akan ada peringatan bahwa perintah \texttt{is Nihil} tidak ada dan harus dideklarasikan.
+
 \section{Generik}
 
+Seperti bahasa pemrograman Java, Kotlin pun memiliki fasilitas generik yang memungkinkan deklarasi atas tipe data dibuat umum. Biasanya akan kita temukan di pustaka \textit{collection}. Coba perhatikan contoh kode berikut untuk implementasi generik :
+
+\begin{lstlisting}
+import java.util.ArrayList
+
+fun main(args: Array<String>) {
+	var data = Data(2)
+	data.addData(5)
+	
+	data.cetak()
+}
+
+class Data<T>(t: T) {
+	var larik = ArrayList<T>()
+	
+	init {
+		larik.add(t)
+	}
+	
+	fun addData(t: T) {
+		larik.add(t)
+	}
+	
+	fun cetak() {
+		for(data in larik) {
+			println(data)
+		}
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+2
+5
+\end{lstlisting}
+
+Deklarasi generik sebetulnya ada pada baris ke-10, yaitu dengan tanda seperti ini \texttt{<T>}, yang artinya, kelas \texttt{Data} yang kita buat dapat menerima tipe data apapun untuk disimpan dalam properti \texttt{larik} yang sudah disediakan.
+
+Pada contoh kita di atas, kita menggunakan kelas \texttt{Data} dengan tipe data \texttt{Int} sebagai pengganti \texttt{T}. Sehingga \texttt{ArrayList} yang dideklarasikan pada baris ke-11 akan digunakan hanya untuk tipe data \texttt{Int}.
+
 \section{Kelas Bersarang}
+
+Artinya di dalam sebuah kelas, bisa diperbolehkan kita membentuk kelas lain, dimana kelas yang berada di dalam ini dapat mengakses variabel yang berada pada kelas di atasnya. Contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val data = Pegawai().Jabatan()
+	
+	data.cetak()
+}
+
+class Pegawai {
+	var nama = "tamami"
+	
+	inner class Jabatan {
+		fun cetak() {
+			println("$nama sebagai direktur")
+		}
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas akan terlihat seperti berikut ini :
+
+\begin{lstlisting}
+tamami sebagai Direktur
+\end{lstlisting}
+
+Kita lihat bahwa kelas \texttt{Jabatan} bersarang atau berada di dalam kelas \texttt{Pegawai} pada baris ke-10 dengan kode \texttt{inner} di depannya yang memungkinkan di dalam kelas \texttt{Jabatan} memanggil properti milik kelas induknya. Apabila kata kunci \texttt{inner} kita hilangkan, maka pemanggilan variabel \texttt{\$nama} pada baris ke-12 tidak akan mengalami kegagalan kompilasi.
+
+Ada saatnya sebuah kelas dibentuk tanpa memerlukan nama instan seperti di Java, istilahnya biasa dikenal dengan \textit{anonymous class}, di Kotlin implementasinya seperti kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var data = Pegawai(object: Jabatan() {
+		init {
+			jabatan = "direktur"
+		}
+	})
+	
+	println(data.jabatan.jabatan)
+}
+
+class Pegawai(jabatan: Jabatan) {
+	var jabatan = jabatan
+}
+
+open class Jabatan {
+	var jabatan = ""
+}
+\end{lstlisting}
+
+Hasil dari kode di atas akan terlihat seperti berikut ini :
+
+\begin{lstlisting}
+direktur
+\end{lstlisting}
+
+Deklarasi dari \textit{anonymous class} pada kode di atas ada pada baris ke-2 dengan kata kunci \texttt{object}. Kelas Jabatan sendiri harus di deklarasikan dengan kata kunci \texttt{open} seperti pada baris ke-15 agar kelas anonim yang terbentuk di baris ke-2 dapat diubah sesuai kebutuhan. Hasilnya adalah mengisikan variabel \texttt{jabatan} dengan teks \texttt{direktur}.
 
 \section{Kelas \textit{Enum}}
 
