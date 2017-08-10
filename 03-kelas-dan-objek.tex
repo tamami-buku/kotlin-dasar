@@ -1032,7 +1032,169 @@ Deklarasi dari \textit{anonymous class} pada kode di atas ada pada baris ke-2 de
 
 \section{Kelas \textit{Enum}}
 
-\section{Ekspresi Objek dan Deklarasi}
+Kelas \textit{enum} sendiri sebetulnya ditujukan untuk membentuk definisi data baru yang bisa disamakan dengan konstanta. Kita lihat contoh kode berikut untuk lebih jelasnya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var jenisKelamin = Kelamin.PRIA
+	
+	println(jenisKelamin)
+}
+
+enum class Kelamin {
+	PRIA, WANITA
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+PRIA
+\end{lstlisting}
+
+Hasil keluaran yang ditampilkan bukan berupa \texttt{String}, tetapi berupa nama \textit{enum}nya, masing-masing konstanta \textit{enum} dipisahkan menggunakan tanda koma.
+
+Sebetulnya tiap konstanta dalam kelas \textit{enum} adalah sebuah objek atau lebih tepatnya adalah instan dari kelas \textit{enum}nya, dan tiap objek ini dapat dilakukan inisialisasi. Berikut contoh kodenya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var angka = Angka.SEPULUH
+	
+	println(angka)
+	when(Angka.SATU.nilai >= Angka.SEPULUH.nilai) {
+		true -> println("Satu lebih besar dari Sepuluh")
+		false -> println("Sepuluh lebih besar dari Satu")
+	}
+}
+
+enum class Angka(val nilai: Int) {
+	SATU(1),
+	SEPULUH(10),
+	SERATUS(100)
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+SEPULUH
+Sepuluh lebih besar dari Satu
+\end{lstlisting}
+
+Pada baris ke-2, kita melihat bahwa variabel \texttt{angka} diisikan dengan data \textit{enum} berupa \texttt{Angka.SEPULUH}, kemudian mencetaknya pada baris ke-4.
+
+Pada baris ke-5, kita mencoba melakukan perbandingan, apakah data \textit{enum} \texttt{SATU} lebih besar atau sama dengan data \textit{enum} \texttt{SEPULUH}, namun ternyata hasilnya adalah \texttt{false} sehingga yang tercetak ke layar adalah perintah \texttt{println} pada baris ke-7.
+
+Perhatikan pada baris ke-5 bahwa yang dilakukan perbandingan adalah parameter \texttt{nilai} yang ada pada tiap-tiap \textit{enum} konstantanya.
+
+Satu lagi dari \textit{enum} di Kotlin adalah bahwa tiap \textit{enum} konstantanya memiliki properti yang memberikan kita informasi nama (\texttt{name}) dan posisi (\texttt{ordinal}) urutan deklarasinya dalam kelas \textit{enum}. Perhatikan kode berikut untuk memperjelasnya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val data = Angka.SEPULUH
+	
+	println("namanya ${data.name}")
+	println("urutan ${data.ordinal}")
+}
+
+enum class Angka(val nilai: Int) {
+	SATU(1),
+	SEPULUH(10),
+	SERATUS(100)
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+namanya SEPULUH
+urutan 1
+\end{lstlisting}
+
+Kita lihat bahwa nama dari \textit{enum} konstanta \texttt{SEPULUH} adalah \texttt{SEPULUH} juga, sedangkan urutan deklarasinya adalah \texttt{1} (satu), dimana data urutan awal yang digunakan dalam \textit{enum} ini adalah 0 (nol).
+
+\section{Objek Ekspresi dan Deklarasi}
+
+Ada kalanya saat kita ingin menggunakan dan mengubah sebuah kelas, namun tidak ingin dengan cara membuat sub-kelas baru, melainkan melakukannya dengan cara membuat kelas anonim, saat inilah objek ekspresi dan objek deklarasi dapat digunakan. Coba perhatikan kode berikut ini :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var data = Pegawai(object : Bio() {
+		override fun cetakNama() {
+			println("nama : $nama")
+			println("hp : $hp")
+		}
+	})
+	
+	data.bio.cetakNama()
+}
+
+class Pegawai(bio: Bio) {
+	var bio = bio
+}
+
+abstract class Bio {
+	val nama = "tamami"
+	val hp = "08123456"
+	
+	abstract fun cetakNama()
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+nama : tamami
+hp : 08123456
+\end{lstlisting}
+
+Deklarasi objek ekspresi ada pada baris ke-2, yaitu membuat instan dari kelas \texttt{Bio} dengan langsung merubah implementasinya sekaligus tanpa membuat sub-kelas terlebih dahulu.
+
+Untuk objek deklarasi, penjelasannya kita awali dari kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	println(Rumus.tambah(2,5))
+}
+
+object Rumus {
+	fun tambah(a: Int, b: Int): Int {
+		return a + b
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+7
+\end{lstlisting}
+
+Object deklarasi ada pada baris ke-5 sampai dengan baris ke-9, cara memanggil objek deklarasi ini mirip dengan pemanggilan tipe \texttt{static} di Java, langsung memanggil nama objek dan nama fungsi yang dibutuhkan tanpa harus membuat instan dari kelasnya.
+
+Untuk penggunaan objek deklarasi di dalam kelas, harus ditambahkan kata kunci \texttt{companion}. Berikut adalah contoh kodenya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	println(Pegawai.ambilSandi(2,3))
+}
+
+class Pegawai {
+	companion object Sandi {
+		fun ambilSandi(a: Int, b: Int): Int {
+			return a * b - a
+		}
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode tersebut adalah sebagai berikut :
+
+\begin{lstlisting}
+4
+\end{lstlisting}
+
+Perhatikan cara pemanggilan fungsi \texttt{ambilSandi} pada baris ke-2 yang juga tanpa harus membuat instan dari kelas \texttt{Pegawai} dan tanpa menyertakan pemanggilan nama objeknya, \texttt{Sandi}.
 
 \section{Delegasi}
 
