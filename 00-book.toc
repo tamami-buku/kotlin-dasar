@@ -56,15 +56,15 @@
 \contentsline {section}{\numberline {3.9}Kelas Bersarang}{48}{section.3.9}
 \contentsline {section}{\numberline {3.10}Kelas \textit {Enum}}{49}{section.3.10}
 \contentsline {section}{\numberline {3.11}Objek Ekspresi dan Deklarasi}{50}{section.3.11}
-\contentsline {section}{\numberline {3.12}Delegasi}{51}{section.3.12}
-\contentsline {section}{\numberline {3.13}Mendelegasikan Properti}{51}{section.3.13}
-\contentsline {chapter}{\numberline {4}Fungsi dan Lamda}{53}{chapter.4}
-\contentsline {section}{\numberline {4.1}Fungsi}{53}{section.4.1}
-\contentsline {section}{\numberline {4.2}Fungsi Lanjutan dan Lamda}{53}{section.4.2}
-\contentsline {section}{\numberline {4.3}Fungsi Sebaris}{53}{section.4.3}
-\contentsline {section}{\numberline {4.4}\textit {Coroutines}}{53}{section.4.4}
-\contentsline {chapter}{\numberline {5}Java Interoperabilitas}{55}{chapter.5}
-\contentsline {chapter}{\numberline {6}Perkakas}{57}{chapter.6}
-\contentsline {section}{\numberline {6.1}Menggunakan Gradle}{57}{section.6.1}
-\contentsline {section}{\numberline {6.2}Menggunakan Maven}{57}{section.6.2}
-\contentsline {chapter}{\numberline {7}Contoh Kasus \\ Aplikasi Chat}{59}{chapter.7}
+\contentsline {section}{\numberline {3.12}Delegasi}{52}{section.3.12}
+\contentsline {section}{\numberline {3.13}Mendelegasikan Properti}{53}{section.3.13}
+\contentsline {chapter}{\numberline {4}Fungsi dan Lamda}{55}{chapter.4}
+\contentsline {section}{\numberline {4.1}Fungsi}{55}{section.4.1}
+\contentsline {section}{\numberline {4.2}Fungsi Lanjutan dan Lamda}{55}{section.4.2}
+\contentsline {section}{\numberline {4.3}Fungsi Sebaris}{55}{section.4.3}
+\contentsline {section}{\numberline {4.4}\textit {Coroutines}}{55}{section.4.4}
+\contentsline {chapter}{\numberline {5}Java Interoperabilitas}{57}{chapter.5}
+\contentsline {chapter}{\numberline {6}Perkakas}{59}{chapter.6}
+\contentsline {section}{\numberline {6.1}Menggunakan Gradle}{59}{section.6.1}
+\contentsline {section}{\numberline {6.2}Menggunakan Maven}{59}{section.6.2}
+\contentsline {chapter}{\numberline {7}Contoh Kasus \\ Aplikasi Chat}{61}{chapter.7}

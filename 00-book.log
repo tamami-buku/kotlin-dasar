@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  10 AUG 2017 22:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  12 AUG 2017 19:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -780,42 +780,72 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[49] [50])
+[49] [50]
+Overfull \hbox (18.64156pt too wide) in paragraph at lines 1175--1176
+[]\OT1/ptm/m/n/10 Untuk peng-gu-naan ob-jek deklarasi di dalam ke-las, harus di
+-ta-m-bahkan kata kunci \OT1/pcr/m/n/10 companion\OT1/ptm/m/n/10 .
+ []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
 [51]
+Overfull \hbox (8.26134pt too wide) in paragraph at lines 1228--1229
+[]\OT1/ptm/m/n/10 Kita li-hat bahwa ke-las \OT1/pcr/m/n/10 Honda \OT1/ptm/m/n/1
+0 mewarisi \OT1/ptm/m/it/10 in-ter-face \OT1/pcr/m/n/10 Mobil\OT1/ptm/m/n/10 , 
+ke-mu-dian melakukan \OT1/pcr/m/n/10 override
+ []
+
+[52]
+Overfull \hbox (4.83038pt too wide) in paragraph at lines 1264--1265
+\OT1/ptm/m/it/10 ter-face \OT1/pcr/m/n/10 Mobil\OT1/ptm/m/n/10 , dan masing-mas
+ing ke-las memi-liki im-ple-men-tasi fungsi \OT1/pcr/m/n/10 cetakInfo \OT1/ptm/
+m/n/10 masing-
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[53])
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[54]
 \openout2 = `04-fungsi-lamda.aux'.
 
- (./04-fungsi-lamda.tex [52
+ (./04-fungsi-lamda.tex
+Chapter 4.
+) [55
 
 
 
 ]
-Chapter 4.
-) [53]
 \openout2 = `05-java-interoperabilitas.aux'.
 
- (./05-java-interoperabilitas.tex [54
+ (./05-java-interoperabilitas.tex [56
 
 
 
 ]
 Chapter 5.
-) [55]
+) [57]
 \openout2 = `06-perkakas.aux'.
 
- (./06-perkakas.tex [56
+ (./06-perkakas.tex [58
 
 
 
 ]
 Chapter 6.
-) [57]
+) [59]
 \openout2 = `07-kasus-1.aux'.
 
- (./07-kasus-1.tex [58
+ (./07-kasus-1.tex [60
 
 
 
@@ -825,7 +855,7 @@ Chapter 7.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-) [59]
+) [61]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
  (./00-book.aux (./01-mulai.aux) (./02-dasar.aux)
@@ -837,8 +867,8 @@ Package rerunfilecheck Info: File `00-book.out' has not changed.
 (rerunfilecheck)             Checksum: 0104FF4CAA322D1606044B9DDC6CC899;4404.
  ) 
 Here is how much of TeX's memory you used:
- 8896 strings out of 494902
- 130005 string characters out of 6179891
+ 8982 strings out of 494902
+ 131407 string characters out of 6179891
  296948 words of memory out of 5000000
  10614 multiletter control sequences out of 15000+600000
  58343 words of font info for 111 fonts, out of 8000000 for 9000
@@ -855,10 +885,10 @@ re/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on 00-book.pdf (75 pages, 297374 bytes).
+Output written on 00-book.pdf (77 pages, 306828 bytes).
 PDF statistics:
- 2300 PDF objects out of 2487 (max. 8388607)
- 2190 compressed objects within 22 object streams
- 1420 named destinations out of 1440 (max. 500000)
+ 2409 PDF objects out of 2487 (max. 8388607)
+ 2296 compressed objects within 23 object streams
+ 1506 named destinations out of 1728 (max. 500000)
  553 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1198,4 +1198,124 @@ Perhatikan cara pemanggilan fungsi \texttt{ambilSandi} pada baris ke-2 yang juga
 
 \section{Delegasi}
 
+Pola delegasi telah terbukti dapat menjadi alternatif implementasi pewarisan \textit{interface}, dan Kotlin menyediakannya secara \textit{native}. Mari kita perhatikan contoh kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val data = Honda()
+	Proses(data).cetakInfo()
+}
+
+interface Mobil {
+	fun cetakInfo()
+}
+
+class Honda(): Mobil {
+	override fun cetakInfo() {
+		println("Ini implementasi mobil Honda")
+	}
+}
+
+class Proses(mobil: Mobil): Mobil by mobil
+\end{lstlisting}
+
+Hasil keluaran yang muncul adalah sebagai berikut :
+
+\begin{lstlisting}
+Ini implementasi mobil Honda
+\end{lstlisting}
+
+Kita lihat bahwa kelas \texttt{Honda} mewarisi \textit{interface} \texttt{Mobil}, kemudian melakukan \texttt{override} pada fungsi \texttt{cetakInfo}.
+
+Kemudian ada kelas \texttt{Proses} yang pada konstruktornya memiliki 1 (satu) parameter, yaitu \texttt{Mobil}, deklarasi kelas \texttt{Proses} ini pun mewarisi \textit{interface} \texttt{Mobil}, tetapi dengan kata kunci \texttt{by}. 
+
+Maksud dari penggunaan kata kunci \texttt{by} ini sebetulnya yaitu bahwa \textit{method} implementasi yang berada di kelas \texttt{Proses} ini, yang diwariskan dari \textit{interface} \texttt{Mobil}, akan bergantung pada nilai yang dilewatkan melalui parameter \texttt{mobil} pada konstruktor.
+
+Contoh lebih jelas dapat dilihat pada kode program berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var data = Honda()
+	Proses(data).cetakInfo()
+	
+	var dataLain = Toyota()
+	Proses(dataLain).cetakInfo()
+}
+
+interface Mobil {
+	fun cetakInfo()
+}
+
+class Honda(): Mobil {
+	override fun cetakInfo() {
+		println("Ini implementasi mobil Honda")
+	}
+}
+
+class Toyota(): Mobil {
+	override fun cetakInfo() {
+		println("Ini implementasi mobil Toyota")
+	}
+}
+
+class Proses(mobil: Mobil): Mobil by mobil
+\end{lstlisting}
+
+Mirip seperti percobaan sebelumnya, kali ini kita memiliki 2 (dua) kelas yang mewarisi \textit{interface} \texttt{Mobil}, dan masing-masing kelas memiliki implementasi fungsi \texttt{cetakInfo} masing-masing.
+
+Kita lihat pada saat pemanggilan kelas \texttt{Proses} dengan parameter yang berbeda pada baris ke-3 dan baris ke-6, akan menghasilkan fungsi \texttt{cetakInfo} yang berbeda pula.
+
 \section{Mendelegasikan Properti}
+
+Tadi adalah delegasi yang terjadi pada tingkat kelas, untuk tingkat properti pun telah disiapkan oleh Kotlin. Contoh dasarnya dapat dilihat pada kode berikut :
+
+\begin{lstlisting}
+import kotlin.reflect.KProperty
+
+fun main(args: Array<String>) {
+	var data: String by GSData()
+	
+	data = "tamami"
+	println("cetak $data")
+}
+
+class GSData {
+	var data: Any? = ""
+
+	operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
+		return "nama properti : ${property.name} isinya $data"
+	}
+	
+	operator fun setValue(thisRef: Any?, property: KProperty<*>, value: String) {
+		println("nilai $value sudah disimpan di ${property.name}")
+		data = value
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran untuk kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+nilai tamami sudah di simpan di data
+cetak nama properti : data isinya tamami
+\end{lstlisting}
+
+Padahal operasi yang terjadi adalah sederhana, namun karena implementasi \texttt{String} untuk variabel \texttt{data} telah didelegasikan ke kelas \texttt{GSData}, maka ada perubahan yang terjadi. 
+
+Perubahan yang pertama adalah pada saat properti \texttt{data} diisikan sebuah nilai, yaitu \texttt{tamami}, seperti pada baris ke-6, maka fungsi yang bekerja untuk menangani ini adalah fungsi \texttt{setValue} milik kelas \texttt{GSData}.
+
+Ada 2 (dua) aktifitas yang dilakukan di fungsi \texttt{setValue}, yang pertama adalah mencetak informasi ke layar bahwa nilai dari parameter \texttt{\$value} sudah disimpan. Kemudian menyimpan nilai dari \texttt{value} ke variabel atau properti \texttt{data} milik kelas \texttt{GSData}.
+
+Saat inilah dicetak ke monitor informasi teks yang berbunyi \texttt{nilai tamami sudah di simpan di data}. Yang pada kondisi ini, data teks \texttt{tamami} telah diisikan ke properti \texttt{data}.
+
+Perubahan berikutnya adalah pada saat melakukan akses data terhadap properti \texttt{data} seperti pada baris ke-7.
+
+Pada baris ke-7, seharusnya hanya mencetak teks \texttt{cetak \$data} dimana \texttt{\$data} akan digantikan oleh nilainya, namun pada kenyataannya tidak demikian, yang terjadi adalah mencetak kalimat \texttt{cetak nama properti : data isinya tamami}, kata \texttt{cetak} disana sebetulnya memang isi dari baris ke-7, sedangkan sisanya adalah nilai yang dikembalikan dari fungsi \texttt{getValue} milik kelas \texttt{GSData}.
+
+Ada beberapa delegasi properti yang umum yang mungkin dapat digunakan nantinya, yaitu :
+
+\begin{itemize}
+	\item \texttt{lazy}
+	\item \texttt{observable}
+	\item \texttt{map}
+\end{itemize}
