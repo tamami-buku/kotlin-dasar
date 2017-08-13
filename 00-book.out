@@ -62,11 +62,12 @@
 \BOOKMARK [2][-]{subsection.3.13.3}{map}{section.3.13}% 62
 \BOOKMARK [0][-]{chapter.4}{Fungsi dan Lamda}{}% 63
 \BOOKMARK [1][-]{section.4.1}{Fungsi}{chapter.4}% 64
-\BOOKMARK [1][-]{section.4.2}{Fungsi Lanjutan dan Lamda}{chapter.4}% 65
-\BOOKMARK [1][-]{section.4.3}{Fungsi Sebaris}{chapter.4}% 66
-\BOOKMARK [1][-]{section.4.4}{Coroutines}{chapter.4}% 67
-\BOOKMARK [0][-]{chapter.5}{Java Interoperabilitas}{}% 68
-\BOOKMARK [0][-]{chapter.6}{Perkakas}{}% 69
-\BOOKMARK [1][-]{section.6.1}{Menggunakan Gradle}{chapter.6}% 70
-\BOOKMARK [1][-]{section.6.2}{Menggunakan Maven}{chapter.6}% 71
-\BOOKMARK [0][-]{chapter.7}{Contoh Kasus \040Aplikasi Chat}{}% 72
+\BOOKMARK [2][-]{subsection.4.1.1}{Cara Penggunaan}{section.4.1}% 65
+\BOOKMARK [1][-]{section.4.2}{Fungsi Lanjutan dan Lamda}{chapter.4}% 66
+\BOOKMARK [1][-]{section.4.3}{Fungsi Sebaris}{chapter.4}% 67
+\BOOKMARK [1][-]{section.4.4}{Coroutines}{chapter.4}% 68
+\BOOKMARK [0][-]{chapter.5}{Java Interoperabilitas}{}% 69
+\BOOKMARK [0][-]{chapter.6}{Perkakas}{}% 70
+\BOOKMARK [1][-]{section.6.1}{Menggunakan Gradle}{chapter.6}% 71
+\BOOKMARK [1][-]{section.6.2}{Menggunakan Maven}{chapter.6}% 72
+\BOOKMARK [0][-]{chapter.7}{Contoh Kasus \040Aplikasi Chat}{}% 73

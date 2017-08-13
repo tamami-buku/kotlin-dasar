@@ -2,6 +2,204 @@
 
 \section{Fungsi}
 
+Fungsi sebetulnya adalah sekumpulan kode program yang spesifik untuk menyelesaikan satu permasalahan. Fungsi dalam Kotlin ditandai dengan kata kunci \texttt{fun}.
+
+Contoh kode berikut akan memberikan gambaran deklarasi dan penggunaan fungsi pada Kotlin :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	cetak("tamami")
+}
+
+fun cetak(nama: String) {
+	println("nama : $nama")
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+nama : tamami
+\end{lstlisting}
+
+Bila kita perhatikan, sebetulnya deklarasi fungsi \texttt{main} pada baris ke-1 sampai dengan baris ke-3 adalah deklarasi fungsi yang selalu kita sertakan, karena fungsi ini wajib ada apabila aplikasi ingin kita jalankan.
+
+Fungsi \texttt{main} ini hanya menerima sebuah argumen bertipe \texttt{Array} yang sebetulnya akan terisi apabila kita menyertakan parameter pada saat menjalankan aplikasi. Kita akan coba ini nanti.
+
+Yang kedua adalah fungsi dengan nama \texttt{cetak} yang deklarasinya ada pada baris ke-5 sampai dengan baris ke-7. Fungsi ini sederhana, hanya meminta sebuah parameter bertipe \texttt{String} dan mencetak parameter tersebut ke monitor.
+
+Sekarang coba ubah kode di atas menjadi seperti berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	cetak(args[0])
+}
+
+fun cetak(nama: String) {
+	println("nama : $nama")
+}
+\end{lstlisting}
+
+Setelah melakukan \textit{compile}, jalankan aplikasi dengan memberikan parameter pada program yang dijalankan. Caranya adalah dengan menambahkan teks setelah nama \textit{file} utamanya, misalkan nama \textit{file} kode yang saya buat adalah \texttt{Test.kt}, setelah melalui proses \textit{compile}, menghasilkan \textit{file} dengan nama \texttt{TestKt.class}.
+
+Cara eksekusi \textit{file} \texttt{TestKt.class} tersebut adalah dengan cara berikut :
+
+\begin{lstlisting}
+> kotlin TestKt [parameter]
+\end{lstlisting}
+
+Kali ini kita coba mengganti bagian \texttt{[parameter]} dengan teks \texttt{tamami}, perintah lengkapnya adalah sebagai berikut :
+
+\begin{lstlisting}
+> kotlin TestKt tamami
+\end{lstlisting}
+
+Hasil yang dikeluarkan dari pemanggilan kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+nama : tamami
+\end{lstlisting}
+
+Terlihat bahwa teks \texttt{tamami} yang menjadi parameter pertama, akan dilewatkan sebagai parameter di pemanggilan fungsi \texttt{cetak} seperti di baris ke-2, yang kemudian di cetak ke layar sebagaimana perintah pada baris ke-6.
+
+\subsection{Cara Penggunaan}
+
+\subsubsection{Notasi Infix}
+
+Apa itu notasi \textit{infix}, notasi ini sebetulnya membuat pemanggilan sebuah fungsi menjadi seperti operator. Mungkin akan lebih mudah bila disajikan dalam bentuk kode program berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var nama = "tamami"
+	
+	println(nama sambung "Selamat Datang")
+}
+
+infix fun String.sambung(data: String): String {
+	return "$this $data"
+}
+\end{lstlisting}
+
+Sehingga hasil yang muncul ke layar adalah sebagai berikut :
+
+\begin{lstlisting}
+tamami Selamat Datang
+\end{lstlisting}
+
+Perhatikan pada baris ke-4, kita melihat bahwa fungsi \texttt{sambung} yang dideklarasikan pada baris ke-7 sampai dengan baris ke-9, karena memiliki kata kunci \texttt{infix} dapat berbentuk seperti operator biasa, cara memanggilnya tidak seperti kondisi fungsi pada umumnya.
+
+Pada baris ke-8, kita melihat ada 2 (dua) variabel yang dipanggil, yaitu \texttt{\$this} yang isinya adalah \texttt{String} yang akan disambung, dan variabel \texttt{\$data} yang isinya adalah \texttt{String} sambungannya.
+
+Beberapa hal agar model \textit{infix} ini dapat diimplementasikan yaitu :
+
+\begin{enumerate}
+	\item Fungsi yang dideklarasikan merupakan anggota dari kelas (berada dalam sebuah kelas) atau merupakan fungsi ekstensi dari suatu kelas..
+	\item Fungsi ini hanya memiliki sebuah parameter
+	\item Fungsi ini harus dideklarasikan dengan kata kunci \texttt{infix}.
+\end{enumerate}
+
+\subsubsection{Parameter}
+
+Parameter seperti halnya variabel atau properti, harus dideklarasikan dengan format \texttt{[nama] : [tipe data]}, nama pada kondisi deklarasi parameter wajib menyertakan tipe data secara eksplisit. Tiap parameter pada konstruktor atau fungsi dipisahkan dengan koma.
+
+Coba perhatikan fungsi \texttt{sambung} pada kode sebelumnya, disana ada sebuah parameter dengan nama \texttt{data} dengan tipe data berupa \texttt{String}. Deklarasinya harus berbentuk seperti ini.
+
+\subsubsection{Parameter \textit{Default}}
+
+Sebuah fungsi dapat memiliki parameter yang secara \textit{default} sudah memiliki nilai. Parameter-parameter ini dapat dilewatkan saat memanggil fungsi. Contoh kodenya adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var pegawai = Pegawai()
+	pegawai.setBio("tamami")
+	
+	println("nama : ${pegawai.nama}")
+	println("jabatan : ${pegawai.jabatan}")
+}
+
+class Pegawai {
+	var nama: String = ""
+	var jabatan: String = ""
+	
+	fun setBio(nama: String, jabatan: String = "STAF") {
+		this.nama = nama
+		this.jabatan = jabatan
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+nama : tamami
+jabatan : STAF
+\end{lstlisting}
+
+Perhatikan pada baris ke-3 dari kode di atas, bahwa pemanggilan fungsi \texttt{setBio} milik kelas \texttt{Pegawai} hanya menyertakan sebuah parameter sedangkan pada deklarasinya membutuhkan 2 (dua) buah parameter, yaitu \texttt{nama} dan \texttt{jabatan}. 
+
+Namun karena parameter \texttt{jabatan} memiliki nilai \textit{default} berupa teks \texttt{STAF}, maka parameter ini dapat dilewatkan, karena akan diisikan otomatis dengan teks \texttt{STAF}.
+
+Maka dari itu hasil keluaran yang kita dapatkan adalah seperti tampilan di atas.
+
+Apabila ada kelas turunan yang melakukan \textit{override} terhadap fungsi yang memiliki nilai \textit{default}, maka aturannya tidak boleh didefinisikan ulang nilai \textit{default}nya pada kelas turunan, jadi kelas turunannya akan mengikuti nilai \textit{default} milik pendahulunya.
+
+Kita perhatikan contoh kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var pegawai = Pejabat()
+	pegawai.setBio("tamami")
+	
+	println("nama : ${pegawai.nama}")
+	println("jabatan : ${pegawai.jabatan}")
+}
+
+open class Pegawai {
+	var nama: String = ""
+	var jabatan: String = ""
+	
+	open fun setBio(nama: String, jabatan: String = "STAF") {
+		this.nama = nama
+		this.jabatan = jabatan
+	}
+}
+
+class Pejabat: Pegawai() {
+	override fun setBio(nama: String, jabatan: String) {
+		this.nama = nama
+		if(jabatan.equals("STAF")) {
+			println("Masa pejabat jabatannya staf")
+			return
+		}
+		this.jabatan = jabatan
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran untuk kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+Masa pejabat jabatannya staf
+nama : tamami
+jabatan :
+\end{lstlisting}
+
+Lihatlah pada baris ke-19 sampai dengan baris ke-28, disini adalah tempat deklarasi kelas \texttt{Pejabat} yang sebetulnya adalah turunan dari kelas \texttt{Pegawai}, perhatikan kembali bahwa kelas \texttt{Pegawai} ini harus memiliki kata kunci \texttt{open} agar bisa diwariskan ke kelas di bawahnya, kemudian fungsi \texttt{setBio} milik kelas \texttt{Pegawai} juga diberikan kata kunci \texttt{open} agar kelas dibawahnya dapat melakukan \textit{override} terhadap fungsi ini.
+
+Pada baris ke-20 fungsi \texttt{setBio} milik kelas \texttt{Pegawai} di \textit{override}, dimana pada parameter \texttt{jabatan} sudah tidak dapat lagi diberikan nilai \textit{default} karena nilai \textit{default} sudah diberikan pada kelas pendahulunya, yaitu kelas \texttt{Pegawai}.
+
+Dan pada baris ke-22, kita lakukan seleksi, apabila nilai parameter \texttt{jabatan} masih berisi nilai \textit{default}, yaitu teks \texttt{STAF}, maka kita akan cetak informasi bahwa yang masuk kelas \texttt{Pejabat} ini tentunya harus sudah memberikan jabatan strukturan yang baru selain \texttt{STAF}, maka kemudian isi variabel / properti \texttt{jabatan} milik kelas \texttt{Pejabat} akan dikosongkan / tidak diisikan, sehingga hasil keluaran akan tampak seperti di atas.
+
+\subsubsection{Argumen Bernama}
+
+\subsubsection{Pengembalian Unit}
+
+\subsubsection{Ekspresi Tunggal}
+
+\subsubsection{Pengembalian Eksplisit}
+
+\subsubsection{Argumen Dinamis}
+
 \section{Fungsi Lanjutan dan Lamda}
 
 \section{Fungsi Sebaris}

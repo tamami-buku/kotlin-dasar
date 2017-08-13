@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  13 AUG 2017 07:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  13 AUG 2017 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -287,32 +287,32 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks16
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 20.
+Package hyperref Info: Option `colorlinks' set `true' on input line 24.
 
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 20.
+(hyperref)                setting the option has no effect on input line 24.
 
 (./00-book.aux (./01-mulai.aux) (./02-dasar.aux) (./03-kelas-dan-objek.aux)
 (./04-fungsi-lamda.aux) (./05-java-interoperabilitas.aux) (./06-perkakas.aux)
 (./07-kasus-1.aux))
 \openout1 = `00-book.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 74.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -353,7 +353,7 @@ e
 Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring ON on input line 70.
+Package hyperref Info: Link coloring ON on input line 74.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -362,26 +362,26 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count133
 )
-LaTeX Info: Redefining \ref on input line 70.
-LaTeX Info: Redefining \pageref on input line 70.
-LaTeX Info: Redefining \nameref on input line 70.
+LaTeX Info: Redefining \ref on input line 74.
+LaTeX Info: Redefining \pageref on input line 74.
+LaTeX Info: Redefining \nameref on input line 74.
 
 (./00-book.out) (./00-book.out)
 \@outlinefile=\write4
 \openout4 = `00-book.out'.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
  [3] [4
 
 ] [5] [6
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
  (./00-book.toc [7]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 20.
 
@@ -424,9 +424,9 @@ Package hyperref Warning: bookmark level for unknown schapter defaults to 0.
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
 
-Overfull \hbox (5.47108pt too wide) in paragraph at lines 91--92
+Overfull \hbox (5.47108pt too wide) in paragraph at lines 95--96
 []\OT1/ptm/m/n/10 Dalam buku ini akan di-je-laskan dasar dari pem-ro-gra-man Ko
 tlin yang menawarkan penulisan
  []
@@ -861,32 +861,62 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
  (./04-fungsi-lamda.tex
 Chapter 4.
-) [57
+[57
 
 
 
 ]
+Overfull \hbox (10.82195pt too wide) in paragraph at lines 51--52
+[]\OT1/ptm/m/n/10 Kali ini kita coba meng-ganti bagian \OT1/pcr/m/n/10 [paramet
+er] \OT1/ptm/m/n/10 den-gan teks \OT1/pcr/m/n/10 tamami\OT1/ptm/m/n/10 , per-in
+-tah lengkap-
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[58]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 109.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[59])
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[60]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[61]
 \openout2 = `05-java-interoperabilitas.aux'.
 
- (./05-java-interoperabilitas.tex [58
+ (./05-java-interoperabilitas.tex [62
 
 
 
 ]
 Chapter 5.
-) [59]
+) [63]
 \openout2 = `06-perkakas.aux'.
 
- (./06-perkakas.tex [60
+ (./06-perkakas.tex [64
 
 
 
 ]
 Chapter 6.
-) [61]
+) [65]
 \openout2 = `07-kasus-1.aux'.
 
- (./07-kasus-1.tex [62
+ (./07-kasus-1.tex [66
 
 
 
@@ -896,23 +926,23 @@ Chapter 7.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-) [63]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
+) [67]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
  (./00-book.aux (./01-mulai.aux) (./02-dasar.aux)
 (./03-kelas-dan-objek.aux) (./04-fungsi-lamda.aux)
 (./05-java-interoperabilitas.aux) (./06-perkakas.aux) (./07-kasus-1.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 110.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 110.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
 Package rerunfilecheck Info: File `00-book.out' has not changed.
-(rerunfilecheck)             Checksum: 9D5D60A72922047B3595EFFADD83E89A;4589.
+(rerunfilecheck)             Checksum: 1C4134B919F282461CDAD8ED9EBD051E;4658.
  ) 
 Here is how much of TeX's memory you used:
- 9037 strings out of 494902
- 132294 string characters out of 6179891
- 296948 words of memory out of 5000000
- 10617 multiletter control sequences out of 15000+600000
- 58343 words of font info for 111 fonts, out of 8000000 for 9000
+ 9145 strings out of 494902
+ 134021 string characters out of 6179891
+ 296972 words of memory out of 5000000
+ 10620 multiletter control sequences out of 15000+600000
+ 61132 words of font info for 114 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  29i,11n,43p,652b,1674s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -921,15 +951,16 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf
 fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cour
 ier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
-utmri8a.pfb>
-Output written on 00-book.pdf (79 pages, 316033 bytes).
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
+>
+Output written on 00-book.pdf (83 pages, 338500 bytes).
 PDF statistics:
- 2493 PDF objects out of 2984 (max. 8388607)
- 2377 compressed objects within 24 object streams
- 1558 named destinations out of 1728 (max. 500000)
- 577 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2638 PDF objects out of 2984 (max. 8388607)
+ 2515 compressed objects within 26 object streams
+ 1661 named destinations out of 1728 (max. 500000)
+ 585 words of extra memory for PDF output out of 10000 (max. 10000000)
 
