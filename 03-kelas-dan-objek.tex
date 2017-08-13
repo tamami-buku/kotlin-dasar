@@ -1319,3 +1319,110 @@ Ada beberapa delegasi properti yang umum yang mungkin dapat digunakan nantinya, 
 	\item \texttt{observable}
 	\item \texttt{map}
 \end{itemize}
+
+\subsection{\texttt{lazy}}
+
+\texttt{lazy} ini sebetulnya adalah fungsi hasil implementasi dari \textit{interface} \texttt{Lazy} yang hanya berlaku untuk deklarasi \texttt{val}, nantinya operasi yang terjadi hanya akan terjadi sekali saja, kemudian nilai akhir yang dihasilkan akan disimpan, dan dibaca berulang saat ada pemanggilan atau akses terhadap properti ini. 
+
+Coba kita perhatikan contoh kode berikut :
+
+\begin{lstlisting}
+val lazyVar: String by lazy {
+	println("init")
+	"tamami"
+}
+
+fun main(args: Array<String>) {
+	println(lazyVar)
+	println(lazyVar)
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+init
+tamami
+tamami
+\end{lstlisting}
+
+Kenapa hasilnya demikian? padahal pada baris ke-7 dan baris ke-8, akses terhadap \texttt{lazyVar} dilakukan 2 (dua) kali, tetapi proses pencetakan \texttt{init} hanya sekali.
+
+Hal tersebut karena sifat dari \texttt{lazy} ini hanya melakukan prosesnya sekali di awal akses, kemudian nilainya disimpan untuk akses selanjutnya. 
+
+Jadi pada saat melakukan akses \texttt{lazyVar} di baris ke-7, delegasi propertinya akan melakukan secara lengkap, mulai dari proses mencetak teks \texttt{init}, hingga mengembalikan nilai teks \texttt{tamami}. 
+
+Namun pada saat melakukan akses \texttt{lazyVar} di baris ke-8, delegasi properti hanya akan mengembalikan nilai teks \texttt{tamami} saja.
+
+\subsection{\texttt{observable}}
+
+Untuk menggunakan delegasi properti \texttt{observable}, kita harus melakukan \textit{import} terlebih dahulu terhadap kelas \texttt{kotlin.properties.Delegates}.
+
+Delegasi properti \texttt{observable} ini membutuhkan 2 (dua) parameter, yang pertama adalah nilai awal, yang kedua adalah parameter untuk melakukan tugas perubahan data. Parameter kedua inilah yang akan dipanggil berulang-ulang apabila ada perubahan data.
+
+Sebetulnya parameter kedua dari \texttt{observable} ini akan dieksekusi setelah pengisian data pada variabel / properti terjadi.
+
+Pada parameter ke-2 ini, memiliki 3 (tiga) parameter di dalamnya, yaitu properti yang diisikan nilainya, nilai lama, dan nilai baru. Untuk lebih jelasnya coba perhatikan kode berikut :
+
+\begin{lstlisting}
+import kotlin.properties.Delegates
+
+var nama: String by Delegates.observable("[kosong]") {
+	properti, lama, baru -> 
+		println("properti ${properti.name} telah berubah dari $lama ke $baru")
+}
+
+fun main(args: Array<String>) {
+	nama = "tamami"
+	nama = "ami"
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+properti nama telah berubah dari [kosong] ke tamami
+properti nama telah berubah dari tamami ke ami
+\end{lstlisting}
+
+Pada awalnya, nilai yang diberikan ke properti \texttt{nama} adalah teks \texttt{"[kosong]"}, kemudian pada saat ada perubahan atau pengisian data di baris ke-9, maka parameter ke-2 dari \texttt{observable} yaitu bagian yang menangani perubahan data akan dijalankan. 
+
+Beberapa parameter dari bagian yang menangani perubahan ini akan terisi, dimana \texttt{properti} adalah bagian properti yang dideklarasikan dengan kata kunci \texttt{observable}, kemudian \texttt{lama} akan diisikan dengan data sebelumnya, yaitu teks \texttt{[kosong]}, dan \texttt{baru} akan diisikan dengan data yang telah diisikan, yaitu teks \texttt{tamami}. 
+
+Selanjutnya akan mencetak informasi sebagaimana baris ke-1 dari hasil keluaran di atas.
+
+Pada saat perubahan data kedua, yaitu pada baris ke-10, isi dari parameter \texttt{properti} tentunya tetap, sedangkan isi dari parameter \texttt{lama} akan berubah menjadi teks \texttt{tamami} dan isi parameter \texttt{baru} akan menjadi teks \texttt{ami}.
+
+Setelah itu akan dicetak keluaran dengan hasil sebagaimana baris ke-2 dari hasil keluaran di atas.
+
+\subsection{\texttt{map}}
+
+Penggunaan \texttt{Map} sebagai delegasi properti sebetulnya memanfaatkan \texttt{Map} sebagai parameter konstruktor atau fungsi yang biasanya diimplementasikan pada pencacah kode JSON atau hal yang berhubungan dengan data dinamis. Mari kita perhatikan contoh kode program berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val pegawai = Pegawai(mapOf(
+		"nama" to "tamami",
+		"gaji" to 10000
+	))
+	
+	println(pegawai.nama)
+	println(pegawai.gaji)
+}
+
+class Pegawai(val map: Map<String, Any?>) {
+	val nama: String by map
+	val gaji: Long by map
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+tamami
+10000
+\end{lstlisting}
+
+Parameter deklarasi kelas \texttt{Pegawai} hanya membutuhkan sebuah parameter saja seperti pada baris ke-11. Nantinya, isi dari \texttt{map} tersebut akan dipetakan otomatis dimana \texttt{key}-nya adalah nama properti dan \texttt{value}-nya adalah isi dari propertinya.
+
+Sehingga pada saat properti diakses seperti pada baris ke-7 dan baris ke-8, akan ditampilkan nilai dari masing-masing propertinya.
