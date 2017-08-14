@@ -234,13 +234,104 @@ Penggunaan argumen / parameter bernama ini ada pada baris ke-3, dimana fungsi \t
 
 Dengan menggunaan penamaan parameter ini, mempermudah apabila ada banyak parameter, dan beberapa parameter sudah ada nilai \textit{default}nya, sehingga untuk mengganti atau mengisikan salah satu parameter cukup dikenali dengan nama parameternya.
 
+Fasilitas ini tidak dapat digunakan apabila memanggil fungsi milik kelas Java.
+
 \subsubsection{Pengembalian Unit}
+
+Setiap fungsi pasti memiliki nilai kembalian, apabila tidak dituliskan secara eksplisit, sebetulnya tetap ada nilai kembalian berupa objek \texttt{Unit}, mirip seperti \texttt{void} di bahasa pemrograman Java, yang ditujukan untuk \textit{method} atau fungsi yang tidak memiliki nilai kembalian.
+
+Perhatikan kode berikut ini :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	cetak("tamami")
+}
+
+fun cetak(nama: String) {
+	println("nama : $nama")
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+nama : tamami
+\end{lstlisting}
+
+Pada baris ke-5 dari kode di atas yang mendeklarasikan fungsi \texttt{cetak} akan sama artinya bila kita ganti dengan deklarasi seperti kode berikut :
+
+\begin{lstlisting}
+fun cetak(nama: String): Unit {
+	println("nama : $nama")
+}
+\end{lstlisting}
 
 \subsubsection{Ekspresi Tunggal}
 
-\subsubsection{Pengembalian Eksplisit}
+Untuk fungsi-fungsi yang hanya memiliki satu baris perintah, sebetulnya dapat menghilangkan tanda kurung kurawal (\texttt{\{\}}), dan isi dari baris perintahnya langsung dideklarasikan setelah tanda sama dengan (\texttt{=}).
+
+Hal lain adalah, tipe data kembalian dapat dihilangkan, karena \textit{compiler} akan otomatis melakukan deteksi terhadap ini. Berikut adalah contoh kodenya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	cetak("tamami")
+}
+
+fun cetak(nama: String) = println("nama : $nama")
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+nama : tamami
+\end{lstlisting}
+
+Pada baris ke-5 adalah contoh dari ekspresi tunggal dari fungsi \texttt{cetak}. Deklarasi fungsinya sama saja seperti fungsi pada umumnya, hanya saja tanda kurung kurawal dihilangkan, dan diganti dengan tanda sama dengan (\texttt{=}) dan langsung mendeklarasikan isi dari fungsi \texttt{cetak}.
 
 \subsubsection{Argumen Dinamis}
+
+Dalam kotlin, dimungkin kita membuat sebuah fungsi dengan jumlah argumen / parameter dinamis, dimana bisa saja jumlah parameter hanya satu, dua, atau lebih dari itu. Mari kita lihat contoh kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	println(sum(1,3,5,7))
+	println(sum(2,4,6))
+}
+
+fun sum(vararg data: Int): Int {
+	var result = 0
+	for(x in data) {
+		result += x
+	}
+	
+	return result
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+16
+12
+\end{lstlisting}
+
+Terlihat bahwa pada baris ke-2 dan baris ke-3 sama-sama memanggil fungsi \texttt{sum} tetapi dengan jumlah parameter yang berbeda, baris ke-2 menggunakan 4 (empat) parameter, sedangkan pada baris ke-3 menggunakan hanya 3 (tiga) parameter.
+
+Hal tersebut mungkin terjadi karena deklarasi fungsi \texttt{sum} pada baris ke-6, parameternya menggunakan kata kunci \texttt{vararg} sehingga jumlah parameter yang ada dapat lebih fleksibel.
+
+\subsection{Skup Fungsi}
+
+
+
+\subsection{Fungsi Generik}
+
+\subsection{Fungsi Sebaris}
+
+\subsection{Ekstensi Fungsi}
+
+\subsection{Tingkatan Prioritas Fungsi}
+
+\subsection{Fungsi rekursif}
 
 \section{Fungsi Lanjutan dan Lamda}
 
