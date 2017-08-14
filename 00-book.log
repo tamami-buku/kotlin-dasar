@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  13 AUG 2017 22:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  14 AUG 2017 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -885,26 +885,34 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[59])
+[59]
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[60]
+[60])
+Underfull \vbox (badness 2229) has occurred while \output is active []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
 [61]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[62]
 \openout2 = `05-java-interoperabilitas.aux'.
 
- (./05-java-interoperabilitas.tex [62
+ (./05-java-interoperabilitas.tex
+Chapter 5.
+) [63
 
 
 
 ]
-Chapter 5.
-) [63]
 \openout2 = `06-perkakas.aux'.
 
  (./06-perkakas.tex [64
@@ -938,8 +946,8 @@ Package rerunfilecheck Info: File `00-book.out' has not changed.
 (rerunfilecheck)             Checksum: 1C4134B919F282461CDAD8ED9EBD051E;4658.
  ) 
 Here is how much of TeX's memory you used:
- 9145 strings out of 494902
- 134021 string characters out of 6179891
+ 9178 strings out of 494902
+ 134566 string characters out of 6179891
  296972 words of memory out of 5000000
  10620 multiletter control sequences out of 15000+600000
  61132 words of font info for 114 fonts, out of 8000000 for 9000
@@ -957,10 +965,10 @@ texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on 00-book.pdf (83 pages, 338500 bytes).
+Output written on 00-book.pdf (83 pages, 342482 bytes).
 PDF statistics:
- 2638 PDF objects out of 2984 (max. 8388607)
- 2515 compressed objects within 26 object streams
- 1661 named destinations out of 1728 (max. 500000)
+ 2678 PDF objects out of 2984 (max. 8388607)
+ 2555 compressed objects within 26 object streams
+ 1694 named destinations out of 1728 (max. 500000)
  585 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -192,6 +192,48 @@ Dan pada baris ke-22, kita lakukan seleksi, apabila nilai parameter \texttt{jaba
 
 \subsubsection{Argumen Bernama}
 
+Parameter / argumen pada fungsi dapat diberikan nama parameternya untuk memudahkan pengisian. Contohnya coba perhatikan pada kode berikut ini :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var pegawai: Pegawai() 
+	pegawai.setBio(nama="tamami, gaji=5000L) 
+	
+	println("nama : ${pegawai.nama}")
+	println("jabatan : ${pegawai.jabatan}")
+	println("gaji : ${pegawai.gaji}")
+	println("jenis kelamin : ${pegawai.jenisKelamin}")
+}
+
+class Pegawai {
+	var nama = ""
+	var jabatan = ""
+	var gaji = 0L
+	var jenisKelamin = true
+	
+	fun setBio(nama: String, jabatan: String = "STAF", gaji: Long = 1500L,
+			jenisKelamin: Boolean = true) {
+		this.nama = nama
+		this.jabatan = jabatan
+		this.gaji = gaji
+		this.jenisKelamin = jenisKelamin
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+nama : tamami
+jabatan : STAF
+gaji : 5000
+jenis kelamin : true
+\end{lstlisting}
+
+Penggunaan argumen / parameter bernama ini ada pada baris ke-3, dimana fungsi \texttt{setBio} milik kelas \texttt{Pegawai} hanya diisikan 2 (dua) parameter saja, yaitu \texttt{nama} dan \texttt{gaji}.
+
+Dengan menggunaan penamaan parameter ini, mempermudah apabila ada banyak parameter, dan beberapa parameter sudah ada nilai \textit{default}nya, sehingga untuk mengganti atau mengisikan salah satu parameter cukup dikenali dengan nama parameternya.
+
 \subsubsection{Pengembalian Unit}
 
 \subsubsection{Ekspresi Tunggal}
