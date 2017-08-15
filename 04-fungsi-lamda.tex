@@ -321,7 +321,39 @@ Hal tersebut mungkin terjadi karena deklarasi fungsi \texttt{sum} pada baris ke-
 
 \subsection{Skup Fungsi}
 
+Seperti telah kita coba sebelumnya, fungsi di Kotlin tidak hanya berada di dalam kelas, melainkan dapat ditempatkan di tingat teratas dari \textit{file}. 
 
+Bukan hanya ditempatkan di tingkatan teratas dari \textit{file}, fungsi juga dapat ditempatkan sebagai lokal, \textit{member} dari suatu kelas, atau yang telah kita bahas sebelumnya, sebagai fungsi ekstensi.
+
+Fungsi ekstensi telah kita bahas pada materi sebelumnya, kita akan bahas mengenai apa itu fungsi lokal, dan fungsi \textit{member}.
+
+\subsubsection{Fungsi Lokal}
+
+Fungsi yang berada di dalam fungsi lain bisa disebut fungsi lokal, fungsi lokal ini dapat melakukan akses terhadap variabel yang dideklarasikan di fungsi atasnya, coba perhatikan kode berikut ini :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	fun tambah(a: Int, b: Int) = a + b
+	
+	println(tambah(2,4))
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+6
+\end{lstlisting}
+
+Perhatikan pada baris ke-2, yaitu deklarasi fungsi \texttt{tambah} yang berada pada fungsi \texttt{main}, yang kemudian dipanggil pada baris ke-4 untuk dilihat hasilnya. 
+
+\subsubsection{Fungsi Member}
+
+Fungsi member ini sebetulnya sudah sering kita gunakan pada percobaan sebelumnya, fungsi ini menjadi anggota / member di dalam sebuah kelas. Perhatikan contoh berikut :
+
+\begin{lstlisting}
+
+\end{lstlisting}
 
 \subsection{Fungsi Generik}
 
