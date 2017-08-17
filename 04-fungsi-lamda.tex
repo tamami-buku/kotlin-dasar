@@ -490,7 +490,38 @@ Apabila angka yang diberikan di parameter fungsi (variabel \texttt{a}) tidak dap
 
 Saya menggunakan tipe data \texttt{BigDecimal} karena pada saat penggunaan tipe data \texttt{Double} maupun \texttt{Float} menghasilkan angka yang aneh pada prosesnya.
 
-\section{Fungsi Lanjutan dan Lamda}
+\section{Fungsi \textit{Higher-Order} dan Lamda}
+
+Fungsi \textit{higher-order} adalah fungsi yang memiliki parameter berupa pemanggilan terhadap fungsi lain atau mengembalikan sebuah fungsi. Perhatikan contoh kode berikut untuk lebih jelasnya  :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val dataList = listOf(1,3,5,7)
+	val data: String = cetakList(dataList, ::cetak)
+	
+	println(data)
+}
+
+fun <T> cetakList(list: List<Int>, body: () -> T): T {
+	println(list.first())
+	try {
+		return body()
+	} finally {
+		println(list.last())
+	}
+}
+
+fun cetak(): String = "Cetak dulu ini"
+\end{lstlisting}
+
+Hasil dari kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+1
+7
+Cetak dulu ini
+\end{lstlisting}
+
 
 \section{Fungsi Sebaris}
 
