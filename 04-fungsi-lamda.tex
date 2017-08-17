@@ -352,18 +352,118 @@ Perhatikan pada baris ke-2, yaitu deklarasi fungsi \texttt{tambah} yang berada p
 Fungsi member ini sebetulnya sudah sering kita gunakan pada percobaan sebelumnya, fungsi ini menjadi anggota / member di dalam sebuah kelas. Perhatikan contoh berikut :
 
 \begin{lstlisting}
+fun main(args: Array<String>) {
+	var mhs = Mahasiswa()
+	
+	mhs.cetakNama("tamami")
+}
 
+class Mahasiswa {
+	fun cetakNama(nama: String) {
+		println("nama : $nama")
+	}
+}
 \end{lstlisting}
+
+Hasil keluaran untuk kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+nama : tamami
+\end{lstlisting}
+
+Deklarasi fungsi member untuk kode di atas ada pada baris ke-8 dengan nama \texttt{cetakNama}, karena fungsi ini berada di dalam kelas \texttt{Mahasiswa}.
 
 \subsection{Fungsi Generik}
 
-\subsection{Fungsi Sebaris}
+Seperti halnya Java, Kotlin pun dapat membuat fungsi generik dengan deklarasi tipe generik berupa kurung siku sebelum deklarasi nama fungsinya, perhatikan contoh kode berikut yang kita ubah dari kode sebelumnya :
 
-\subsection{Ekstensi Fungsi}
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	var mhs = Mahasiswa()
+	
+	mhs.cetakData("tamami")
+	mhs.cetakData(50L)	
+}
 
-\subsection{Tingkatan Prioritas Fungsi}
+class Mahasiswa {
+	fun <T> cetakData(data: T) {
+		println("data : $data")
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode tersebut adalah sebagai berikut :
+
+\begin{lstlisting}
+data : tamami
+data : 50
+\end{lstlisting}
+
+Deklarasi fungsi generik ini ada pada baris ke-9 sampai dengan baris ke-11. Terlihat bahwa sebelum nama fungsi, ada deklarasi generik dengan tanda \texttt{<T>}, dan tipe data ini dijadikan tipe data para parameter \texttt{data}.
+
+Pemanggilan fungsi ini ada pada baris ke-4 dan baris ke-5, dimana pada baris ke-4 dipanggil dengan mengisikan tipe data \texttt{String} pada parameternya. Kemudian pada baris ke-5, parameter diisi dengan tipe data \texttt{Long}. Keduanya dapat diterima dan di proses, karena tipe data apapun yang dilewatkan melalui parameter tersebut akan dicetak ke layar.
 
 \subsection{Fungsi rekursif}
+
+Fungsi rekursif adalah fungsi yang memanggil dirinya sendiri dalam implementasinya. Misalnya saja, untuk sederhananya adalah fungsi perkalian dengan operasi sederhana berupa penjumlahan dan pengurangan. Kita lihat contoh kodenya berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val hasil = kali(3,5)
+	
+	println(hasil)
+}
+
+fun kali(a: Int, b: Int): Int = if(b == 1) a else a + kali(a, b-1)
+\end{lstlisting}
+
+Hasil dari kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+15
+\end{lstlisting}
+
+Perhatikan bahwa di baris ke-7 ada deklarasi fungsi \texttt{kali} yang di dalamnya terdapat pemanggilan ke fungsi \texttt{kali} yang sama, namun dengan nilai yang berbeda, ini yang disebut fungsi rekursif.
+
+Fungsi ini terlihat lebih sederhana daripada menggunakan perintah iterasi seperti berikut ini :
+
+\begin{lstlisting}
+fun kali(a: Int, b: Int): Int {
+	var result = a
+	var pengali = b
+	
+	if(b == 1) return a
+	else {
+		while(pengali > 1) {
+			pengali--
+			result += a
+			println("$pengali : $result")
+		}
+		return result
+	}
+}
+\end{lstlisting}
+
+Hasil dari kode program di atas adalah seperti berikut ini :
+
+\begin{lstlisting}
+4 : 6
+3 : 9
+2 : 12
+1 : 15
+15
+\end{lstlisting}
+
+Dari kode iterasi yang panjang di atas, mendapatkan hasil yang sama dari sebuah perkalian.
+
+Namun sayangnya, bentuk rekursif biasa seperti di atas sangat rentang sekali akan kesalahan yang dikenal dengan \textit{stack overflow}, karena tiap dipanggil sebuah fungsi, komputer akan menyiapkan memori sebesar kebutuhan fungsi tersebut, bayangkan saat rekursi yang terjadi sudah lebih dari kemampuan memori komputer menyiapkan ruang untuk itu.
+
+Optimalisasi yang dilakukan di Kotlin adalah mendukung \textit{tail} rekursif, yaitu rekursif yang terjadi di belakang (bukan secara fisik, namun secara logika). Maksudnya rekursif yang telah dipanggil tidak akan ditunggu hasilnya untuk kemudian diproses kembali, melainkan prosesnya akan berlanjut ke fungsi berikutnya dan dapat menghilangkan fungsi sebelumnya dari memori.
+
+Contoh kode programnya adalah sebagai berikut :
+
+\begin{lstlisting}
+\end{lstlisting}
 
 \section{Fungsi Lanjutan dan Lamda}
 

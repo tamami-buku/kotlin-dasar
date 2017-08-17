@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  14 AUG 2017 22:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  17 AUG 2017 15:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -896,33 +896,44 @@ Overfull \hbox (4.56133pt too wide) in paragraph at lines 289--290
 ungsi \OT1/pcr/m/n/10 cetak\OT1/ptm/m/n/10 . Deklarasi fungsinya
  []
 
-[62])
+[62] [63]
+Overfull \hbox (5.21176pt too wide) in paragraph at lines 374--375
+[]\OT1/ptm/m/n/10 Deklarasi fungsi mem-ber un-tuk kode di atas ada pada baris k
+e-8 den-gan nama \OT1/pcr/m/n/10 cetakNama\OT1/ptm/m/n/10 ,
+ []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[63]
+[64])
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[65]
 \openout2 = `05-java-interoperabilitas.aux'.
 
- (./05-java-interoperabilitas.tex [64
+ (./05-java-interoperabilitas.tex [66
 
 
 
 ]
 Chapter 5.
-) [65]
+) [67]
 \openout2 = `06-perkakas.aux'.
 
- (./06-perkakas.tex [66
+ (./06-perkakas.tex [68
 
 
 
 ]
 Chapter 6.
-) [67]
+) [69]
 \openout2 = `07-kasus-1.aux'.
 
- (./07-kasus-1.tex [68
+ (./07-kasus-1.tex [70
 
 
 
@@ -932,7 +943,7 @@ Chapter 7.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-) [69]
+) [71]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
  (./00-book.aux (./01-mulai.aux) (./02-dasar.aux)
@@ -940,33 +951,48 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
 (./05-java-interoperabilitas.aux) (./06-perkakas.aux) (./07-kasus-1.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
-Package rerunfilecheck Info: File `00-book.out' has not changed.
-(rerunfilecheck)             Checksum: 1C4134B919F282461CDAD8ED9EBD051E;4658.
+
+
+Package rerunfilecheck Warning: File `00-book.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `00-book.out':
+(rerunfilecheck)             Before: 2AB411F7744B3E2604B6D0E9B5EF2607;5077
+(rerunfilecheck)             After:  BE00711E161897AFE65451BD96893951;4860.
  ) 
 Here is how much of TeX's memory you used:
- 9218 strings out of 494902
- 135194 string characters out of 6179891
+ 9282 strings out of 494902
+ 136235 string characters out of 6179891
  296972 words of memory out of 5000000
- 10620 multiletter control sequences out of 15000+600000
+ 10626 multiletter control sequences out of 15000+600000
  61132 words of font info for 114 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  29i,11n,43p,652b,1674s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cour
-ier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
-mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
->
-Output written on 00-book.pdf (85 pages, 346847 bytes).
+pdfTeX warning (dest): name{subsection.4.1.7} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.1.6} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.1.5} has been referenced but does not 
+exist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courie
+r/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
+s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on 00-book.pdf (87 pages, 354231 bytes).
 PDF statistics:
- 2734 PDF objects out of 2984 (max. 8388607)
- 2608 compressed objects within 27 object streams
- 1734 named destinations out of 2073 (max. 500000)
- 585 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2834 PDF objects out of 2984 (max. 8388607)
+ 2705 compressed objects within 28 object streams
+ 1792 named destinations out of 2073 (max. 500000)
+ 633 words of extra memory for PDF output out of 10000 (max. 10000000)
 
