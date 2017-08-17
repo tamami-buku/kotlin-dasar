@@ -417,7 +417,7 @@ fun main(args: Array<String>) {
 fun kali(a: Int, b: Int): Int = if(b == 1) a else a + kali(a, b-1)
 \end{lstlisting}
 
-Hasil dari kode program di atas adalah sebagai berikut :
+Hasil dari kode program di atas \footnote{https://bertzzie.com/knowledge/analisis-algoritma/Rekursif.html\#tail-call} adalah sebagai berikut :
 
 \begin{lstlisting}
 15
@@ -463,7 +463,32 @@ Optimalisasi yang dilakukan di Kotlin adalah mendukung \textit{tail} rekursif, y
 Contoh kode programnya adalah sebagai berikut :
 
 \begin{lstlisting}
+import java.math.BigDecimal
+
+fun main(args: Array<String>) {
+	val hasil = angkaAjaib()
+	
+	println(hasil)
+}
+
+tailrec fun angkaAjaib(a: BigDecimal = BigDecimal("0.1")): BigDecimal =
+	if((a.plus(a)).compareTo(a.times(a)) == 0) a else 
+		angkaAjaib(a.plus(BigDecimal("0.1")))
 \end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+2.0
+\end{lstlisting}
+
+Pemanggilan rekursif kali ini berbeda, ada kata kunci \texttt{tailrec} sebelum deklarasi fungsi \texttt{angkaAjaib}.
+
+Fungsi \texttt{angkaAjaib} memiliki sebuah parameter dengan tipe data \texttt{BigDecimal} milik Java. Nilai awal yang diberikan adalah \texttt{0.1}. Fungsi ini hanya memastikan angka berapa yang nilai penjumlahan dan perkaliannya adalah sama.
+
+Apabila angka yang diberikan di parameter fungsi (variabel \texttt{a}) tidak dapat memenuhi ketentuan itu, maka jumlahkan dengan \texttt{0.1} kemudian panggil kembali fungsi \texttt{angkaAjaib}. Fungsi inilah yang disebut \textit{tail} rekursif.
+
+Saya menggunakan tipe data \texttt{BigDecimal} karena pada saat penggunaan tipe data \texttt{Double} maupun \texttt{Float} menghasilkan angka yang aneh pada prosesnya.
 
 \section{Fungsi Lanjutan dan Lamda}
 
