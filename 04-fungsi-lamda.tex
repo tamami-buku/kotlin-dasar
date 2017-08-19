@@ -522,7 +522,185 @@ Hasil dari kode program di atas adalah sebagai berikut :
 Cetak dulu ini
 \end{lstlisting}
 
+Deklarasi dari fungsi \textit{higher-order} ini ada pada baris ke-8 sampai dengan baris ke-15, fungsi tersebut bernama \texttt{cetakList}. 
 
-\section{Fungsi Sebaris}
+Fungsi \texttt{cetakList} ini memiliki 2 (dua) parameter, yaitu yang pertama adalah \texttt{List}, dan yang kedua adalah sebuah fungsi yang memiliki nilai kembalian berupa tipe data \texttt{T}.
+
+Dalam fungsi \texttt{cetakList} ini, hanya ada 3 (tiga) perintah penting, yang pertama adalah mencetak elemen pertama dari parameter \texttt{List}, yang kedua adalah mengembalikan nilai fungsi dari parameter kedua dari fungsi \texttt{cetakList}, yang ketiga adalah mencetak elemen terakhir dari parameter \texttt{List}.
+
+Parameter kedua dari fungsi \texttt{cetakList} ini dikembalikan keluar fungsi untuk diproses kemudian. 
+
+Bila diperhatikan pada baris ke-3 dari kode di atas, parameter pada fungsi \texttt{cetakList} yang pertama berisi \texttt{List} dari angka \texttt{1, 3, 5}, dan \texttt{7}. Dan parameter yang kedua adalah fungsi \texttt{cetak} yang mengembalikan \texttt{String} berupa teks \texttt{Cetak dulu ini}, teks inilah yang dikembalikan keluar fungsi \texttt{cetakList} sehingga tercetak ke layar melalui perintah pada baris ke-5.
+
+Cara lain yang lebih umum adalah dengan menggunakan ekpresi lamda. Kita ubah kode di atas dengan cara ekspresi lamda, perhatikan kode berikut ini :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val dataList = listOf(1,3,5,7)
+	val data: String = cetakList(dataList, { "Cetak ini" })
+	
+	println(data)
+}
+
+fun <T> cetakList(list: List<Int>, body: () -> T): T {
+	println(list.first())
+	try {
+		return body()
+	} finally {
+		println(list.last())
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran untuk kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+1
+7
+Cetak ini
+\end{lstlisting}
+
+Perhatikan pada baris ke-3 dimana pemanggilan fungsi \texttt{cetak} sudah tidak lagi diperlukan disini, tetapi langsung mendeklarasikan teks \texttt{Cetak ini} dengan tanda kurung kurawal di depan dan di belakangnya.
+
+Beberapa ciri penggunaan ekspresi lamda ini adalah sebagai berikut :
+
+\begin{itemize}
+	\item Expresi lamda selalu di awali dan di akhiri dengan tanda kurung kurawal.
+	\item Parameter (jika ada) akan ditempatkan di sebelah kiri tanda panah \texttt{->}, namun parameter bisa diabaikan bila memang tidak ada.
+	\item Inti / tubuh ekspresi lamda adalah setelah tanda panah \texttt{->}.
+\end{itemize}
+
+Perhatikan kode ekspresi lamda berikut yang sudah kita ubah agar memiliki parameter :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val dataList = listOf(1,3,5,7,9,11)
+	val data: Int = cetakList(dataList, {dataList.get(it * 2)})
+	
+	println(data)
+}
+
+fun <T> cetakList(list: List<Int>, body: (data: Int) -> T): T {
+	println("data ke-1: ${list.first()}")
+	return body(2)
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+data ke-1 : 1
+9
+\end{lstlisting}
+
+Deklarasi fungsi \texttt{cetakList} pada baris ke-8 sampai dengan baris ke-11, membutuhkan ekspresi lamda pada parameter kedua dengan sebuah parameter fungsi lamda bertipe data \texttt{Int} yang bernama \texttt{body}.
+
+Di dalamnya hanya perintah sederhana yang mencetak elemen pertama dari \texttt{List} seperti pada baris ke-9 dan mengembalikan fungsi dari parameter ke-2 dengan isi parameter berupa angka \texttt{2}.
+
+Angka \texttt{2} tersebut akan dikembalikan ke ekspresi lamda pada baris ke-3, dimana karena isinya hanya sebuah parameter, maka variabel parameter ini akan dibuatkan secara implisit dengan kata kunci \texttt{it}.
+
+Hasilnya dapat dilihat bahwa parameter yang diisikan angka \texttt{2} pada baris ke-10, kemudian dikalikan dengan \texttt{2} pada baris ke-3, didapat hasilnya adalah elemen ke-4 dari variabel \texttt{dataList}.
+
+Contoh lain adalah pada penggunaan \texttt{Map} yang membutuhkan 2 (dua) parameter, yaitu \textit{key} dan \textit{value}, karena memang sifat tampungan data pada \texttt{Map} adalah pasangan antara \textit{key} dan \textit{value}.
+
+Jika kita melihat pada dokumentasi API yang disediakan untuk fungsi ekstensi \texttt{forEach} milik \texttt{Map} akan terlihat deklarasi seperti berikut :
+
+\begin{lstlisting}
+fun <K,V> Map<out K, V>.forEach(action: (Entry<K, V>) -> Unit)
+\end{lstlisting}
+
+Bila diperhatikan, bahwa fungsi ekstensi \texttt{forEach} ini hanya memerlukan sebuah parameter yang dapat kita buatkan fungsi lamdanya. Sekarang kita implementasikan informasi API \texttt{forEach} tersebut dalam kode yang akan kita buat berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val dataMap = mapOf(1 to "data1", 2 to "data2", 3 to "data3")
+	
+	dataMap.forEach { _, nilai -> println(nilai) }
+}
+\end{lstlisting}
+
+Hasil keluaran di atas akan terlihat sebagai berikut :
+
+\begin{lstlisting}
+data1
+data2
+data3
+\end{lstlisting}
+
+Pada implementasinya di baris ke-4, karena kita akan menampilkan nilainya saja (\textit{value}), kita tidak akan menampilkan \textit{key}-nya, maka parameter \textit{key} dapat kita ganti dengan karakter garis bawah (\textit{\_}), selebihnya tinggal melakukan pencetakan \texttt{nilai} pada bagian tubuh fungsi lamda.
+
+\section{Fungsi Dalam Baris}
+
+Fungsi dalam baris itu secara sederhana adalah memindahkan fungsi yang seharusnya menjadi parameter fungsi lain, ke dalam baris yang memanggil fungsi tersebut. Penjelasan akan lebih terlihat apabila kita melihat kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	fungsiSaya{ println("isinya") }
+}
+
+fun fungsiSaya(data: () -> Unit) {
+	println("awal")
+	data()
+	println("akhir")
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+awal
+isinya
+akhir
+\end{lstlisting}
+
+Terlihat kode di atas \footnote{https://stackoverflow.com/questions/44471284/when-to-use-an-inline-function-in-kotlin} biasa saja, parameter yang diberikan pada saat pemanggilan fungsi \texttt{fungsiSaya} akan dicetak setelah mencetak teks \texttt{awal} dan sebelum teks \texttt{akhir}.
+
+Namun sebenarnya, Kotlin akan mengubah kode dari fungsi \texttt{fungsiSaya} tersebut ke dalam kode dasar kelas Java yang kurang lebih akan jadi seperti ini :
+
+\begin{lstlisting}
+public void fungsiSaya(Function data) {
+	System.out.println("awal");
+	data.panggil();
+	System.out.println("akhir");
+}
+\end{lstlisting}
+
+Kemudian fungsi lambda pada baris ke-2 akan diubah ke dalam kode dasar kelas Java menjadi seperti ini :
+
+\begin{lstlisting}
+fungsiSaya(new Function() {
+	@Override
+	public void panggil() {
+		System.out.println("isinya");
+	}
+});
+\end{lstlisting}
+
+Bayangkan bila ada banyak pemanggilan fungsi lambda disana, maka akan sebanyak itulah instan dari kelas \texttt{Function} yang terbentuk yang akan menimbulkan tidak efisiennya penggunaan memori komputer.
+
+Maka Kotlin menyediakan fungsi \textit{inline} untuk menjadikannya lebih efisien, kata kunci yang digunakan untuk mendeklarasikan fungsi ini adalah dengan kata kunci 
+\textit{inline}. Berikut adalah contoh kodenya yang kita ubah dari kode sebelumnya :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	fungsiSaya{ println("isinya") }
+}
+
+inline fun fungsiSaya(data: () -> Unit) {
+	println("awal")
+	data()
+	println("akhir")
+}
+\end{lstlisting}
+
+Hasil keluarannya sama persis dengan kode sebelumnya tanpa kata kunci \texttt{inline}. Namun, terjemahan untuk kode dasar kelas Java-nya menjadi demikian :
+
+\begin{lstlisting}
+println("awal");
+println("isinya");
+println("akhir");
+\end{lstlisting}
+
+Tanpa membuat instan dari kelas \texttt{Function} yang artinya, tidak perlu menyiapkan ruang memori yang terlalu besar sebesar kelas \texttt{Function} untuk melakukan tindakan pencetakan seperlunya.
 
 \section{\textit{Coroutines}}
