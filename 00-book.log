@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  19 AUG 2017 21:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  20 AUG 2017 10:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -929,21 +929,26 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[68])
+[68]
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[69]
+[69])
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[70]
 \openout2 = `05-java-interoperabilitas.aux'.
 
- (./05-java-interoperabilitas.tex [70
+ (./05-java-interoperabilitas.tex
+Chapter 5.
+) [71
 
 
 
 ]
-Chapter 5.
-) [71]
 \openout2 = `06-perkakas.aux'.
 
  (./06-perkakas.tex [72
@@ -980,33 +985,35 @@ Package rerunfilecheck Warning: File `00-book.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `00-book.out':
-(rerunfilecheck)             Before: 421CBDDF8604EEAC10D345FA70AFC9D1;4864
-(rerunfilecheck)             After:  DB77A4AE29BC834150A40B8C1F81D481;4868.
+(rerunfilecheck)             Before: DB77A4AE29BC834150A40B8C1F81D481;4868
+(rerunfilecheck)             After:  992AFA303756384AB935C40D39A65E6D;4811.
  ) 
 Here is how much of TeX's memory you used:
- 9405 strings out of 494902
- 138164 string characters out of 6179891
+ 9431 strings out of 494902
+ 138583 string characters out of 6179891
  296972 words of memory out of 5000000
  10625 multiletter control sequences out of 15000+600000
  64302 words of font info for 118 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  29i,11n,43p,652b,1674s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cour
-ier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
-mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
->
-Output written on 00-book.pdf (91 pages, 371474 bytes).
+pdfTeX warning (dest): name{section.4.4} has been referenced but does not exi
+st, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courie
+r/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
+s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on 00-book.pdf (91 pages, 373947 bytes).
 PDF statistics:
- 2984 PDF objects out of 2984 (max. 8388607)
- 2850 compressed objects within 29 object streams
- 1914 named destinations out of 2073 (max. 500000)
+ 3015 PDF objects out of 3580 (max. 8388607)
+ 2881 compressed objects within 29 object streams
+ 1940 named destinations out of 2073 (max. 500000)
  609 words of extra memory for PDF output out of 10000 (max. 10000000)
 

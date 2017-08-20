@@ -1,1 +1,65 @@
 \chapter{Java Interoperabilitas}
+
+Karna Kotlin melakukan kompilasi ke dalam kelas Java, maka sebetulnya Kotlin mampu untuk menggunakan pustaka-pustaka yang ditulis dan dibangun menggunakan bahasa Java. Begitu pula sebaliknya.
+
+\section{Gunakan Java di Kotlin}
+
+Kotlin dibangun dengan memikirkan penggabungannya dengan pustaka Java. Kode yang dibangun di Java dapat dengan mudah digunakan di Kotlin, begitu pula sebaliknya. Coba perhatikan kode yang ditulis dalam bahasa Kotlin yang menggunakan pustaka \texttt{ArrayList} dari Java :
+
+\begin{lstlisting}
+import java.util.ArrayList;
+
+fun main(args: Array<String>) {
+	val list = ArrayList<Int>()
+	
+	list.add(1)
+	list.add(4)
+	list.add(7)
+	
+	for(i in list) {
+		println(i)
+	}
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+1
+4
+7
+\end{lstlisting}
+
+Terlihat bahwa kode di atas menggunakan kelas \texttt{ArrayList} yang ada pada pustaka Java.
+
+Untuk fungsi \textit{getter} dan \textit{setter}, di Kotlin akan dikenal sebagai properti. Jadi misalkan ada fungsi \textit{getter} dan \textit{setter}-nya di Java, cukup dipanggil nama propertinya saja.
+
+Perhatikan kode Java berikut ini :
+
+\begin{lstlisting}
+public class Pegawai {
+	private String nama;
+	
+	public void setNama(String nama) {
+		this.nama = nama;
+	}
+	
+	public String getNama() {
+		return nama;
+	}
+}
+\end{lstlisting}
+
+Kode tersebut dapat di\textit{compile} dengan \texttt{javac} kemudian nantinya akan kita gunakan pada kode Kotlin berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val pegawai = Pegawai()
+	
+	pegawai.nama = "tamami"
+	
+	println(pegawai.nama)
+}
+\end{lstlisting}
+
+\section{Gunakan Kotlin di Java}
