@@ -32,6 +32,8 @@ Hasil keluaran dari kode di atas adalah sebagai berikut :
 
 Terlihat bahwa kode di atas menggunakan kelas \texttt{ArrayList} yang ada pada pustaka Java.
 
+\subsection{Fungsi \textit{Getter} dan \textit{Setter}}
+
 Untuk fungsi \textit{getter} dan \textit{setter}, di Kotlin akan dikenal sebagai properti. Jadi misalkan ada fungsi \textit{getter} dan \textit{setter}-nya di Java, cukup dipanggil nama propertinya saja.
 
 Perhatikan kode Java berikut ini :
@@ -61,5 +63,160 @@ fun main(args: Array<String>) {
 	println(pegawai.nama)
 }
 \end{lstlisting}
+
+Yang perlu di perhatikan untuk \textit{compile} kode di atas adalah, kelas \texttt{Pegawai} yang dibuat dengan kode Java harus dalam 1 (satu) direktori dengan \textit{file} Kotlin yang kita buat.
+
+\textit{Compile} terlebih dahulu kelas \texttt{Pegawai} agar dapat digunakan. Untuk melakukan \textit{compile file} Kotlin harus menggunakan opsi \textit{classpath} seperti berikut ini (misalkan nama \textit{file} Kotlin yang saya buat adalah \texttt{Test.kt}) :
+
+\begin{lstlisting}
+kotlinc -cp . Test.kt
+\end{lstlisting}
+
+Begitu pula pada saat kita akan menjalankan aplikasi Kotlin yang telah kita buat, gunakan opsi \textit{classpath} seperti berikut ini :
+
+\begin{lstlisting}
+kotlin -cp . TestKt
+\end{lstlisting}
+
+Hasil keluarannya akan tampak seperti berikut ini :
+
+\begin{lstlisting}
+tamami
+\end{lstlisting}
+
+Terlihat bahwa pada kode Kotlin yang telah kita buat, kita menggunakan kelas \texttt{Pegawai} dari bahasa Java. Kemudian melakukan akses ke properti \texttt{nama} milik kelas \texttt{Pegawai} dengan memberinya nilai seperti pada baris ke-4.
+
+Pada saat melakukan pengambilan data seperti pada baris ke-6 pun, cukup melakukan akses ke nama propertinya yang Kotlin akan menerjemahkan untuk melakukan akses atau mengambil nilai dengan fungsi \texttt{getNama} yang ada di Java.
+
+Bagaimana jika properti di Java hanya memiliki sebuah \textit{method} \texttt{set} saja di dalamnya, maka Kotlin tidak akan bisa melakukan akses terhadap properti ini, yang dapat kita lakukan adalah dengan melakukan akses langsung terhadap nama fungsinya. Dijelaskan dengan kode (kita ubah kode Java sebelumnya) adalah sebagai berikut :
+
+\begin{lstlisting}
+public class Pegawai {
+	private String nama;
+	
+	public void setNama(String nama) {
+		this.nama = nama;
+	}
+}
+\end{lstlisting}
+
+Maka kode di Kotlin akan melakukan akses dengan cara berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val pegawai : Pegawai()
+	
+	pegawai.setNama("tamami")
+}
+\end{lstlisting}
+
+\subsection{Nilai Kembalian \texttt{void}}
+
+Saat sebuah \textit{method} mengembalikan nilai \texttt{void} di Java, maka dalam Kotlin akan digantikan dengan kelas \texttt{Unit} pada saat \textit{compile}.
+
+\subsection{Kata Kunci di Kotlin Jadi Nama \textit{Method} di Java}
+
+Bila di Java menggunakan nama \textit{method} yang sama dengan kata kunci di Kotlin seperti \texttt{is}, \texttt{in}, \texttt{object}, dan lainnya, kita masih dapat menggunakannya dengan cara memberikan tanda \textit{backtick}. Berikut contoh kode di Javanya :
+
+\begin{lstlisting}
+public class Pegawai {
+	private String bagian;
+	
+	public Pegawai(String bagian) {
+		this.bagian = bagian;
+	}
+		
+	public boolean in(String bagian) {
+		if(bagian.equals(this.begin)) return true;
+		else return false;
+	}
+}
+\end{lstlisting}
+
+Kita lihat pada baris ke-8 bahwa \textit{method} dengan nama \texttt{in} ada di Java, untuk melakukan akses terhadap \textit{method} ini di Kotlin adalah dengan cara berikut ini :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val pegawai = Pegawai("dattap")
+	
+	if(pegawai.`in`("dattap")) println("betul") else println("lain")
+}
+\end{lstlisting}
+
+Untuk memanggil \textit{method} \texttt{in} seperti terlihat pada baris ke-4 di atas.
+
+\subsection{\textit{Null-Safety}}
+
+Di Java ada kemungkinan variabel atau properti yang ada dalam sebuah kelas bernilai \texttt{null} sedangkan Kotlin akan menjaga agar tidak ada satu variabel atau properti yang bernilai \texttt{null} pada saat melakukan \textit{compile}, lalu bagaimana solusinya, perhatikan 2 (dua) kode berikut.
+
+Kode yang pertama di tulis dalam Java dan memiliki peluang untuk memberikan nilai \texttt{null} pada kelas yang melakukan akses terhadap properti \texttt{nama}. Berikut kodenya :
+
+\begin{lstlisting}
+public class Pegawai {
+	private String nama;
+	
+	public void setNama(String nama) {
+		this.nama = nama;
+	}
+	
+	public String getNama() {
+		return nama;
+	}
+}
+\end{lstlisting}
+
+Kita dapat menggunakan operator tanda tanya (\texttt{?}) untuk menampung data yang mungkin akan menghasilkan nilai \texttt{null} dari kelas \texttt{Pegawai} di atas, berikut kodenya di Kotlin :
+
+\begin{lstlisting}
+import java.util.ArrayList
+
+fun main(args: Array<String>) {
+	val list = ArrayList<String>()
+	list.add("data")
+	
+	val pegawai = Pegawai()
+	
+	val boleh: String? = pegawai.nama
+	val tidak: String = list[0]
+	
+	println(boleh)
+	println(tidak)
+}
+\end{lstlisting}
+
+Hasil keluaran dari kode program di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+null
+data
+\end{lstlisting}
+
+Pada baris ke-9 dari kode Kotlin yang kita buat, ada operator tanda tanya (\texttt{?}) disana yang akan memberikan kelonggaran, atau melewatkan pemeriksaan atas properti \texttt{nama} milik kelas \texttt{Pegawai} yang dimungkinkan bernilai \texttt{null}. Dan benar saja, pada saat dicetak seperti pada baris ke-12, hasilnya adalah \texttt{null}.
+
+\subsection{Persamaan Tipe Data}
+
+\subsection{Java Generik}
+
+\subsection{Larik Java}
+
+Untuk larik, ingatlah bahwa larik di Kotlin berbeda dengan larik di Java. Di Kotlin tidak diperbolehkan mengisikan data dari sub-kelas atau super-kelas, contohnya misalkan deklarasi yang disebutkan adalah \texttt{Array<Any>}, deklarasi tersebut tidak bisa diisikan dengan data seperti \texttt{Array<String>}. Dan untuk tipe data primitif di Java, ada kelas yang bertugas menangani masing-masing tipe data tersebut dalam larik seperti \texttt{IntArray}, \texttt{CharArray}, \texttt{FloatArray} dan seterusnya.
+
+\subsection{Varargs di Java}
+
+\subsection{Operator}
+
+\subsection{Pemeriksaan \textit{Exception}}
+
+\subsection{\textit{Method} Kelas Objek di Java}
+
+\subsection{Mewarisi dari Kelas Java}
+
+\subsection{Mengakses \texttt{static}}
+
+\subsection{Java Reflection}
+
+\subsection{Konversi SAM}
+
+\subsection{Menggunakan JNI di Kotlin}
 
 \section{Gunakan Kotlin di Java}
