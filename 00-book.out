@@ -70,8 +70,24 @@
 \BOOKMARK [1][-]{section.4.3}{Fungsi Dalam Baris}{chapter.4}% 70
 \BOOKMARK [0][-]{chapter.5}{Java Interoperabilitas}{}% 71
 \BOOKMARK [1][-]{section.5.1}{Gunakan Java di Kotlin}{chapter.5}% 72
-\BOOKMARK [1][-]{section.5.2}{Gunakan Kotlin di Java}{chapter.5}% 73
-\BOOKMARK [0][-]{chapter.6}{Perkakas}{}% 74
-\BOOKMARK [1][-]{section.6.1}{Menggunakan Gradle}{chapter.6}% 75
-\BOOKMARK [1][-]{section.6.2}{Menggunakan Maven}{chapter.6}% 76
-\BOOKMARK [0][-]{chapter.7}{Contoh Kasus \040Aplikasi Chat}{}% 77
+\BOOKMARK [2][-]{subsection.5.1.1}{Fungsi Getter dan Setter}{section.5.1}% 73
+\BOOKMARK [2][-]{subsection.5.1.2}{Nilai Kembalian void}{section.5.1}% 74
+\BOOKMARK [2][-]{subsection.5.1.3}{Kata Kunci di Kotlin Jadi Nama Method di Java}{section.5.1}% 75
+\BOOKMARK [2][-]{subsection.5.1.4}{Null-Safety}{section.5.1}% 76
+\BOOKMARK [2][-]{subsection.5.1.5}{Persamaan Tipe Data}{section.5.1}% 77
+\BOOKMARK [2][-]{subsection.5.1.6}{Java Generik}{section.5.1}% 78
+\BOOKMARK [2][-]{subsection.5.1.7}{Larik Java}{section.5.1}% 79
+\BOOKMARK [2][-]{subsection.5.1.8}{Varargs di Java}{section.5.1}% 80
+\BOOKMARK [2][-]{subsection.5.1.9}{Operator}{section.5.1}% 81
+\BOOKMARK [2][-]{subsection.5.1.10}{Pemeriksaan Exception}{section.5.1}% 82
+\BOOKMARK [2][-]{subsection.5.1.11}{Method Kelas Objek di Java}{section.5.1}% 83
+\BOOKMARK [2][-]{subsection.5.1.12}{Mewarisi dari Kelas Java}{section.5.1}% 84
+\BOOKMARK [2][-]{subsection.5.1.13}{Mengakses static}{section.5.1}% 85
+\BOOKMARK [2][-]{subsection.5.1.14}{Java Reflection}{section.5.1}% 86
+\BOOKMARK [2][-]{subsection.5.1.15}{Konversi SAM}{section.5.1}% 87
+\BOOKMARK [2][-]{subsection.5.1.16}{Menggunakan JNI di Kotlin}{section.5.1}% 88
+\BOOKMARK [1][-]{section.5.2}{Gunakan Kotlin di Java}{chapter.5}% 89
+\BOOKMARK [0][-]{chapter.6}{Perkakas}{}% 90
+\BOOKMARK [1][-]{section.6.1}{Menggunakan Gradle}{chapter.6}% 91
+\BOOKMARK [1][-]{section.6.2}{Menggunakan Maven}{chapter.6}% 92
+\BOOKMARK [0][-]{chapter.7}{Contoh Kasus \040Aplikasi Chat}{}% 93

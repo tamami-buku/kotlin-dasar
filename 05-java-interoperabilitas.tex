@@ -193,7 +193,132 @@ data
 
 Pada baris ke-9 dari kode Kotlin yang kita buat, ada operator tanda tanya (\texttt{?}) disana yang akan memberikan kelonggaran, atau melewatkan pemeriksaan atas properti \texttt{nama} milik kelas \texttt{Pegawai} yang dimungkinkan bernilai \texttt{null}. Dan benar saja, pada saat dicetak seperti pada baris ke-12, hasilnya adalah \texttt{null}.
 
+Selain itu, ada saatnya sebuah tipe data yang tidak dapat disebutkan secara eksplisit, apakah \texttt{null} atau apakah nilainya ada, yang biasa disebut tipe \textit{platform}. Untuk kasus ini bisa menggunakan notasi tanda seru (\texttt{!}) setelah tipe datanya. Misalkan untuk tipe data \texttt{T}, dapat menggunakan \texttt{T!} yang artinya dapat berupa data yang mungkin \texttt{null} seperti notasi \texttt{T?} atau tipe data yang pasti bukan \texttt{null} seperti tanda \texttt{T}.
+
 \subsection{Persamaan Tipe Data}
+
+Dari percobaan sebelumnya, kita telah ketahui bahwa tipe data primitif Java tidak diterjemahkan seperti data primitif di Kotlin, namun akan dipetakan ke bentuk kelas, beberapa pemetaan yang dilakukan untuk tipe data primitif adalah sebagai berikut :
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Java} & \textbf{Kotlin} \\
+\hline
+byte & kotlin.Byte \\
+\hline
+short & kotlin.Short \\
+\hline
+int & kotlin.Int \\
+\hline
+long & kotlin.Long \\
+\hline
+char & kotlin.Char \\
+\hline 
+float & kotlin.Float \\
+\hline
+double & kotlin.Double \\
+\hline
+boolean & kotlin.Boolean \\
+\hline
+\end{tabular}
+\end{center}
+
+Beberapa tipe data yang bukan termasuk ke tipe data primitif pun akan dipetakan sebagai berikut di Kotlin :
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Java} & \textbf{Kotlin} \\
+\hline
+java.lang.Object & kotlin.Any! \\
+\hline
+java.lang.Cloneable & kotlin.Cloneable! \\
+\hline
+java.lang.Comparable & kotlin.Comparable! \\
+\hline
+java.lang.Enum & kotlin.Enum! \\
+\hline
+java.lang.Annotation & kotlin.Annotation! \\
+\hline
+java.lang.Deprecated & kotlin.Deprecated! \\
+\hline
+java.lang.CharSequence & kotlin.CharSequence! \\
+\hline
+java.lang.String & kotlin.String! \\
+\hline
+java.lang.Number & kotlin.Number! \\
+\hline
+java.lang.Throwable & kotlin.Throwable! \\
+\hline
+\end{tabular}
+\end{center}
+
+Beberapa tipe data primitif yang dibentuk dalam kelas juga akan dipetakan di Kotlin seperti berikut ini :
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Java} & \textbf{Kotlin} \\
+\hline
+java.lang.Byte & kotlin.Byte? \\
+\hline
+java.lang.Short & kotlin.Short? \\
+\hline
+java.lang.Integer & kotlin.Int? \\
+\hline
+java.lang.Long & kotlin.Long? \\
+\hline
+java.lang.Char & kotlin.Char? \\
+\hline
+java.lang.Float & kotlin.Float? \\
+\hline
+java.lang.Double & kotlin.Double? \\
+\hline
+java.lang.Boolean & kotlin.Boolean? \\
+\hline
+\end{tabular}
+\end{center}
+
+\textit{Collection} di Kotlin bisa berupa \textit{read-only} atau dapat diubah, jadi ketentuan \textit{collection} di Java akan berlaku seperti ini :
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Java} & \textbf{Kotlin \textit{read-only}} & \textbf{Kotlin dapat diubah} & \textbf{Kotlin \textit{Platform}} \\
+\hline
+Iterator<T> & Iterator<T> & MutableIterator<T> & (Mutable) Iterator<T>! \\
+\hline
+Iterable<T> & Iterable<T> & MutableIterable<T> & (Mutable) Iterable<T>! \\
+\hline
+Collection<T> & Collection<T> & MutableCollection<T> & (Mutable) Collection<T>! \\
+\hline
+Set<T> & Set<T> & MutableSet<T> & (Mutable) Set<T>! \\
+\hline
+List<T> & List<T> & MutableList<T> & (Mutable) List<T>! \\
+\hline
+ListIterator<T> & ListIterator<T> & MutableListIterator<T> & (Mutable) ListIterator<T>! \\
+\hline
+Map<K, V> & Map<K, V> & MutableMap<K, V> & (Mutable) Map<K, V>! \\
+\hline
+Map.Entry<K, V> & Map.Entry<K, V> & MutableMap.MutableEntry<K, V> & (Mutable) Map.(Mutable)Entry<K, V>
+\end{tabular}
+\end{center}
+
+Semua kelas di atas berada dalam paket \texttt{kotlin.collections}.
+
+Untuk larik sendiri, di Kotlin akan diterjemahkan sebagai berikut :
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Java} & \textbf{Kotlin} \\
+\hline
+int[] & kotlin.IntArray! \\
+\hline
+String[] & kotlin.Array<(out) String>! \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Java Generik}
 

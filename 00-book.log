@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  20 AUG 2017 14:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  22 AUG 2017 23:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -395,7 +395,15 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[8])
+[8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[9])
 \tf@toc=\write5
 \openout5 = `00-book.toc'.
 
@@ -404,9 +412,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[9] [10
-
-]
+[10]
 
 Package hyperref Warning: bookmark level for unknown schapter defaults to 0.
 
@@ -414,7 +420,9 @@ Package hyperref Warning: bookmark level for unknown schapter defaults to 0.
 \tf@lof=\write6
 \openout6 = `00-book.lof'.
 
- [11] [12
+ [11
+
+] [12
 
 ] (./00-book.lot)
 \tf@lot=\write7
@@ -958,24 +966,45 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[73])
+[73]
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
 [74]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[75]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 287.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[76]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[77]
 \openout2 = `06-perkakas.aux'.
 
- (./06-perkakas.tex
-Chapter 6.
-) [75
+ (./06-perkakas.tex [78
 
 
 
 ]
+Chapter 6.
+) [79]
 \openout2 = `07-kasus-1.aux'.
 
- (./07-kasus-1.tex [76
+ (./07-kasus-1.tex [80
 
 
 
@@ -985,7 +1014,7 @@ Chapter 7.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-) [77]
+) [81]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
  (./00-book.aux (./01-mulai.aux) (./02-dasar.aux)
@@ -994,14 +1023,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
 Package rerunfilecheck Info: File `00-book.out' has not changed.
-(rerunfilecheck)             Checksum: A0DC8E3031DFF4DE27CA88BBCD55903A;4949.
+(rerunfilecheck)             Checksum: C1BED523C77F4DE3DBECF59AD27BF122;6123.
  ) 
 Here is how much of TeX's memory you used:
- 9539 strings out of 494902
- 140314 string characters out of 6179891
- 296975 words of memory out of 5000000
- 10626 multiletter control sequences out of 15000+600000
- 64302 words of font info for 118 fonts, out of 8000000 for 9000
+ 9581 strings out of 494902
+ 140985 string characters out of 6179891
+ 296972 words of memory out of 5000000
+ 10644 multiletter control sequences out of 15000+600000
+ 65931 words of font info for 120 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  29i,11n,43p,652b,1674s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1016,10 +1045,10 @@ texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on 00-book.pdf (93 pages, 385819 bytes).
+Output written on 00-book.pdf (97 pages, 394949 bytes).
 PDF statistics:
- 3156 PDF objects out of 3580 (max. 8388607)
- 3018 compressed objects within 31 object streams
- 2047 named destinations out of 2073 (max. 500000)
- 617 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3261 PDF objects out of 3580 (max. 8388607)
+ 3118 compressed objects within 32 object streams
+ 2070 named destinations out of 2073 (max. 500000)
+ 745 words of extra memory for PDF output out of 10000 (max. 10000000)
 

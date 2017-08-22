@@ -80,8 +80,24 @@
 \contentsline {section}{\numberline {4.3}Fungsi Dalam Baris}{69}{section.4.3}
 \contentsline {chapter}{\numberline {5}Java Interoperabilitas}{71}{chapter.5}
 \contentsline {section}{\numberline {5.1}Gunakan Java di Kotlin}{71}{section.5.1}
-\contentsline {section}{\numberline {5.2}Gunakan Kotlin di Java}{74}{section.5.2}
-\contentsline {chapter}{\numberline {6}Perkakas}{75}{chapter.6}
-\contentsline {section}{\numberline {6.1}Menggunakan Gradle}{75}{section.6.1}
-\contentsline {section}{\numberline {6.2}Menggunakan Maven}{75}{section.6.2}
-\contentsline {chapter}{\numberline {7}Contoh Kasus \\ Aplikasi Chat}{77}{chapter.7}
+\contentsline {subsection}{\numberline {5.1.1}Fungsi \textit {Getter} dan \textit {Setter}}{72}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Nilai Kembalian \texttt {void}}{73}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Kata Kunci di Kotlin Jadi Nama \textit {Method} di Java}{73}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}\textit {Null-Safety}}{74}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}Persamaan Tipe Data}{75}{subsection.5.1.5}
+\contentsline {subsection}{\numberline {5.1.6}Java Generik}{76}{subsection.5.1.6}
+\contentsline {subsection}{\numberline {5.1.7}Larik Java}{76}{subsection.5.1.7}
+\contentsline {subsection}{\numberline {5.1.8}Varargs di Java}{77}{subsection.5.1.8}
+\contentsline {subsection}{\numberline {5.1.9}Operator}{77}{subsection.5.1.9}
+\contentsline {subsection}{\numberline {5.1.10}Pemeriksaan \textit {Exception}}{77}{subsection.5.1.10}
+\contentsline {subsection}{\numberline {5.1.11}\textit {Method} Kelas Objek di Java}{77}{subsection.5.1.11}
+\contentsline {subsection}{\numberline {5.1.12}Mewarisi dari Kelas Java}{77}{subsection.5.1.12}
+\contentsline {subsection}{\numberline {5.1.13}Mengakses \texttt {static}}{77}{subsection.5.1.13}
+\contentsline {subsection}{\numberline {5.1.14}Java Reflection}{77}{subsection.5.1.14}
+\contentsline {subsection}{\numberline {5.1.15}Konversi SAM}{77}{subsection.5.1.15}
+\contentsline {subsection}{\numberline {5.1.16}Menggunakan JNI di Kotlin}{77}{subsection.5.1.16}
+\contentsline {section}{\numberline {5.2}Gunakan Kotlin di Java}{77}{section.5.2}
+\contentsline {chapter}{\numberline {6}Perkakas}{79}{chapter.6}
+\contentsline {section}{\numberline {6.1}Menggunakan Gradle}{79}{section.6.1}
+\contentsline {section}{\numberline {6.2}Menggunakan Maven}{79}{section.6.2}
+\contentsline {chapter}{\numberline {7}Contoh Kasus \\ Aplikasi Chat}{81}{chapter.7}
