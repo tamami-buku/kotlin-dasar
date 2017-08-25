@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  22 AUG 2017 23:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.27)  25 AUG 2017 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -979,15 +979,17 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [75]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 287.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Overfull \hbox (65.47263pt too wide) in paragraph at lines 285--305
+ [] 
+ []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[76]
+[76])
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
@@ -1026,10 +1028,10 @@ Package rerunfilecheck Info: File `00-book.out' has not changed.
 (rerunfilecheck)             Checksum: C1BED523C77F4DE3DBECF59AD27BF122;6123.
  ) 
 Here is how much of TeX's memory you used:
- 9581 strings out of 494902
- 140985 string characters out of 6179891
- 296972 words of memory out of 5000000
- 10644 multiletter control sequences out of 15000+600000
+ 9582 strings out of 494902
+ 140997 string characters out of 6179891
+ 297007 words of memory out of 5000000
+ 10645 multiletter control sequences out of 15000+600000
  65931 words of font info for 120 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  29i,11n,43p,652b,1674s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1045,10 +1047,10 @@ texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on 00-book.pdf (97 pages, 394949 bytes).
+Output written on 00-book.pdf (97 pages, 396686 bytes).
 PDF statistics:
- 3261 PDF objects out of 3580 (max. 8388607)
- 3118 compressed objects within 32 object streams
+ 3262 PDF objects out of 3580 (max. 8388607)
+ 3119 compressed objects within 32 object streams
  2070 named destinations out of 2073 (max. 500000)
  745 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -322,21 +322,144 @@ String[] & kotlin.Array<(out) String>! \\
 
 \subsection{Java Generik}
 
+Generik di Kotlin seperti pembahasan pada bagian \ref{secGenerik}, berbeda dengan kondisi generik di Java. Beberapa konversi yang dilakukan antara generik di Java dengan Kotlin adalah sebagai berikut :
+
+\begin{itemize}
+	\item \textit{Wildcard} di Java akan diterjemahkan berikut :
+		\begin{itemize}
+			\item \texttt{MyMethod<? extends Kelas>} menjadi \texttt{MyMethod<out Kelas!>!}.
+			\item \texttt{MyMethod<? super Kelas>} menjadi \texttt{MyMethod<in Kelas!>!}
+		\end{itemize}	
+	\item Untuk tipe data mentah, yang biasanya tidak dideklarasikan akan menjadi seperti berikut :
+		\begin{itemize}
+			\item \texttt{ArrayList} menjadi \texttt{ArrayList<*>!}
+		\end{itemize}
+\end{itemize}
+
 \subsection{Larik Java}
 
 Untuk larik, ingatlah bahwa larik di Kotlin berbeda dengan larik di Java. Di Kotlin tidak diperbolehkan mengisikan data dari sub-kelas atau super-kelas, contohnya misalkan deklarasi yang disebutkan adalah \texttt{Array<Any>}, deklarasi tersebut tidak bisa diisikan dengan data seperti \texttt{Array<String>}. Dan untuk tipe data primitif di Java, ada kelas yang bertugas menangani masing-masing tipe data tersebut dalam larik seperti \texttt{IntArray}, \texttt{CharArray}, \texttt{FloatArray} dan seterusnya.
 
+Gambaran kodenya akan terlihat seperti percobaan berikut, pertama kita buat dahulu kode dari Java dimana salah satu \textit{method} membutuhkan larik primitif \texttt{int} untuk di cetak ke layar monitor. Kode Javanya sebagai berikut :
+
+\begin{lstlisting}
+public class Pencetak {
+	public void go(int[] data) {
+		for(int i=0; i<data.length; i++) {
+			System.out.println(data[i]);
+		}
+	}
+}
+\end{lstlisting}
+
+Kode Kotlin yang menggunakan kelas \texttt{Pencetak} tersebut adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val data = intArrayOf(0,2,4,6)
+	val pencetak = Pencetak()
+	
+	pencetak.go(data)
+}
+\end{lstlisting}
+
+Hasil yang dikeluarkan oleh kode program di atas adalah sebagai berikut : 
+
+\begin{lstlisting}
+0
+2
+4
+6
+\end{lstlisting}
+
 \subsection{Varargs di Java}
 
-\subsection{Operator}
+\textit{Varargs} di Java sebetulnya mirip dengan larik, hanya saja deklarasinya memiliki perbedaan dan lebih terlihat dinamis. Contoh berikut akan memberikan gambaran bahwa \textit{varargs} di Java dapat diakses dengan cara yang mirip dengan larik di Java apabila digunakan di dalam kode Kotlin. Berikut adalah kode dengan bahasa pemrograman Java yang memiliki parameter \textit{varargs} :
+
+\begin{lstlisting}
+public class Pencetak {
+	public void go(int... data) {
+		for(int i=0; i<data.length; i++) {
+			System.out.println(data[i]);
+		}
+	}
+}
+\end{lstlisting}
+
+Sedangkan kode di Kotlin untuk melakukan akses terhadap fungsi \texttt{go} dengan parameter \texttt{data} yang berupa \textit{varargs} adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val data = intArrayOf(0, 2, 4, 6)
+	val pencetak = Pencetak()
+	pencetak.go(*data)
+}
+\end{lstlisting}
+
+Hasil keluarannya sama seperti kode sebelumnya, perbedaan yang dapat kita lihat ada pada baris ke-4, yaitu saat melakukan pemanggilan fungsi \texttt{go} dimana ada tanda bintang (\texttt{*}) pada parameter \texttt{data} yang diberikan.
 
 \subsection{Pemeriksaan \textit{Exception}}
 
+Di Kotlin, \textit{exception} tidak diperiksa terlebih dahulu, artinya, saat kita menggunakan \textit{method} di Java yang kemudian menghasilkan \textit{exception}, maka kita dapat abaikan saja, karena pada saat kompile dilakukan pun tidak ada peringatan kesalahan. 
+
+Untuk lebih jelasnya, lihatlah kode berikut, kode pertama adalah kode Java yang menghasilkan \textit{exception}, berikut kodenya :
+
+\begin{lstlisting}
+public class Pencetak {
+	public void go(int... data) throws Exception {
+		if(data.length > 5) throw new Exception("Banyak Amat");
+		
+		for(int i=0; i<data.length; i++) {
+			System.out.println(data[i]);
+		}
+	}
+}
+\end{lstlisting}
+
+Dan kode Kotlin yang memanggil \textit{method} Java \texttt{go} tersebut akan membuat kesalahan dengan mengisikan 6 (enam) parameter seperti kode berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val data = intArrayOf(0, 2, 4, 6, 8, 10)
+	val pencetak = Pencetak()	
+	
+	pencetak.go(*data)
+}
+\end{lstlisting}
+
+Pada saat \textit{compile} dilakukan terhadap kode Kotlin tidak akan memunculkan masalah, tetapi begitu kita jalankan aplikasi Kotlin yang telah kita buat, maka baru akan muncul \textit{exception} yang dikembalikan oleh \textit{method} \texttt{go} dari kelas \texttt{Pencetak} di Java.
+
 \subsection{\textit{Method} Kelas Objek di Java}
 
-\subsection{Mewarisi dari Kelas Java}
+Pada saat kita mendeklarasikan kelas \texttt{Object} di Java, maka pada saat digunakan di Kotlin, kelas tersebut akan dikonversi ke kelas \texttt{Any} di Kotlin.
+
+Kelas \texttt{Any} ini berbeda dengan kelas \texttt{Object} karena hanya memiliki 3 (tiga) \textit{method} saja, yaitu \texttt{toString()}, \texttt{hashCode()}, dan \texttt{equals()}. Untuk implementasi \textit{method} lain dari kelas \texttt{Object} maka perlu didefinisikan dengan \textit{fungsi ekstensi} seperti yang telah kita bahas sebelumnya.
 
 \subsection{Mengakses \texttt{static}}
+
+\textit{Static Member} di Java apabila digunakan di Kotlin akan dikonversi menjadi \textit{companion object} seperti penjelasan sebelumnya. Contoh kodenya adalah seperti berikut, kita akan ubah kode sebelumnya baik kode Java maupun kode di Kotlinnya, berikut adalah kode di Java yang kita ubah :
+
+\begin{lstlisting}
+public class Pencetak {
+	public static void go(int... data) {
+		for(int i=0; i<data.length; i++) {
+			System.out.println(data[i]);
+		}
+	}
+}
+\end{lstlisting}
+
+Kode di Kotlin yang akan menggunakan \textit{method static} di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val data = intArrayOf(0, 2, 4, 6)
+	
+	Pencetak.go("data")
+}
+\end{lstlisting}
+
+Hasilnya masih sama seperti di atas, yaitu akan mencetak seluruh angka yang ada dalam larik \texttt{data}. Yang berbeda adalah kita tidak perlu membuat instan baru seperti sebelumnya, namun langsung dapat dipanggil nama \textit{method}nya seperti pada baris ke-4.
 
 \subsection{Java Reflection}
 

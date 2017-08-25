@@ -86,7 +86,7 @@
 \contentsline {subsection}{\numberline {5.1.4}\textit {Null-Safety}}{74}{subsection.5.1.4}
 \contentsline {subsection}{\numberline {5.1.5}Persamaan Tipe Data}{75}{subsection.5.1.5}
 \contentsline {subsection}{\numberline {5.1.6}Java Generik}{76}{subsection.5.1.6}
-\contentsline {subsection}{\numberline {5.1.7}Larik Java}{76}{subsection.5.1.7}
+\contentsline {subsection}{\numberline {5.1.7}Larik Java}{77}{subsection.5.1.7}
 \contentsline {subsection}{\numberline {5.1.8}Varargs di Java}{77}{subsection.5.1.8}
 \contentsline {subsection}{\numberline {5.1.9}Operator}{77}{subsection.5.1.9}
 \contentsline {subsection}{\numberline {5.1.10}Pemeriksaan \textit {Exception}}{77}{subsection.5.1.10}
