@@ -463,6 +463,59 @@ Hasilnya masih sama seperti di atas, yaitu akan mencetak seluruh angka yang ada 
 
 \subsection{Java Reflection}
 
+\textit{Java Reflection} ini sebetulnya sebuah paket yang digunakan untuk memeriksa kelas pada saat kondisi \textit{runtime}. Beberapa hal yang dapat kita lihat dari \textit{Java Reflection} ini adalah sebagai berikut :
+
+\begin{itemize}
+	\item Nama Kelas
+	\item Lingkup kelas
+	\item Informasi Paket
+	\item Super-Kelas
+	\item Implementasi \textit{Interface}
+	\item Konstruktor
+	\item \textit{Method}
+	\item Properti / Atribut
+	\item Anotasi
+\end{itemize}
+
+Untuk mudahnya, perhatikan kelas berikut yang menggunakan \textit{Java Reflection} :
+
+\begin{lstlisting}
+public class Test {
+	public static void main(String args[]) {
+		Class cl = Test.class;
+		
+		System.out.println(cl.getName());
+	}
+}
+\end{lstlisting}
+
+Hasil dari kode di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+Test
+\end{lstlisting}
+
+Kode tersebut adalah kode Java yang menggunakan \textit{Java Reflection} seperti pada deklarasi di baris ke-3, yaitu penggunaan kelas \texttt{Class}, yang kemudian informasi dapat diakses dengan \textit{method} milik \texttt{Class}.
+
+Hal tersebut dapat kita lakukan dalam Kotlin dengan kode sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	val data = Test()
+	val nama = data::class.java
+	
+	println(nama.name)
+}
+\end{lstlisting}
+
+Hasil dari kode di atas akan sama seperti kode Java sebelumnya, seperti berikut ini :
+
+\begin{lstlisting}
+Test
+\end{lstlisting}
+
+Penggunaan \textit{Java Reflection} ini seperti terlihat di baris ke-3, dimana pada baris ke-2 membentuk instan dari kelas \texttt{Test} milik Java, kemudian pada baris ke-3 dilakukan inspeksi terhadap kelas \texttt{Test} melalui instannya, yaitu \texttt{data}, kemudian dilakukan pencetakan nama kelas seperti pada baris ke-5.
+
 \subsection{Konversi SAM}
 
 \subsection{Menggunakan JNI di Kotlin}
