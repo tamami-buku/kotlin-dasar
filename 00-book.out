@@ -78,16 +78,24 @@
 \BOOKMARK [2][-]{subsection.5.1.6}{Java Generik}{section.5.1}% 78
 \BOOKMARK [2][-]{subsection.5.1.7}{Larik Java}{section.5.1}% 79
 \BOOKMARK [2][-]{subsection.5.1.8}{Varargs di Java}{section.5.1}% 80
-\BOOKMARK [2][-]{subsection.5.1.9}{Operator}{section.5.1}% 81
-\BOOKMARK [2][-]{subsection.5.1.10}{Pemeriksaan Exception}{section.5.1}% 82
-\BOOKMARK [2][-]{subsection.5.1.11}{Method Kelas Objek di Java}{section.5.1}% 83
-\BOOKMARK [2][-]{subsection.5.1.12}{Mewarisi dari Kelas Java}{section.5.1}% 84
-\BOOKMARK [2][-]{subsection.5.1.13}{Mengakses static}{section.5.1}% 85
-\BOOKMARK [2][-]{subsection.5.1.14}{Java Reflection}{section.5.1}% 86
-\BOOKMARK [2][-]{subsection.5.1.15}{Konversi SAM}{section.5.1}% 87
-\BOOKMARK [2][-]{subsection.5.1.16}{Menggunakan JNI di Kotlin}{section.5.1}% 88
-\BOOKMARK [1][-]{section.5.2}{Gunakan Kotlin di Java}{chapter.5}% 89
-\BOOKMARK [0][-]{chapter.6}{Perkakas}{}% 90
-\BOOKMARK [1][-]{section.6.1}{Menggunakan Gradle}{chapter.6}% 91
-\BOOKMARK [1][-]{section.6.2}{Menggunakan Maven}{chapter.6}% 92
-\BOOKMARK [0][-]{chapter.7}{Contoh Kasus \040Aplikasi Chat}{}% 93
+\BOOKMARK [2][-]{subsection.5.1.9}{Pemeriksaan Exception}{section.5.1}% 81
+\BOOKMARK [2][-]{subsection.5.1.10}{Method Kelas Objek di Java}{section.5.1}% 82
+\BOOKMARK [2][-]{subsection.5.1.11}{Mengakses static}{section.5.1}% 83
+\BOOKMARK [2][-]{subsection.5.1.12}{Java Reflection}{section.5.1}% 84
+\BOOKMARK [1][-]{section.5.2}{Gunakan Kotlin di Java}{chapter.5}% 85
+\BOOKMARK [2][-]{subsection.5.2.1}{Properti}{section.5.2}% 86
+\BOOKMARK [2][-]{subsection.5.2.2}{Fungsi Pada Paket}{section.5.2}% 87
+\BOOKMARK [2][-]{subsection.5.2.3}{Field Instan}{section.5.2}% 88
+\BOOKMARK [2][-]{subsection.5.2.4}{Field Statis}{section.5.2}% 89
+\BOOKMARK [2][-]{subsection.5.2.5}{Method Statis}{section.5.2}% 90
+\BOOKMARK [2][-]{subsection.5.2.6}{Lingkup}{section.5.2}% 91
+\BOOKMARK [2][-]{subsection.5.2.7}{KClass}{section.5.2}% 92
+\BOOKMARK [2][-]{subsection.5.2.8}{Tangani Kesamaan Ciri dengan @JvmName}{section.5.2}% 93
+\BOOKMARK [2][-]{subsection.5.2.9}{Pembentukan Overload}{section.5.2}% 94
+\BOOKMARK [2][-]{subsection.5.2.10}{Pemeriksaan Exception}{section.5.2}% 95
+\BOOKMARK [2][-]{subsection.5.2.11}{Null-safety}{section.5.2}% 96
+\BOOKMARK [2][-]{subsection.5.2.12}{Generik}{section.5.2}% 97
+\BOOKMARK [0][-]{chapter.6}{Perkakas}{}% 98
+\BOOKMARK [1][-]{section.6.1}{Menggunakan Gradle}{chapter.6}% 99
+\BOOKMARK [1][-]{section.6.2}{Menggunakan Maven}{chapter.6}% 100
+\BOOKMARK [0][-]{chapter.7}{Contoh Kasus \040Aplikasi Chat}{}% 101

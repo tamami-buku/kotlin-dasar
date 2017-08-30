@@ -516,8 +516,209 @@ Test
 
 Penggunaan \textit{Java Reflection} ini seperti terlihat di baris ke-3, dimana pada baris ke-2 membentuk instan dari kelas \texttt{Test} milik Java, kemudian pada baris ke-3 dilakukan inspeksi terhadap kelas \texttt{Test} melalui instannya, yaitu \texttt{data}, kemudian dilakukan pencetakan nama kelas seperti pada baris ke-5.
 
-\subsection{Konversi SAM}
-
-\subsection{Menggunakan JNI di Kotlin}
-
 \section{Gunakan Kotlin di Java}
+
+Karena sebetulnya tiap proses \textit{compile} yang terjadi di Kotlin adalah merubah kode Kotlin menjadi kode biner Java, jadi sangat mudah menggunakan kode yang dibangun dengan Kotlin untuk digunakan di Java.
+
+\subsection{Properti}
+
+Properti di Kotlin akan diubah atau diurai menjadi elemen-elemen Java seperti berikut ini :
+
+\begin{itemize}
+	\item \textit{Method} get, dimana \textit{method} ini adalah gabungan dari nama properti yang diawali dengan kata kunci \texttt{get}.
+	\item \textit{Method} set, dimana \textit{method} ini adalah gabungan dari nama properti yang diawali dengan kata kunci \texttt{set}. (Hanya berlaku untuk properti dengan kata kunci \texttt{var}).
+	\item Properti dengan nama yang sama dengan tambahan kata kunci \texttt{private}.
+\end{itemize}
+
+Contohnya adalah seperti kode berikut ini :
+
+\begin{lstlisting}
+class Pegawai {
+	var nama: String
+}
+\end{lstlisting}
+
+Dari kelas \texttt{Pegawai} di atas, memiliki sebuah properti yang apabila di-\textit{compile} akan menjadi kode Java berikut :
+
+\begin{lstlisting}
+public class Pegawai {
+	private String nama;
+	
+	public void setNama(String nama) {
+		this.nama = nama;
+	}
+	
+	public String getNama() {
+		return nama;
+	}
+}
+\end{lstlisting}
+
+Secara sederhana akan terbentuk seperti kode di atas. Apabila sebuah properti diberi nama dengan awalan \texttt{is} seperti misalkan \texttt{isStudent}, maka konversinya adalah \textit{method get}-nya akan sama persis seperti nama propertinya, sedangkan \textit{method set}-nya akan merubah awalan \texttt{is} menjadi awalan \texttt{set}, sehingga nama \textit{method} akan menjadi \texttt{setStudent}. 
+
+Aturan tersebut berlaku untuk seluruh tipe data selama nama propertinya mengikuti pola seperti itu.
+
+\subsection{Fungsi Pada Paket}
+
+Fungsi yang berada di dalam paket langsung, bukan di dalam kelas, akan diperlakukan sebagai fungsi \texttt{static} di Java. Termasuk di dalamnya adalah fungsi ekstensi. Berikut adalah kode Kotlin yang dibangun yang memiliki \textit{method} di bawah paket langsung:
+
+\begin{lstlisting}
+package data
+
+fun keterangan() {
+	println("Test Keterangan")
+}
+\end{lstlisting}
+
+Misalkan \textit{file} untuk kode di atas diberi nama \texttt{Pegawai.kt}. Untuk kode Java yang melakukan / menggunakan akses fungsi \texttt{keterangan} dari kode Kotlin di atas adalah sebagai berikut :
+
+\begin{lstlisting}
+public class Test {
+	public static void main(String args[]) {
+		data.PegawaiKt.keterangan();
+	}
+}
+\end{lstlisting}
+
+Hasil dari \textit{compile} dan menjalankan kode di atas, keluarannya akan terlihat seperti ini :
+
+\begin{lstlisting}
+Test Keterangan
+\end{lstlisting}
+
+Hal ini mungkin dicapai karena memang kode Kotlin yang dibuat bertugas hanya mencetak kata tersebut. Perhatikan baris ke-3 dari kode Java yang dibuat, ada beberapa bagian disana, dimana \texttt{data} adalah nama paketnya, \texttt{PegawaiKt} adalah hasil \textit{compile} dari \textit{file} \texttt{Pegawai.kt} karena ada fungsi di dalam paketnya. Dan yang terakhir adalah \texttt{keterangan} yang sebetulnya nama fungsi di level atau tingkatan paket dengan nama \texttt{data}.
+
+Untuk bagian \texttt{PegawaiKt} sebetulnya dapat kita ganti agar terlihat lebih pantas dengan kata kunci \texttt{@file:JvmName()}. Berikut contoh kode programnya dalam Kotlin :
+
+\begin{lstlisting}
+@file:JvmName("Pegawai")
+
+package data
+
+fun keterangan() {
+	println("Test Keterangan")
+}
+\end{lstlisting}
+
+Sehingga kode di Java akan berubah menjadi seperti ini :
+
+\begin{lstlisting}
+public class Test {
+	public static void main(String args[]) {
+		data.Pegawai.keterangan();
+	}
+}
+\end{lstlisting}
+
+Dengan hasil yang sama, namun kata \texttt{Pegawai} tidak lagi menggunakan seperti nama sebelumnya, yaitu \texttt{PegawaiKt}.
+
+\subsection{\textit{Field} Instan}
+
+Jika ingin membuat sebuah properti di Kotlin persis seperti sebuah properti di Java, gunakan kata kunci \texttt{@JvmField}, batasannya adalah properti ini bukan tipe \texttt{private}, bukan pula \texttt{open}, \texttt{override} atau \texttt{const}. Jenis properti lain adalah properti \texttt{late-initialized} akan juga menjadi \textit{field} murni di Java.
+
+\subsection{\textit{Field} Statis}
+
+Properti yang dideklarasikan sejajar dengan nama objek atau dalam \textit{companion} objek akan didefinisikan sebagai \textit{field} statis di Java. Biasanya akan bersifat \texttt{private} juga, namun dapat dibuka dengan menggunakan kata kunci berikut :
+
+\begin{itemize}
+	\item Anotasi \texttt{@JvmField}
+	\item Kata Kunci \texttt{lateinit}
+	\item Kata Kunci \texttt{const}
+\end{itemize}
+
+\subsection{\textit{Method} Statis}
+
+Seperti penjelasan sebelumnya bahwa \textit{method} yang terbentuk di bawah paket langsung akan menjadi \textit{method} statis di Java. Kotlin juga akan membentuk \textit{method} statis apabila fungsi tersebut terbentuk didalam \texttt{object} atau \textit{companion} objek jika diberikan kata kunci \texttt{@JvmStatic}.
+
+\subsection{Lingkup}
+
+Lingkup di Kotlin akan diterjemahkan dalam kelas Java sebagai berikut :
+
+\begin{itemize}
+	\item \texttt{private} di kelas Kotlin akan tetap \texttt{private} di kelas Java.
+	\item \texttt{private} di level paket akan menjadi milik paket lokal.
+	\item \texttt{protected} akan tetap sebagai \texttt{protected}, namun yang perlu diingat adalah bahwa tiap properti dengan lingkup \texttt{protected} di Java masih dapat diakses selama dalam 1 (satu) paket, namun di Kotlin tidak memperbolehkan hal ini.
+	\item \texttt{internal} akan menjadi \texttt{public} di Java.
+	\item \texttt{public} akan tetap menjadi \texttt{public} di Java.
+\end{itemize}
+
+\subsection{KClass}
+
+Adakalanya kita memerlukan sebuah \textit{method} dengan parameter berupa tipe data \texttt{KClass}, tipe data ini tidak ada padanannya di Java, maka kita harus melakukan konversi secara manual seperti kelas \texttt{MainView} berikut :
+
+\begin{lstlisting}
+kotlin.jvm.JvmClassMappingKt.getKotlinClass(MainView.class)
+\end{lstlisting}
+
+\subsection{Tangani Kesamaan Ciri dengan \texttt{@JvmName}}
+
+Apabila ada 2 (dua) fungsi yang dibuat di Kotlin seperti berikut ini :
+
+\begin{lstlisting}
+fun List<String>.filterValid(): List<String>
+fun List<Int>.filterValid(): List<Int>
+\end{lstlisting}
+
+Kedua fungsi tersebut akan menjadi bentrok apabila di konversi ke Java karena Java hanya akan melihat sebuah fungsi berikut :
+
+\begin{lstlisting}
+List<String> filterValid() {}
+\end{lstlisting}
+
+Hal ini dapat diselesaikan dengan kata kunci \texttt{@JvmName} dengan perubahan sebagai berikut di kode Kotlin :
+
+\begin{lstlisting}
+fun List<String>.filterValid(): List<String>
+
+@JvmName("filterValidInt")
+fun List<Int>.filterValid(): List<Int>
+\end{lstlisting}
+
+Karena dengan tambahan kode tersebut, di Java kodenya akan menjadi seperti ini :
+
+\begin{lstlisting}
+List<String> filterValid() {}
+
+List<Int> filterValidInt() {}
+\end{lstlisting}
+
+\subsection{Pembentukan \textit{Overload}}
+
+Sebenarnya, saat kita menulis \textit{method} di Kotlin dengan parameter yang sudah terisi secara \textit{default}, saat diterjemahkan ke Java maka Java hanya akan mengenal satu \textit{method} tersebut dengan jumlah parameter lengkap, misalnya kode kotlin seperti ini :
+
+\begin{lstlisting}
+fun fungsi(nama: String, kelamin: String = "pria", jabatan: String = "Staf") {}
+\end{lstlisting}
+
+Maka di Java hanya akan dikenal satu fungsi dengan pola sebagai berikut :
+
+\begin{lstlisting}
+void fungsi(String nama, String kelamin, String jabatan) {}
+\end{lstlisting}
+
+Padahal seharusnya di Kotlin fungsi \texttt{fungsi} masih dapat dipanggil dengan hanya sebuah parameter saja, yaitu \texttt{nama} seperti ini :
+
+\begin{lstlisting}
+fungsi("tamami")
+\end{lstlisting}
+
+Agar kode di Java dapat dengan mudah mengikuti pola ini, maka fungsi tersebut harus diberikan kata kunci \texttt{@JvmOverloads} seperti berikut :
+
+\begin{lstlisting}
+@JvmOverloads fun fungsi(nama: String, kelamin: String = "pria", 
+	jabatan: String = "Staf") {}
+\end{lstlisting}
+
+Nantinya di Java akan dapat menggunakan salah satu dari \textit{method} berikut yang terbentuk secara otomatis : 
+
+\begin{lstlisting}
+void fungsi(String nama) {}
+void fungsi(String nama, String kelamin) {}
+void fungsi(String nama, String kelamin, String jabatan) {}
+\end{lstlisting}
+
+\subsection{Pemeriksaan \textit{Exception}}
+
+\subsection{\textit{Null-safety}}
+
+\subsection{Generik}

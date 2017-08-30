@@ -88,16 +88,24 @@
 \contentsline {subsection}{\numberline {5.1.6}Java Generik}{76}{subsection.5.1.6}
 \contentsline {subsection}{\numberline {5.1.7}Larik Java}{77}{subsection.5.1.7}
 \contentsline {subsection}{\numberline {5.1.8}Varargs di Java}{77}{subsection.5.1.8}
-\contentsline {subsection}{\numberline {5.1.9}Operator}{77}{subsection.5.1.9}
-\contentsline {subsection}{\numberline {5.1.10}Pemeriksaan \textit {Exception}}{77}{subsection.5.1.10}
-\contentsline {subsection}{\numberline {5.1.11}\textit {Method} Kelas Objek di Java}{77}{subsection.5.1.11}
-\contentsline {subsection}{\numberline {5.1.12}Mewarisi dari Kelas Java}{77}{subsection.5.1.12}
-\contentsline {subsection}{\numberline {5.1.13}Mengakses \texttt {static}}{77}{subsection.5.1.13}
-\contentsline {subsection}{\numberline {5.1.14}Java Reflection}{77}{subsection.5.1.14}
-\contentsline {subsection}{\numberline {5.1.15}Konversi SAM}{77}{subsection.5.1.15}
-\contentsline {subsection}{\numberline {5.1.16}Menggunakan JNI di Kotlin}{77}{subsection.5.1.16}
-\contentsline {section}{\numberline {5.2}Gunakan Kotlin di Java}{77}{section.5.2}
-\contentsline {chapter}{\numberline {6}Perkakas}{79}{chapter.6}
-\contentsline {section}{\numberline {6.1}Menggunakan Gradle}{79}{section.6.1}
-\contentsline {section}{\numberline {6.2}Menggunakan Maven}{79}{section.6.2}
-\contentsline {chapter}{\numberline {7}Contoh Kasus \\ Aplikasi Chat}{81}{chapter.7}
+\contentsline {subsection}{\numberline {5.1.9}Pemeriksaan \textit {Exception}}{78}{subsection.5.1.9}
+\contentsline {subsection}{\numberline {5.1.10}\textit {Method} Kelas Objek di Java}{78}{subsection.5.1.10}
+\contentsline {subsection}{\numberline {5.1.11}Mengakses \texttt {static}}{79}{subsection.5.1.11}
+\contentsline {subsection}{\numberline {5.1.12}Java Reflection}{79}{subsection.5.1.12}
+\contentsline {section}{\numberline {5.2}Gunakan Kotlin di Java}{80}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Properti}{80}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Fungsi Pada Paket}{81}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}\textit {Field} Instan}{82}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}\textit {Field} Statis}{82}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.5}\textit {Method} Statis}{82}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.6}Lingkup}{83}{subsection.5.2.6}
+\contentsline {subsection}{\numberline {5.2.7}KClass}{83}{subsection.5.2.7}
+\contentsline {subsection}{\numberline {5.2.8}Tangani Kesamaan Ciri dengan \texttt {@JvmName}}{83}{subsection.5.2.8}
+\contentsline {subsection}{\numberline {5.2.9}Pembentukan \textit {Overload}}{84}{subsection.5.2.9}
+\contentsline {subsection}{\numberline {5.2.10}Pemeriksaan \textit {Exception}}{84}{subsection.5.2.10}
+\contentsline {subsection}{\numberline {5.2.11}\textit {Null-safety}}{84}{subsection.5.2.11}
+\contentsline {subsection}{\numberline {5.2.12}Generik}{84}{subsection.5.2.12}
+\contentsline {chapter}{\numberline {6}Perkakas}{85}{chapter.6}
+\contentsline {section}{\numberline {6.1}Menggunakan Gradle}{85}{section.6.1}
+\contentsline {section}{\numberline {6.2}Menggunakan Maven}{85}{section.6.2}
+\contentsline {chapter}{\numberline {7}Contoh Kasus \\ Aplikasi Chat}{87}{chapter.7}
