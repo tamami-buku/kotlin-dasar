@@ -92,10 +92,7 @@
 \BOOKMARK [2][-]{subsection.5.2.7}{KClass}{section.5.2}% 92
 \BOOKMARK [2][-]{subsection.5.2.8}{Tangani Kesamaan Ciri dengan @JvmName}{section.5.2}% 93
 \BOOKMARK [2][-]{subsection.5.2.9}{Pembentukan Overload}{section.5.2}% 94
-\BOOKMARK [2][-]{subsection.5.2.10}{Pemeriksaan Exception}{section.5.2}% 95
-\BOOKMARK [2][-]{subsection.5.2.11}{Null-safety}{section.5.2}% 96
-\BOOKMARK [2][-]{subsection.5.2.12}{Generik}{section.5.2}% 97
-\BOOKMARK [0][-]{chapter.6}{Perkakas}{}% 98
-\BOOKMARK [1][-]{section.6.1}{Menggunakan Gradle}{chapter.6}% 99
-\BOOKMARK [1][-]{section.6.2}{Menggunakan Maven}{chapter.6}% 100
-\BOOKMARK [0][-]{chapter.7}{Contoh Kasus \040Aplikasi Chat}{}% 101
+\BOOKMARK [0][-]{chapter.6}{Perkakas}{}% 95
+\BOOKMARK [1][-]{section.6.1}{Menggunakan Gradle}{chapter.6}% 96
+\BOOKMARK [1][-]{section.6.2}{Menggunakan Maven}{chapter.6}% 97
+\BOOKMARK [0][-]{chapter.7}{Contoh Kasus \040Aplikasi Chat}{}% 98

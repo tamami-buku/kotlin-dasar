@@ -1,5 +1,146 @@
 \chapter{Perkakas}
 
+Untuk membangun sebuah aplikasi, dewasa ini dikenal beberapa perkakas yang mempermudah dan mempercepat kita dalam mengumpulkan beberapa pustaka dalam sebuah \textit{project}.
+
+Beberapa perkakas untuk kebutuhan ini beberapa yang terkenal diantaranya Gradle dan Maven, kita akan bahas keduanya, namun untuk penggunaan kedepan kembali lagi kepada pilihan masing-masing.
+
 \section{Menggunakan Gradle}
 
+Gradle ini adalah perangkat otomasi untuk membangun sebuah aplikasi yang dibangun berdasarkan DSL (\textit{Domain-Specific Language) dari bahasa Groovy. 
+
+Gradle ini dibangun untuk dapat menangani multi-\textit{project} dengan cerdas, Gradle tahu bagian mana yang sudah terbarukan dan melakukan eksekusi terhadap paket tersebut tanpa harus melakukan eksekusi disemua bagian.
+
+Karena Gradle berjalan di atas JVM, maka kita diharuskan untuk melakukan instalasi Java terlebih dahulu, dan versi Java yang dibutuhkan adalah versi 7 dan setelahnya.
+
+Untuk proses instalasi dapat mengikuti petunjuk yang disediakan di laman Gradle, yaitu https://gradle.org/install. Untuk memastikan bahwa Gradle telah terpasang, dapat mengetikkan perintah berikut :
+
+\begin{lstlisting}
+gradle -v
+\end{lstlisting}
+
+Bila perintah tersebut berhasil menampilkan informasi versi Gradle, maka Gradle siap kita gunakan.
+
+\textit{File} konfigurasi yang digunakan untuk sebuah \textit{project} menggunakan Gradle adalah \texttt{build.gradle}. Apabila kita ingin membangun sebuah aplikasi dengan bahasa Kotlin, maka isi minimal dari \textit{file} \texttt{build.gradle} ini adalah sebagai berikut :
+
+\begin{lstlisting}
+buildcript {
+	ext.kotlin_version = '1.1.2'
+	
+	repositories {
+		mavenCentral()
+	}
+	
+	dependencies {
+		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+	}
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = 'HelloKt'
+
+defaultTasks 'run'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+}
+\end{lstlisting}
+
+Kode di atas baru isi dari konfigurasi Gradle, untuk kode Kotlin sendiri akan disimpan pada bagian / \textit{folder} sesuai struktur yang ditetapkan Gradle, yaitu didalam \textit{folder} \texttt{src/main/kotlin}.
+
+\textit{File} kode Kotlin yang akan kita buat kita beri nama \texttt{Hello.kt} yang disimpan dalam \textit{folder} seperti di atas, yaitu \texttt{src/main/kotlin}. Berikut isi kode dari \textit{file} \texttt{Hello.kt} :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	println("Halo")
+}
+\end{lstlisting}
+
+Untuk menjalankan kode di atas, gunakan perintah berikut :
+
+\begin{lstlisting}
+gradle run
+\end{lstlisting}
+
+Nantinya akan ada beberapa persiapan yang dilakukan oleh Gradle, termasuk pengumpulan / pengunduhan beberapa pustaka yang dibutuhkan dalam \textit{project} kemudian melakukan kompilasi dan akhirnya mengeksekusi kode program Kotlin yang kita buat.
+
 \section{Menggunakan Maven}
+
+Maven pun sebetulnya sama dengan Gradle, hanya saja \textit{file} konfigurasi pembentuk unit \textit{project} menggunakan format XML. \textit{File} konfigurasi untuk membangun sebuah \textit{project} di Maven diberi nama \texttt{pom.xml}. 
+
+Isi minimal dari \textit{file} tersebut untuk membangun sebuah \textit{project} Kotlin adalah sebagai berikut :
+
+\begin{lstlisting}
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>lab.aikibo</groupId>
+    <artifactId>halo-kotlin</artifactId>
+    <version>1.0</version>
+ 
+    <properties>
+        <kotlin.version>1.1.2</kotlin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
+        <plugins>
+            <plugin>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+\end{lstlisting}
+
+Lebih panjang memang dari format konfigurasi milik Gradle. Struktur penempatan \textit{file} kode juga sama seperti Gradle, yaitu di \textit{folder} \texttt{src/main/kotlin}. \textit{File} yang kita coba untuk Maven ini sama persis dengan Gradle, isinya sebagai berikut :
+
+\begin{lstlisting}
+fun main(args: Array<String>) {
+	println("Halo")
+}
+\end{lstlisting}
+
+Untuk menjalankan \textit{project} ini, perlu dilakukan \textit{compile} terlebih dahulu dengan perintah berikut :
+
+\begin{lstlisting}
+mvn compile
+\end{lstlisting}
+
+Nantinya Maven akan melakukan pengumpulan / pengunduhan pustaka, kemudian melakukan \textit{compile} terhadap kode yang kita buat. Hasil dari proses ini akan terbentuk sebuah \textit{folder} dengan nama \texttt{target} yang isinya tentu saja sudah merupakan kumpulan pustaka yang dibutuhkan dan hasil dari kompilasi \textit{file} kode yang kita susun.
+
+Untuk menjalankan \textit{project}, gunakan perintah berikut :
+
+\begin{lstlisting}
+mvn exec:java -Dexec.mainClass="HelloKt"
+\end{lstlisting}
+
+Kenapa menggunakan Java, karena memang sama saja, setelah \textit{file} kode Kotlin kita \textit{compile} akan menghasilkan \textit{file} biner kode Java.
+
+Selanjutnya akan kita bangun kode lengkap dari sebuah \textit{project} aplikasi \textit{chat} dengan menggunakan Kotlin. 
